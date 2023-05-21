@@ -1,6 +1,28 @@
 #div_main{
     position: relative;
 }
+#div_news{
+	border-style: solid;
+	border-color: rgb(192,192,192);
+	border-width: 2px;
+    position: relative;
+	margin: 30px;
+	margin-top: 100px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 20px;
+}
+.news_div{
+	border-style: solid;
+	border-color: rgb(0,96,255);
+	border-width: 2px;
+	padding-left: 15px;
+	padding-right: 15px;
+	line-height: 10px;
+}
+.date{
+	color: rgb(255,0,0);
+}
 #div_introduction{
     left: 30px;
     top: 100px;
