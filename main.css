@@ -42,5 +42,17 @@ body{
 #div_main h1{font-size: 30pt;}
 #div_main h2{font-size: 15pt;}
 #div_main h3{font-size: 10pt;}
-a{color:#0969da;}
+a{color: #0969da;}
 a:hover{background: rgba(128,128,128,.5);}
+.textbar{
+	border: 1px solid #a0b3d6;
+	padding: 4px;
+	color: #333;
+	outline: 0;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.textbar:empty::before{
+	content:attr(placeholder);
+	color: #999;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./main.css"/>
+    <title>留言板</title>
+	<script>
+if(!localStorage.getItem("cnt")) localStorage.setItem("cnt", "0");
+function add_msg(){
+//msg_board
+	var s = document.getElementById("msg_input").textContent;
+	var i = Number(localStorage.getItem("cnt"));
+	localStorage.setItem("" + i, s);
+	localStorage.setItem("cnt", Number(localStorage.getItem("cnt")) + 1);
+	update_msg();
+}
+function update_msg(){
+	var b = document.getElementById("msg_board");
+	b.innerHTML = "";
+	var n = Number(localStorage.getItem("cnt"));
+	for(var i = 0; i < n; ++i){
+		b.innerHTML += "<p class=\"msg\">" + localStorage.getItem("" + i) + "<\p>\n";
+	}
+}
+	</script>
+	<style>
+#send_btn{
+	float: right;
+	margin-right: 20px;
+	margin-top: 5px;
+	border: 1px solid #0969da;
+	background-color: rgba(0, 0, 0, .0);
+    font-family: Consolas;
+}
+#send_btn:hover{background-color: rgba(128,128,128,.4);}
+#send_btn:active{background-color: rgba(128,128,128,.8);}
+.msg{
+	background-color: rgba(255, 255, 255, .3);
+	padding: 10px;
+	margin-top: 5px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+	</style>
+</head>
+<body>
+    <div id="div_menu">
+        <a style="margin-right:40px;" href="javascript:history.go(-1)">← 返回</a>
+        <a href="./" style="cursor: pointer;text-decoration: none;color: black;font-weight: 60;font-size: 20px;font-family: Consolas;text-align: center;">
+            zero-range
+        </a>
+        <a href="./" style="background: rgba(128,128,128,.3);">主页</a>
+        <a href="./softwares/">软件</a>
+        <a href="./downloads/">下载</a>
+        <a href="./source_code/">源代码</a>
+        <a href="./articles/">文章</a>
+        <a href="./links/">链接</a>
+    </div>
+    <div id="div_main">
+		<h1>留言板</h1>
+		<div id="msg_board"></div>
+		<script>update_msg();</script>
+		<div id="msg_input" class="textbar" contenteditable="true" placeholder="请输入内容..."></div>
+		<button id="send_btn" onclick="add_msg()">发送..</button>
+    </div>
+</body>
+</html>
