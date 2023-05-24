@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="./main.css"/>
     <title>留言板</title>
-	<script>
+	<script type="text/javascript">
 if(!localStorage.getItem("cnt")) localStorage.setItem("cnt", "0");
 function add_msg(){
 //msg_board
-	var s = document.getElementById("msg_input").textContent;
+	var s = document.getElementById("msg_input").innerText;
 	var i = Number(localStorage.getItem("cnt"));
 	localStorage.setItem("" + i, s);
 	localStorage.setItem("cnt", Number(localStorage.getItem("cnt")) + 1);
@@ -22,6 +22,7 @@ function update_msg(){
 		b.innerHTML += "<p class=\"msg\">" + localStorage.getItem("" + i) + "<\p>\n";
 	}
 }
+update_msg();
 	</script>
 	<style>
 #send_btn{
@@ -59,7 +60,6 @@ function update_msg(){
     <div id="div_main">
 		<h1>留言板</h1>
 		<div id="msg_board"></div>
-		<script>update_msg();</script>
 		<div id="msg_input" class="textbar" contenteditable="true" placeholder="请输入内容..."></div>
 		<button id="send_btn" onclick="add_msg()">发送..</button>
     </div>
