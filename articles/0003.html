@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../main.css"/>
+	<link rel="stylesheet" href="./highlight.min.css">
+	<script src="./highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+	<style>
+#div_article{
+	margin: 30pt;
+}
+.bimage{
+    margin-left: 30px;
+    margin-right: 30px;
+    max-width: 900px;
+    max-height: 450px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+img{
+	image-rendering: pixelated;
+}
+p{
+    margin-left: 20px;
+}
+	</style>
+    <title>All The Way Forward 游戏说明书</title>
+</head>
+<body>
+    <div id="div_menu">
+        <a style="margin-right:40px;" href="javascript:history.go(-1)">← 返回</a>
+        <a href="../" style="cursor: pointer;text-decoration: none;color: black;font-weight: 60;font-size: 20px;font-family: Consolas;text-align: center;">
+            zero-range
+        </a>
+        <a href="../">主页</a>
+        <a href="../softwares/">软件</a>
+        <a href="../downloads/">下载</a>
+        <a href="../source_code/">源代码</a>
+        <a href="./" style="background: rgba(128,128,128,.3);">文章</a>
+        <a href="../links/">链接</a>
+    </div>
+    <div id="div_main">
+		<div id="div_article">
+			<h1>All The Way Forward 游戏说明书</h1>
+			<h2 style="text-align: left;">键位</h2>
+			<p>向左移动：左键、A</p>
+			<p>向右移动：右键、D</p>
+			<p>暂停：Esc</p>
+			<p>全屏：F11</p>
+			<p>截图：F2（截图文件将会保存在%AppData%\AllTheWayForward\screenshots中）</p>
+			<h2 style="text-align: left;">地形</h2>
+			<p>水与苔石（主世界）：0~200格与848~∞格</p>
+			<img class="bimage" src="images/0003-1.png"/>
+			<p>岩浆与地狱岩（下界）：200~400格与648~848格</p>
+			<img class="bimage" src="images/0003-2.png"/>
+			<p>末地石（末路之地）：200~400格与400~648格</p>
+			<img class="bimage" src="images/0003-3.png"/>
+			<h2 style="text-align: left;">方块</h2>
+			<p>障碍物 <img style="height: 30px;" src="images/0003-4.png"/> （碰撞后减少1~1.5格血）</p>
+			<p style="margin-left: 40px">（在300格以后，每行障碍物有1/3的概率移动）</p>
+			<p>绿宝石 <img style="height: 30px;" src="images/0003-6.gif"/> （得分+1）</p>
+			<p>蜘蛛网 <img style="height: 30px;" src="images/0003-5.png"/> （速度减少到大约10%）</p>
+			<h2 style="text-align: left;">购买</h2>
+			<img class="bimage" src="images/0003-7.png"/>
+			<p>商店以绿宝石为货币</p>
+			<p>每局游戏结束后获得绿宝石个数可以在右上角看到，如下图</p>
+			<p>增加的绿宝石个数=四舍五入(得分/10+距离/100)</p>
+			<img class="bimage" src="images/0003-8.png"/>
+		</div>
+    </div>
+</body>
+<script>
+</script>
+</html>
