@@ -183,6 +183,7 @@ GameManager.prototype.setup = function () {
     // Add the initial tiles
     this.addStartTiles();
   }
+  this.bestTile = 1;
 
   // Update the actuator
   this.actuate();
@@ -210,6 +211,14 @@ GameManager.prototype.actuate = function () {
   if (this.storageManager.getBestScore() < this.score) {
     this.storageManager.setBestScore(this.score);
   }
+  var bestTileChanged = false;
+  if (this.storageManager.getBestTile() > this.bestTile) {
+    bestTileChanged = true;
+    this.bestTile = this.storageManager.getBestTile();
+  } else if (this.storageManager.getBestTile() < this.bestTile) {
+    this.storageManager.setBestTile(this.bestTile);
+    bestTileChanged = true;
+  } 
 
   // Clear the state when the game is over (game over only, not win)
   if (this.over) {
@@ -230,7 +239,8 @@ GameManager.prototype.actuate = function () {
     over:       this.over,
     won:        this.won,
     bestScore:  this.storageManager.getBestScore(),
-    terminated: this.isGameTerminated()
+    terminated: this.isGameTerminated(),
+    bestTile:   bestTileChanged ? this.storageManager.getBestTile() : 0
   });
 
 };
@@ -293,6 +303,8 @@ GameManager.prototype.move = function (direction) {
         if (next && next.value === tile.value && !next.mergedFrom) {
           var merged = new Tile(positions.next, tile.value + 1);
           merged.mergedFrom = [tile, next];
+          
+          if (merged.value > self.bestTile) self.bestTile = merged.value;
 
           self.grid.insertTile(merged);
           self.grid.removeTile(tile);
@@ -527,10 +539,11 @@ Grid.prototype.serialize = function () {
 };
 
 function HTMLActuator() {
-  this.tileContainer    = document.querySelector(".tile-container");
-  this.scoreContainer   = document.querySelector(".score-container");
-  this.bestContainer    = document.querySelector(".best-container");
-  this.messageContainer = document.querySelector(".game-message");
+  this.tileContainer     = document.querySelector(".tile-container");
+  this.scoreContainer    = document.querySelector(".score-container");
+  this.bestContainer     = document.querySelector(".best-container");
+  this.bestTileContainer = document.querySelector(".bestTile-container");
+  this.messageContainer  = document.querySelector(".game-message");
 
   this.score = 0;
 }
@@ -551,6 +564,7 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
 
     self.updateScore(metadata.score);
     self.updateBestScore(metadata.bestScore);
+    self.updateBestTile(metadata.bestTile);
 
     if (metadata.terminated) {
       if (metadata.over) {
@@ -574,17 +588,7 @@ HTMLActuator.prototype.clearContainer = function (container) {
   }
 };
 
-HTMLActuator.prototype.addTile = function (tile) {
-  var self = this;
-
-  var wrapper   = document.createElement("div");
-  var inner     = document.createElement("div");
-  var position  = tile.previousPosition || { x: tile.x, y: tile.y };
-  var positionClass = this.positionClass(position);
-
-  // We can't use classlist because it somehow glitches when replacing classes
-  var classes = ["tile", "tile-" + tile.value, positionClass];
-  
+HTMLActuator.prototype.getTileText = function (value) {
   var texts = [
     '1',
     '2',
@@ -606,18 +610,32 @@ HTMLActuator.prototype.addTile = function (tile) {
 	'131072',
 	'262144',
 	'524288'];
-  if (tile.value >= texts.length) {
+  var text = ''
+  if (value >= texts.length) {
     var upper = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
-    var x = tile.value;
-    inner.textContent = ''
+    var x = value;
     while(x) {
-      inner.textContent = upper[x % 10] + inner.textContent;
+      text = upper[x % 10] + text;
       x = Math.floor(x / 10);
     }
-    inner.textContent = '2' + inner.textContent;
+    text = '2' + text;
   } else {
-    inner.textContent = texts[tile.value];
+    text = texts[value];
   }
+  return text;
+}
+HTMLActuator.prototype.addTile = function (tile) {
+  var self = this;
+
+  var wrapper   = document.createElement("div");
+  var inner     = document.createElement("div");
+  var position  = tile.previousPosition || { x: tile.x, y: tile.y };
+  var positionClass = this.positionClass(position);
+
+  // We can't use classlist because it somehow glitches when replacing classes
+  var classes = ["tile", "tile-" + tile.value, positionClass];
+  
+  inner.textContent = self.getTileText(tile.value);
   if (tile.value >= 40) classes.push("tile-super");
 
   this.applyClasses(wrapper, classes);
@@ -682,6 +700,11 @@ HTMLActuator.prototype.updateScore = function (score) {
 
 HTMLActuator.prototype.updateBestScore = function (bestScore) {
   this.bestContainer.textContent = bestScore;
+};
+HTMLActuator.prototype.updateBestTile = function (bestTile) {
+  if (!bestTile) return;
+  this.bestTileContainer.innerHTML = 
+    "<div class=\"tile tile-best tile-" + bestTile + " tile-new\"><div class=\"tile-inner\">" + this.getTileText(bestTile) + "</div></div>";
 };
 
 HTMLActuator.prototype.message = function (won) {
@@ -866,6 +889,7 @@ window.fakeStorage = {
 function LocalStorageManager() {
   this.bestScoreKey     = "bestScore";
   this.gameStateKey     = "gameState";
+  this.bestTileKey      = "bestTile";
 
   var supported = this.localStorageSupported();
   this.storage = supported ? window.localStorage : window.fakeStorage;
@@ -891,6 +915,14 @@ LocalStorageManager.prototype.getBestScore = function () {
 
 LocalStorageManager.prototype.setBestScore = function (score) {
   this.storage.setItem(this.bestScoreKey, score);
+};
+
+LocalStorageManager.prototype.getBestTile = function () {
+  return this.storage.getItem(this.bestTileKey) || 0;
+};
+
+LocalStorageManager.prototype.setBestTile = function (tile) {
+  this.storage.setItem(this.bestTileKey, tile);
 };
 
 // Game state getters/setters and clearing
