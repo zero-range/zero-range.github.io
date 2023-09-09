@@ -20,10 +20,7 @@ body{
 }
 #div_menu a{
     float: left;
-    padding-right: 12pt;
-    padding-left: 12pt;
-    padding-top: 12pt;
-    padding-bottom: 12pt;
+    padding: 16px;
     text-decoration: none;
     color: black;
 }
