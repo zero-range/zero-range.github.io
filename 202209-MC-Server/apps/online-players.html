@@ -3,6 +3,23 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../../main.css"/>
+	<style>
+@font-face{
+	font-family: "Mojangles";
+	src: url("../Mojangles.ttf");
+}
+#table_players{
+	margin: 0 auto;
+}
+#table_players img{
+	height: 20pt;
+	margin-right: 6pt;
+}
+#table_players p{
+	font-family: Mojangles;
+	font-size: 16pt;
+}
+	</style>
     <title>NFLS 202209 MC服务器</title>
 </head>
 <body>
@@ -21,7 +38,36 @@
     </div>
     <div id="div_main">
 		<h1>在线玩家</h1>
-		<h2>asdasdeogirth</h2>
+		<table id="table_players" border="0">
+		</table>
 	</div>
 </body>
+<script>
+function addplayer(name){
+	const Http = new XMLHttpRequest();
+	Http.open("GET", "https://playerdb.co/api/player/minecraft/" + name);
+	Http.send();
+	players = document.getElementById("table_players");
+	Http.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200){
+			res = JSON.parse(Http.responseText);
+			avatar = "";
+			if(res.code == "player.found"){
+				avatar = res["data"]["player"]["avatar"];
+			}
+			players.innerHTML += "<tr><td><img src=\"" + avatar + "\"/></td><td><p>" + name + "</p></td></tr>";
+		}
+	}
+}
+const Http = new XMLHttpRequest();
+Http.open("GET", "http://47.122.30.124:9821" + name);
+Http.send();
+Http.onreadystatechange = function(){
+	if(this.readyState == 4 && this.status == 200){
+		res = JSON.parse(Http.responseText);
+		for(var i = 0; i < res.length; ++i)
+			addplayer(res[i]);
+	}
+}
+</script>
 </html>
