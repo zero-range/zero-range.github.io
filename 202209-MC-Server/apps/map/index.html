@@ -54,6 +54,7 @@ function loadImage(src, x, y, s){
 	img.src = src;
 	img.onload = () => {
 		images.push([img, x, y, s]);
+		images.sort(function (a, b){return b[3] - a[3]; });
 		repaint();
 	}
 }
@@ -117,15 +118,15 @@ function resizeEvent(){
 window.onresize = resizeEvent;
 resizeEvent();
 
-loadImage("./448 448.png", 448, 448, 8);
-loadImage("./448 -576.png", 448, -576, 8);
-loadImage("./3520 -1600.png", 3520, -1600, 8);
-loadImage("./1472 448.png", 1472, 448, 8);
-loadImage("./2496 448.png", 2496, 448, 8);
-loadImage("./2496 -576.png", 2496, -576, 8);
-loadImage("./448 1472.png", 448, 1472, 8);
-loadImage("./1472 -576.png", 1472, -576, 8);
-loadImage("./-576 448.png", -576, 448, 8);
-loadImage("./-576 -576.png", -576, -576, 8);
+imgSrc = ['0 384 640.png', '0 384 768.png', '0 512 640.png', '0 512 768.png', '0 640 -128.png', '0 640 -256.png', '0 640 640.png', '3 -576 -576.png', '3 -576 448.png', '3 1472 -576.png', '3 1472 448.png', '3 2496 -576.png', '3 2496 448.png', '3 3520 -1600.png', '3 448 -576.png', '3 448 1472.png', '3 448 448.png'];	
+
+for(var i = 0; i < imgSrc.length; ++i){
+	[s, x, y] = imgSrc[i].match(/[-\d]+/g);
+	s = parseInt(s),
+	x = parseInt(x),
+	y = parseInt(y);
+	console.log(s + ' ' + x + ' ' + y);
+	loadImage("./" + imgSrc[i], x, y, 1 << s);
+}
 </script>
 </html>
