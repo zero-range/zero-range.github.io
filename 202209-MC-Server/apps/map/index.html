@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../main.css"/>
+	<style>
+#main{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+	</style>
+    <title>服务器地图</title>
+</head>
+<body>
+    <div id="div_menu">
+		<a style="margin-right:10px;" href="javascript:history.go(-1)">
+			<b style="font-weight:60;font-size:24px;line-height:24px;">←</b>
+			返回
+		</a>
+        <a href="../../" style="cursor:pointer;display:flex;">
+            <img style="width:24px;height:24px;margin-top:1px;" src="../../icon.png"/>
+			<p style="text-decoration:none;color:black;font-weight:60;font-size:20px;font-family:Consolas;text-align:center;margin:0px;margin-left:7px;padding:0px;">NFLS 202209 MC服务器</p>
+        </a>
+        <a href="../../">主页</a>
+        <a href="../../tutorial/">教程</a>
+        <a href="../../apps/">应用</a>
+    </div>
+	<canvas id="main"/>
+</body>
+<script>
+const menu = document.getElementById("div_menu");
+const canvas = document.getElementById("main");
+const cxt = canvas.getContext("2d");
+let width = 0;
+let height = 0;
+let ox = 0;
+let oy = 0;
+let sc = 1.0;
+
+var images = [];
+
+function repaint(){
+	cxt.imageSmoothingEnabled = false;
+	cxt.clearRect(0, 0, width, height);
+	for(var i = 0; i < images.length; ++i){
+		[img, x, y, s] = images[i];
+		cxt.drawImage(img, width / 2 + ox + (x - 128 * s / 2) * sc, height / 2 + oy + (y - 128 * s / 2) * sc, 128 * s * sc, 128 * s * sc);
+	}
+}
+
+function loadImage(src, x, y, s){
+	var img = new Image();
+	img.src = src;
+	img.onload = () => {
+		images.push([img, x, y, s]);
+		repaint();
+	}
+}
+
+let leftClick = false;
+let lx = null;
+let ly = null;
+
+canvas.onmousedown = function(){
+	var event = event || window.event;
+	if(event.button == 0){
+		leftClick = true;
+		lx = event.offsetX;
+		ly = event.offsetY;
+	}
+}
+
+canvas.onmouseup = function(){
+	var event = event || window.event;
+	if(event.button == 0){
+		leftClick = false;
+		lx = null;
+		ly = null;
+	}
+}
+
+canvas.onmousemove = function(){
+	var event = event || window.event;
+	if(leftClick && lx != null && ly != null){
+		ox += event.offsetX - lx;
+		oy += event.offsetY - ly;
+		lx = event.offsetX;
+		ly = event.offsetY;
+		repaint();
+	}
+}
+
+canvas.onmousewheel = function(){
+	var event = event || window.event;
+	let rsc = sc;
+	let p = Math.pow(0.998, event.deltaY);
+	sc *= p;
+	const U = Math.pow(0.998, -1000);
+	const D = Math.pow(0.998, 1000);
+	if(sc > U) sc = U, p = U / rsc;
+	if(sc < D) sc = D, p = D / rsc;
+	let px = event.offsetX - width / 2;
+	let py = event.offsetY - height / 2;
+	ox = px + (ox - px) * p;
+	oy = py + (oy - py) * p;
+	repaint();
+}
+
+function resizeEvent(){
+	canvas.style.top = menu.clientHeight + "px";
+	width = canvas.width = canvas.clientWidth;
+	height = canvas.height = canvas.clientHeight;
+	repaint();
+}
+
+window.onresize = resizeEvent;
+resizeEvent();
+
+loadImage("./448 448.png", 448, 448, 8);
+loadImage("./448 -576.png", 448, -576, 8);
+loadImage("./3520 -1600.png", 3520, -1600, 8);
+loadImage("./1472 448.png", 1472, 448, 8);
+loadImage("./2496 448.png", 2496, 448, 8);
+loadImage("./2496 -576.png", 2496, -576, 8);
+loadImage("./448 1472.png", 448, 1472, 8);
+loadImage("./1472 -576.png", 1472, -576, 8);
+loadImage("./-576 448.png", -576, 448, 8);
+loadImage("./-576 -576.png", -576, -576, 8);
+</script>
+</html>
