@@ -61,7 +61,7 @@ function addplayer(name){
 	}
 }
 const Http = new XMLHttpRequest();
-Http.open("GET", "http://47.122.30.124:9821");
+Http.open("GET", "https://47.122.30.124:9821");
 Http.send();
 Http.onreadystatechange = function(){
 	if(this.readyState == 4 && this.status == 200){

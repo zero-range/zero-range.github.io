@@ -6,6 +6,8 @@
 	<style>
 #main{
 	position: fixed;
+	left: 0px;
+	top: 0px;
 	width: 100%;
 	height: 100%;
 }
@@ -32,20 +34,49 @@
 const menu = document.getElementById("div_menu");
 const canvas = document.getElementById("main");
 const cxt = canvas.getContext("2d");
-let width = 0;
-let height = 0;
-let ox = 0;
-let oy = 0;
-let sc = 1.0;
+var width = 0;
+var height = 0;
+var ox = parseFloat(localStorage.getItem("ox"));
+if(isNaN(ox) || !isFinite(ox)) ox = 0.0;
+var oy = parseFloat(localStorage.getItem("oy"));
+if(isNaN(oy) || !isFinite(oy)) oy = 0.0;
+var sc = parseFloat(localStorage.getItem("sc"));
+if(isNaN(sc) || !isFinite(sc)) sc = 1.0;
 
 var images = [];
+var tags = [];
+let chosen = null;
 
 function repaint(){
+	tags.sort(function (a, b){return a.ac * 1000 + a.y - b.ac * 1000 - b.y;});
 	cxt.imageSmoothingEnabled = false;
 	cxt.clearRect(0, 0, width, height);
 	for(var i = 0; i < images.length; ++i){
 		[img, x, y, s] = images[i];
 		cxt.drawImage(img, width / 2 + ox + (x - 128 * s / 2) * sc, height / 2 + oy + (y - 128 * s / 2) * sc, 128 * s * sc, 128 * s * sc);
+	}
+	for(var i = 0; i < tags.length; ++i){
+		img = tags[i].img,
+		x = tags[i].x,
+		z = tags[i].z,
+		ac = tags[i].ac;
+		var tx = Math.round(width / 2 + ox + x * sc);
+		var ty = Math.round(height / 2 + oy + z * sc);
+		if(ac){
+			cxt.drawImage(img, tx - 20, ty - 20, 40, 40);
+			cxt.lineWidth = '2';
+			cxt.strokeStyle = 'black';
+			cxt.strokeRect(tx - 22, ty - 21, 42, 42);
+			cxt.strokeStyle = 'white';
+			cxt.strokeRect(tx - 24, ty - 23, 46, 46);
+		}else{
+			cxt.drawImage(img, tx - 16, ty - 16, 32, 32);
+			cxt.lineWidth = '1';
+			cxt.strokeStyle = 'black';
+			cxt.strokeRect(tx - 17, ty - 17, 33, 33);
+			cxt.strokeStyle = 'white';
+			cxt.strokeRect(tx - 18, ty - 18, 35, 35);
+		}
 	}
 }
 
@@ -59,9 +90,26 @@ function loadImage(src, x, y, s){
 	}
 }
 
-let leftClick = false;
-let lx = null;
-let ly = null;
+function loadTag(src, x, y, z, name, desc){
+	var img = new Image();
+	img.src = src;
+	img.onload = () => {
+		tags.push({
+			img: img,
+			x: x,
+			y: y,
+			z: z,
+			name: name,
+			desc: desc,
+			ac: false
+		});
+		repaint();
+	}
+}
+
+var leftClick = false;
+var lx = null;
+var ly = null;
 
 canvas.onmousedown = function(){
 	var event = event || window.event;
@@ -69,6 +117,25 @@ canvas.onmousedown = function(){
 		leftClick = true;
 		lx = event.offsetX;
 		ly = event.offsetY;
+		var fl = true;
+		tags.sort(function (a, b){return a.ac * 1000 + a.y - b.ac * 1000 - b.y;});
+		for(var i = 0; i < tags.length; ++i){
+			x = tags[i].x,
+			z = tags[i].z;
+			var tx = Math.round(width / 2 + ox + x * sc);
+			var ty = Math.round(height / 2 + oy + z * sc);
+			if(tx - 16 <= lx && lx < tx + 16 && ty - 16 <= ly && ly < ty + 16){
+				if(chosen != null) chosen.ac = false;
+				chosen = tags[i];
+				chosen.ac = true;
+				fl = false;
+			}
+		}
+		if(fl){
+			if(chosen != null) chosen.ac = false;
+			chosen = null;
+		}
+		repaint();
 	}
 }
 
@@ -94,18 +161,19 @@ canvas.onmousemove = function(){
 
 canvas.onmousewheel = function(){
 	var event = event || window.event;
-	let rsc = sc;
-	let p = Math.pow(0.998, event.deltaY);
+	var rsc = sc;
+	var p = Math.pow(0.998, event.deltaY);
 	sc *= p;
 	const U = Math.pow(0.998, -1000);
 	const D = Math.pow(0.998, 1000);
 	if(sc > U) sc = U, p = U / rsc;
 	if(sc < D) sc = D, p = D / rsc;
-	let px = event.offsetX - width / 2;
-	let py = event.offsetY - height / 2;
+	var px = event.offsetX - width / 2;
+	var py = event.offsetY - height / 2;
 	ox = px + (ox - px) * p;
 	oy = py + (oy - py) * p;
 	repaint();
+	return false;
 }
 
 function resizeEvent(){
@@ -118,6 +186,12 @@ function resizeEvent(){
 window.onresize = resizeEvent;
 resizeEvent();
 
+window.onunload = function (){
+	localStorage.setItem("ox", ox);
+	localStorage.setItem("oy", oy);
+	localStorage.setItem("sc", sc);
+}
+
 imgSrc = ['0 384 640.png', '0 384 768.png', '0 512 640.png', '0 512 768.png', '0 640 -128.png', '0 640 -256.png', '0 640 640.png', '3 -576 -576.png', '3 -576 448.png', '3 1472 -576.png', '3 1472 448.png', '3 2496 -576.png', '3 2496 448.png', '3 3520 -1600.png', '3 448 -576.png', '3 448 1472.png', '3 448 448.png'];	
 
 for(var i = 0; i < imgSrc.length; ++i){
@@ -125,8 +199,23 @@ for(var i = 0; i < imgSrc.length; ++i){
 	s = parseInt(s),
 	x = parseInt(x),
 	y = parseInt(y);
-	console.log(s + ' ' + x + ' ' + y);
-	loadImage("./" + imgSrc[i], x, y, 1 << s);
+	loadImage("./terrain/" + imgSrc[i], x, y, 1 << s);
 }
+
+loadTag("./icons/iron_golem.png", 630, 62, -191, "刷铁塔", "asdasdeogirth");
+loadTag("./icons/villager.png", 653, 66, -160, "村民繁殖", "asdasdeogirth");
+loadTag("./icons/oak_sapling.png", 684, 66, -172, "简易树场", "asdasdeogirth");
+loadTag("./icons/cobblestone.png", 609, 66, -119, "刷石机", "asdasdeogirth");
+loadTag("./icons/crafting_table_top.png", 659, 64, -202, "喷射合成站", "asdasdeogirth");
+loadTag("./icons/sugar_cane.png", 641, 67, -113, "小甘蔗机", "asdasdeogirth");
+loadTag("./icons/pumpkin_top.png", 609, 66, -161, "小南瓜机", "asdasdeogirth");
+loadTag("./icons/emerald.png", 654, 42, -175, "村民交易", "asdasdeogirth");
+loadTag("./icons/furnace_front_on.png", 664, 52, -152, "40速熔炉组", "asdasdeogirth");
+loadTag("./icons/slime_ball.png", 3467, 181, -1358, "沼泽刷怪塔", "asdasdeogirth");
+loadTag("./icons/nahida.png", 448, 64, 704, "像素画-纳西妲", "asdasdeogirth");
+loadTag("./icons/genshin.png", 640, 64, 640, "像素画-原神", "asdasdeogirth");
+loadTag("./icons/end_portal_frame_top.png", 463, 20, 1555, "末地传送门", "asdasdeogirth");
+loadTag("./icons/sand.png", 463, 20, 1555, "末地门刷沙机", "asdasdeogirth");
+loadTag("./icons/lime_concrete_powder.png", 669, 274, 64, "祭坛刷沙收集与混凝土固化", "asdasdeogirth");
 </script>
 </html>
