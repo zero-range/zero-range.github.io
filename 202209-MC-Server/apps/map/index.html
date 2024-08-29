@@ -167,7 +167,7 @@ function updateDescription(){
 }
 
 function repaint(){
-	tags.sort(function (a, b){return a.ac * 1000 + a.y - b.ac * 1000 - b.y;});
+	tags[dimension].sort(function (a, b){return a.ac * 1000 + a.y - b.ac * 1000 - b.y;});
 	cxt.imageSmoothingEnabled = false;
 	cxt.clearRect(0, 0, width, height);
 	for(var i = 0; i < images[dimension].length; ++i){
@@ -372,6 +372,19 @@ loadTag(0, "./icons/end_portal_frame_top.png", 463, 21, 1553, "末地传送门",
 loadTag(0, "./icons/sand.png", 463, 20, 1555, "末地门刷沙机", "Chong_Sheng 制作的刷沙机。Chong_Sheng 说开机时人一定要待在末地。坏过一次，但 Chong_Sheng 光速修好。");
 loadTag(0, "./icons/light_blue_concrete_powder.png", 669, 274, 64, "祭坛刷沙收集与混凝土固化", "Chong_Sheng 的作品。Chong_Sheng 一直想把它换成自适应打包收集，不过做像素画时还挺好用。");
 loadTag(0, "./icons/magma_cube.png", 248, 79, 400, "岩浆怪塔收集", "zero_range 制作的机器。自从使用岩浆块的僵尸猪灵塔修好了之后就几乎没有开机过。");
+
+loadTag(1, "./icons/honey_bottle.png", 115, 129, -24, "蜂蜜机", "asdasdeogirth");
+loadTag(1, "./icons/gold_ingot.png", 203, 247, 25, "僵尸猪灵塔", "asdasdeogirth");
+loadTag(1, "./icons/quartz.png", 210, 235, 41, "猪灵交易", "asdasdeogirth");
+loadTag(1, "./icons/magma_cube.png", 57, 248, 50, "岩浆怪塔", "asdasdeogirth");
+
+loadTag(2, "./icons/experience_orb.png", 24, 6, -286, "末影人经验塔", "asdasdeogirth");
+loadTag(2, "./icons/shulker.png", -711, 62, 142, "潜影贝塔", "asdasdeogirth");
+loadTag(2, "./icons/sand.png", 100, 49, 0, "末地门刷沙机收集", "asdasdeogirth");
+loadTag(2, "./icons/light_blue_concrete_powder.png", 0, 61, 0, "末地祭坛刷沙机", "asdasdeogirth");
+loadTag(2, "./icons/oak_sapling.png", 319, 50, -23, "树场", "asdasdeogirth");
+loadTag(2, "./icons/bone_meal.png", 304, 43, 11, "骨粉机", "asdasdeogirth传奇耐卸王。");
+loadTag(2, "./icons/sugar_cane.png", 304, 49, 29, "甘蔗机", "asdasdeogirth");
 
 </script>
 </html>
