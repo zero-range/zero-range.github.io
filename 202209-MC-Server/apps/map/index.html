@@ -32,7 +32,6 @@
 	margin-bottom: 16px;
 	margin-right: 40px;
 	font-size: 32px;
-	tabindex: -1;
 }
 #description .content{
 	margin-left: 16px;
@@ -40,7 +39,6 @@
 	line-height: 20px;
 	margin-top: 0px;
 	font-size: 16px;
-	tabindex: -1;
 }
 #description img{
 	position: relative;
@@ -49,7 +47,6 @@
 	width: 32px;
 	image-rendering: pixelated;
 	float: left;
-	tabindex: -1;
 }
 #description #close{
 	font-family: Mojangles;
@@ -91,6 +88,7 @@
 	position: absolute;
 	bottom: 16px;
 	left: 16px;
+	tabindex: -1;
 }
 .dimensions{
 	width: 32px;
@@ -100,6 +98,7 @@
 	padding-top: 2px;
 	padding-bottom: 3px;
 	background: rgba(255, 255, 255, 0.3);
+	tabindex: -1;
 }
 .dimensions:hover{
 	background: rgba(255, 255, 255, 0.8);
@@ -320,10 +319,13 @@ canvas.onmousewheel = function(){
 }
 
 function setDimension(x){
+	if(x == dimension) return;
+	chosen = null;
 	dimensions[dimension].style.border = "none";
 	dimension = x;
 	dimensions[dimension].style.border = "2px solid white";
 	repaint();
+	updateDescription();
 }
 dimensions[dimension].style.border = "2px solid white";
 
