@@ -278,17 +278,22 @@ canvas.addEventListener("mousedown", function(event){
 }, false);
 
 canvas.addEventListener("touchstart", function(event){
-	var len = event.touches.length;
-	touches = Math.max(touches, len);
-	lx = 0.0, ly = 0.0;
+	touches = event.touches.length;
 	var rc = canvas.getBoundingClientRect();
-	for(var i = 0; i < len; ++i){
-		lx += event.touches[i].clientX - rc.x,
-		ly += event.touches[i].clientY - rc.y;
-	}
-	lx /= len, ly /= len;
-	if(touches == 1)
+	if(touches == 1){
+		var x = event.touches[0].clientX - rc.x;
+		var y = event.touches[0].clientY - rc.y;
+		lx = x, ly = y;
 		leftclick(lx, ly);
+	}else if(touches == 2){
+		var x1 = event.touches[0].clientX - rc.x;
+		var y1 = event.touches[0].clientY - rc.y;
+		var x2 = event.touches[1].clientX - rc.x;
+		var y2 = event.touches[1].clientY - rc.y;
+		ldis = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+		lx = (x1 + x2) / 2.0,
+		ly = (y1 + y2) / 2.0;
+	}
 }, false);
 
 canvas.addEventListener("mouseup", function(event){
@@ -300,7 +305,7 @@ canvas.addEventListener("mouseup", function(event){
 }, false);
 
 canvas.addEventListener("touchend", function(event){
-	touches = 0, lx = null, ly = null, ldis = null;
+	ldis = null, lx = null, ly = null;
 	return false;
 }, false);
 
@@ -311,6 +316,7 @@ canvas.addEventListener("mouseout", function(event){
 }, false);
 
 canvas.addEventListener("touchcancel", function(event){
+	touches = 0;
 	lx = null;
 	ly = null;
 	ldis = null;
@@ -327,13 +333,12 @@ canvas.addEventListener("mousemove", function(event){
 }, false);
 
 canvas.addEventListener("touchmove", function(event){
-	var len = event.touches.length;
-	touches = Math.max(touches, len);
+	touches = event.touches.length;
 	var rc = canvas.getBoundingClientRect();
 	if(touches == 1){
 		var x = event.touches[0].clientX - rc.x;
 		var y = event.touches[0].clientY - rc.y;
-		ox += x - lx, oy += y - ly,
+		if(lx != null && ly != null) ox += x - lx, oy += y - ly;
 		lx = x, ly = y;
 		repaint();
 	}else if(touches == 2){
