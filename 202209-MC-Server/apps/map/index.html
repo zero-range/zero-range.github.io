@@ -161,7 +161,7 @@ function updateDescription(){
 	cmd = "/tp " + chosen.x + ' ' + chosen.y + ' ' + chosen.z;
 	description.innerHTML = "<img src=\"" + chosen.img.src + "\"/><p class=\"title\">" + chosen.name + "</p><p class=\"content\">" + chosen.desc + 
 	"</p><button id=\"close\" onclick=\"chosen.ac = false; chosen = null; repaint(); updateDescription(); \">x</button><p id=\"coordinate\">坐标：<a id=\"copy\" title=\"点击复制：" + cmd +
-	"\"  onclick=\"navigator.clipboard.writeText('" + cmd + "');\">" + chosen.x + ' ' + chosen.y + ' ' + chosen.z + "</a></p>";
+	"\"  onclick=\"navigator.clipboard.writeText('" + cmd + "');\">[" + chosen.x + ', ' + chosen.y + ', ' + chosen.z + "]</a></p>";
 }
 
 function repaint(){
