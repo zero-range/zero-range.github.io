@@ -85,6 +85,23 @@
 	margin-left: 0px;
 	margin-bottom: 0px;
 }
+#select_dimensions{
+	position: absolute;
+	bottom: 16px;
+	left: 16px;
+}
+.dimensions{
+	width: 32px;
+	image-rendering: pixelated;
+	padding-left: 2px;
+	padding-right: 3px;
+	padding-top: 2px;
+	padding-bottom: 3px;
+	background: rgba(255, 255, 255, 0.3);
+}
+.dimensions:hover{
+	background: rgba(255, 255, 255, 0.8);
+}
 	</style>
     <title>服务器地图</title>
 </head>
@@ -104,12 +121,22 @@
     </div>
 	<canvas id="main"></canvas>
 	<div id="description" style="display: none;"></div>
+	<div id="select_dimensions">
+		<img src="./icons/overworld.png" id="overworld" class="dimensions" onclick="setDimension(0);"></img>
+		<img src="./icons/nether.png" id="nether" class="dimensions" onclick="setDimension(1);"></img>
+		<img src="./icons/end.png" id="end" class="dimensions" onclick="setDimension(2);"></img>
+	</div>
 </body>
 <script>
 const menu = document.getElementById("div_menu");
 const canvas = document.getElementById("main");
 const description = document.getElementById("description");
 const cxt = canvas.getContext("2d");
+const dimensions = [
+	document.getElementById("overworld"),
+	document.getElementById("nether"),
+	document.getElementById("end")
+]
 var width = 0;
 var height = 0;
 var ox = parseFloat(localStorage.getItem("ox"));
@@ -118,9 +145,11 @@ var oy = parseFloat(localStorage.getItem("oy"));
 if(isNaN(oy) || !isFinite(oy)) oy = 0.0;
 var sc = parseFloat(localStorage.getItem("sc"));
 if(isNaN(sc) || !isFinite(sc)) sc = 1.0;
+var dimension = parseFloat(localStorage.getItem("dimension"));
+if(isNaN(dimension) || !isFinite(dimension)) dimension = 0;
 
-var images = [];
-var tags = [];
+var images = [[], [], []];
+var tags = [[], [], []];
 let chosen = null;
 
 function updateDescription(){
@@ -139,15 +168,15 @@ function repaint(){
 	tags.sort(function (a, b){return a.ac * 1000 + a.y - b.ac * 1000 - b.y;});
 	cxt.imageSmoothingEnabled = false;
 	cxt.clearRect(0, 0, width, height);
-	for(var i = 0; i < images.length; ++i){
-		[img, x, y, s] = images[i];
+	for(var i = 0; i < images[dimension].length; ++i){
+		[img, x, y, s] = images[dimension][i];
 		cxt.drawImage(img, width / 2 + ox + (x - 128 * s / 2) * sc, height / 2 + oy + (y - 128 * s / 2) * sc, 128 * s * sc, 128 * s * sc);
 	}
-	for(var i = 0; i < tags.length; ++i){
-		img = tags[i].img,
-		x = tags[i].x,
-		z = tags[i].z,
-		ac = tags[i].ac;
+	for(var i = 0; i < tags[dimension].length; ++i){
+		img = tags[dimension][i].img,
+		x = tags[dimension][i].x,
+		z = tags[dimension][i].z,
+		ac = tags[dimension][i].ac;
 		var tx = Math.round(width / 2 + ox + x * sc);
 		var ty = Math.round(height / 2 + oy + z * sc);
 		if(ac){
@@ -168,21 +197,21 @@ function repaint(){
 	}
 }
 
-function loadImage(src, x, y, s){
+function loadImage(dimension, src, x, y, s){
 	var img = new Image();
 	img.src = src;
 	img.onload = () => {
-		images.push([img, x, y, s]);
-		images.sort(function (a, b){return b[3] - a[3]; });
+		images[dimension].push([img, x, y, s]);
+		images[dimension].sort(function (a, b){return b[3] - a[3]; });
 		repaint();
 	}
 }
 
-function loadTag(src, x, y, z, name, desc){
+function loadTag(dimension, src, x, y, z, name, desc){
 	var img = new Image();
 	img.src = src;
 	img.onload = () => {
-		tags.push({
+		tags[dimension].push({
 			img: img,
 			x: x,
 			y: y,
@@ -204,10 +233,10 @@ function leftclick(cx, cy){
 	lx = cx;
 	ly = cy;
 	var fl = true;
-	tags.sort(function (a, b){return a.ac * 1000 + a.y - b.ac * 1000 - b.y;});
-	for(var i = 0; i < tags.length; ++i){
-		x = tags[i].x,
-		z = tags[i].z;
+	tags[dimension].sort(function (a, b){return a.ac * 1000 + a.y - b.ac * 1000 - b.y;});
+	for(var i = 0; i < tags[dimension].length; ++i){
+		x = tags[dimension][i].x,
+		z = tags[dimension][i].z;
 		var tx = Math.round(width / 2 + ox + x * sc);
 		var ty = Math.round(height / 2 + oy + z * sc);
 		if(tx - 16 <= lx && lx < tx + 16 && ty - 16 <= ly && ly < ty + 16){
@@ -284,6 +313,14 @@ canvas.onmousewheel = function(){
 	return false;
 }
 
+function setDimension(x){
+	dimensions[dimension].style.border = "none";
+	dimension = x;
+	dimensions[dimension].style.border = "2px solid white";
+	repaint();
+}
+setDimension(dimension);
+
 function resizeEvent(){
 	canvas.style.top = menu.clientHeight + "px";
 	width = canvas.width = canvas.clientWidth;
@@ -296,9 +333,10 @@ window.onresize = resizeEvent;
 resizeEvent();
 
 window.onunload = function (){
-	localStorage.setItem("ox", ox);
-	localStorage.setItem("oy", oy);
-	localStorage.setItem("sc", sc);
+	localStorage.setItem("ox", ox),
+	localStorage.setItem("oy", oy),
+	localStorage.setItem("sc", sc),
+	localStorage.setItem("dimension", dimension);
 }
 
 imgSrc = ['0 256 384.png', '0 3456 -1280.png', '0 3456 -1408.png', '0 384 384.png', '0 384 640.png', '0 384 768.png', '0 512 -128.png', '0 512 640.png', '0 512 768.png', '0 640 -128.png', '0 640 -256.png', '0 640 640.png', '3 -576 -576.png', '3 -576 448.png', '3 1472 -576.png', '3 1472 448.png', '3 2496 -576.png', '3 2496 448.png', '3 3520 -1600.png', '3 448 -576.png', '3 448 1472.png', '3 448 448.png'];
@@ -308,25 +346,25 @@ for(var i = 0; i < imgSrc.length; ++i){
 	s = parseInt(s),
 	x = parseInt(x),
 	y = parseInt(y);
-	loadImage("./terrain/" + imgSrc[i], x, y, 1 << s);
+	loadImage(0, "./terrain/" + imgSrc[i], x, y, 1 << s);
 }
 
-loadTag("./icons/iron_golem.png", 630, 62, -191, "刷铁塔", "Chong_Sheng 在前前期做的刷铁塔，特别好用。一开始效率很低，没想到竟是服主忘了开困难。");
-loadTag("./icons/villager.png", 653, 66, -160, "村民繁殖", "Chong_Sheng 在开服第一天做的村民繁殖，位于当初竹岛村庄的中心。为村民交易所和刷铁塔贡献极大。");
-loadTag("./icons/oak_sapling.png", 684, 66, -172, "简易树场", "Chong_Sheng 制造的简单树场。效率不高但是什么树种都可以生产。假人 hsds 是这里的常客。");
-loadTag("./icons/cobblestone.png", 609, 66, -119, "刷石机", "zero_range 制造的大叔牌刷石机。绝对不抗卸载，开机一定要小心。坏了无数次，但修起来极快。产量不高，不过暂时够用。");
-loadTag("./icons/crafting_table_top.png", 659, 64, -202, "喷射合成站", "Chong_Sheng 做的喷射合成站。非常好用。需要辅助模组 ItemScroller、Tweakeroo 和 TweakerMore。");
-loadTag("./icons/sugar_cane.png", 641, 67, -113, "小甘蔗机", "Chong_Sheng 在前前期做的甘蔗机。为全服生产了好几盒烟花后光荣退休。");
-loadTag("./icons/pumpkin_top.png", 609, 66, -161, "小南瓜机", "zero_range 随手造的南瓜机。本质只是叠单片。不过就这也让 zero_range 造错了几次。");
-loadTag("./icons/emerald.png", 654, 42, -175, "村民交易", "位于地下二层。共同制作的村民交易所，配套刷线机，拥有常用村民和全套附魔书交易。原址位于竹岛南部，现已拆除。");
-loadTag("./icons/furnace_front_on.png", 664, 52, -152, "40速熔炉组", "位于地下一层。由 zero_range 和 Chong_Sheng 制造，能快速烧东西。抗卸载，但是不要在烧东西的时候关掉。能各种各样地坏，但是不妨碍它好用。");
-loadTag("./icons/slime_ball.png", 3467, 181, -1358, "沼泽刷怪塔", "zero_range 制作的沼泽刷怪塔。非常好用，不过路程有点儿远。");
-loadTag("./icons/nahida.png", 448, 64, 704, "像素画-纳西妲", "由 zero_range 提供投影和材料，Chong_Sheng 和 zero_range 联合制作的 256*256 像素画。由于 zero_range 的代码中的一个错误，像素画比原图显得亮一些，而且有些失真。不过 Chong_Sheng 对此很满意。Chong_Sheng 评价：哈哈哈！🥵我的纳西妲！🥵哧溜哧溜斯哈斯哈¥#$%&🥵🥵🥵！");
-loadTag("./icons/genshin.png", 640, 64, 640, "像素画-原神", "zero_range 生成投影并和 Chong_Sheng（、yzb?） 一起制作的像素画，表达了全服成员共同的志向。被贴在各个重要的公共设施上以表示它们的重要性。");
-loadTag("./icons/end_portal_frame_top.png", 463, 21, 1553, "末地传送门", "末地传送门。是重要的交通通道，也是末地门刷沙机的一部分。");
-loadTag("./icons/sand.png", 463, 20, 1555, "末地门刷沙机", "Chong_Sheng 制作的刷沙机。Chong_Sheng 说开机时人一定要待在末地。坏过一次，但 Chong_Sheng 光速修好。");
-loadTag("./icons/light_blue_concrete_powder.png", 669, 274, 64, "祭坛刷沙收集与混凝土固化", "Chong_Sheng 的作品。Chong_Sheng 一直想把它换成自适应打包收集，不过做像素画时还挺好用。");
-loadTag("./icons/magma_cube.png", 248, 79, 400, "岩浆怪塔收集", "zero_range 制作的机器。自从使用岩浆块的僵尸猪灵塔修好了之后就几乎没有开机过。");
+loadTag(0, "./icons/iron_golem.png", 630, 62, -191, "刷铁塔", "Chong_Sheng 在前前期做的刷铁塔，特别好用。一开始效率很低，没想到竟是服主忘了开困难。");
+loadTag(0, "./icons/villager.png", 653, 66, -160, "村民繁殖", "Chong_Sheng 在开服第一天做的村民繁殖，位于当初竹岛村庄的中心。为村民交易所和刷铁塔贡献极大。");
+loadTag(0, "./icons/oak_sapling.png", 684, 66, -172, "简易树场", "Chong_Sheng 制造的简单树场。效率不高但是什么树种都可以生产。假人 hsds 是这里的常客。");
+loadTag(0, "./icons/cobblestone.png", 609, 66, -119, "刷石机", "zero_range 制造的大叔牌刷石机。绝对不抗卸载，开机一定要小心。坏了无数次，但修起来极快。产量不高，不过暂时够用。");
+loadTag(0, "./icons/crafting_table_top.png", 659, 64, -202, "喷射合成站", "Chong_Sheng 做的喷射合成站。非常好用。需要辅助模组 ItemScroller、Tweakeroo 和 TweakerMore。");
+loadTag(0, "./icons/sugar_cane.png", 641, 67, -113, "小甘蔗机", "Chong_Sheng 在前前期做的甘蔗机。为全服生产了好几盒烟花后光荣退休。");
+loadTag(0, "./icons/pumpkin_top.png", 609, 66, -161, "小南瓜机", "zero_range 随手造的南瓜机。本质只是叠单片。不过就这也让 zero_range 造错了几次。");
+loadTag(0, "./icons/emerald.png", 654, 42, -175, "村民交易", "位于地下二层。共同制作的村民交易所，配套刷线机，拥有常用村民和全套附魔书交易。原址位于竹岛南部，现已拆除。");
+loadTag(0, "./icons/furnace_front_on.png", 664, 52, -152, "40速熔炉组", "位于地下一层。由 zero_range 和 Chong_Sheng 制造，能快速烧东西。抗卸载，但是不要在烧东西的时候关掉。能各种各样地坏，但是不妨碍它好用。");
+loadTag(0, "./icons/slime_ball.png", 3467, 181, -1358, "沼泽刷怪塔", "zero_range 制作的沼泽刷怪塔。非常好用，不过路程有点儿远。");
+loadTag(0, "./icons/nahida.png", 448, 64, 704, "像素画-纳西妲", "由 zero_range 提供投影和材料，Chong_Sheng 和 zero_range 联合制作的 256*256 像素画。由于 zero_range 的代码中的一个错误，像素画比原图显得亮一些，而且有些失真。不过 Chong_Sheng 对此很满意。Chong_Sheng 评价：哈哈哈！🥵我的纳西妲！🥵哧溜哧溜斯哈斯哈¥#$%&🥵🥵🥵！");
+loadTag(0, "./icons/genshin.png", 640, 64, 640, "像素画-原神", "zero_range 生成投影并和 Chong_Sheng（、yzb?） 一起制作的像素画，表达了全服成员共同的志向。被贴在各个重要的公共设施上。");
+loadTag(0, "./icons/end_portal_frame_top.png", 463, 21, 1553, "末地传送门", "末地传送门。是重要的交通通道，也是末地门刷沙机的一部分。");
+loadTag(0, "./icons/sand.png", 463, 20, 1555, "末地门刷沙机", "Chong_Sheng 制作的刷沙机。Chong_Sheng 说开机时人一定要待在末地。坏过一次，但 Chong_Sheng 光速修好。");
+loadTag(0, "./icons/light_blue_concrete_powder.png", 669, 274, 64, "祭坛刷沙收集与混凝土固化", "Chong_Sheng 的作品。Chong_Sheng 一直想把它换成自适应打包收集，不过做像素画时还挺好用。");
+loadTag(0, "./icons/magma_cube.png", 248, 79, 400, "岩浆怪塔收集", "zero_range 制作的机器。自从使用岩浆块的僵尸猪灵塔修好了之后就几乎没有开机过。");
 
 </script>
 </html>
