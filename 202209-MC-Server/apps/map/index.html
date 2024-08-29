@@ -241,7 +241,7 @@ function leftclick(cx, cy){
 		var ty = Math.round(height / 2 + oy + z * sc);
 		if(tx - 16 <= lx && lx < tx + 16 && ty - 16 <= ly && ly < ty + 16){
 			if(chosen != null) chosen.ac = false;
-			chosen = tags[i];
+			chosen = tags[dimension][i];
 			chosen.ac = true;
 			fl = false;
 		}
