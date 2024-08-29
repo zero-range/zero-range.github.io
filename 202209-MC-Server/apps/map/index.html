@@ -24,18 +24,23 @@
 	width: 240px;
 	background-color: rgba(240, 240, 240, .8);
 	font-family: Mojangles;
+	tabindex: -1;
 }
 #description .title{
 	margin-left: 56px;
 	margin-top: 14px;
 	margin-bottom: 16px;
-	margin-right: 48px;
+	margin-right: 40px;
 	font-size: 32px;
+	tabindex: -1;
 }
 #description .content{
 	margin-left: 16px;
+	margin-right: 16px;
+	line-height: 20px;
 	margin-top: 0px;
 	font-size: 16px;
+	tabindex: -1;
 }
 #description img{
 	position: relative;
@@ -44,6 +49,7 @@
 	width: 32px;
 	image-rendering: pixelated;
 	float: left;
+	tabindex: -1;
 }
 #description #close{
 	font-family: Mojangles;
@@ -221,6 +227,12 @@ canvas.onmouseup = function(){
 	}
 }
 
+canvas.onmouseout = function(){
+	leftClick = false;
+	lx = null;
+	ly = null;
+}
+
 canvas.onmousemove = function(){
 	var event = event || window.event;
 	if(leftClick && lx != null && ly != null){
@@ -276,15 +288,15 @@ for(var i = 0; i < imgSrc.length; ++i){
 	loadImage("./terrain/" + imgSrc[i], x, y, 1 << s);
 }
 
-loadTag("./icons/iron_golem.png", 630, 62, -191, "刷铁塔", "asdasdeogirth");
-loadTag("./icons/villager.png", 653, 66, -160, "村民繁殖", "asdasdeogirth");
-loadTag("./icons/oak_sapling.png", 684, 66, -172, "简易树场", "asdasdeogirth");
-loadTag("./icons/cobblestone.png", 609, 66, -119, "刷石机", "asdasdeogirth");
-loadTag("./icons/crafting_table_top.png", 659, 64, -202, "喷射合成站", "asdasdeogirth");
-loadTag("./icons/sugar_cane.png", 641, 67, -113, "小甘蔗机", "asdasdeogirth");
-loadTag("./icons/pumpkin_top.png", 609, 66, -161, "小南瓜机", "asdasdeogirth");
-loadTag("./icons/emerald.png", 654, 42, -175, "村民交易", "asdasdeogirth");
-loadTag("./icons/furnace_front_on.png", 664, 52, -152, "40速熔炉组", "asdasdeogirth");
+loadTag("./icons/iron_golem.png", 630, 62, -191, "刷铁塔", "Chong_Sheng 在前前期做的刷铁塔，特别好用。一开始效率很低，没想到竟是服主忘了开困难。");
+loadTag("./icons/villager.png", 653, 66, -160, "村民繁殖", "Chong_Sheng 在开服第一天做的村民繁殖，位于当初竹岛村庄的中心。为村民交易所和刷铁塔贡献极大。");
+loadTag("./icons/oak_sapling.png", 684, 66, -172, "简易树场", "Chong_Sheng 制造的简单树场。效率不高但是什么树种都可以生产。假人 hsds 是这里的常客。");
+loadTag("./icons/cobblestone.png", 609, 66, -119, "刷石机", "zero_range 制造的大叔牌刷石机。绝对不抗卸载，开机一定要小心。坏了无数次，但修起来极快。产量不高，不过暂时够用。");
+loadTag("./icons/crafting_table_top.png", 659, 64, -202, "喷射合成站", "Chong_Sheng 做的喷射合成站。非常好用。需要辅助模组 ItemScroller、Tweakeroo 和 TweakerMore。");
+loadTag("./icons/sugar_cane.png", 641, 67, -113, "小甘蔗机", "Chong_Sheng 在前前期做的甘蔗机。为全服生产了好几盒烟花后光荣退休。");
+loadTag("./icons/pumpkin_top.png", 609, 66, -161, "小南瓜机", "zero_range 随手造的南瓜机。本质只是叠单片。不过就这也让 zero_range 造错了几次。");
+loadTag("./icons/emerald.png", 654, 42, -175, "村民交易", "位于地下二层。共同制作的村民交易所，配套刷线机，拥有常用村民和全套附魔书交易。原址位于竹岛南部，现已拆除。");
+loadTag("./icons/furnace_front_on.png", 664, 52, -152, "40速熔炉组", "位于地下一层，由 zero_range 和 Chong_Sheng 制造，能快速烧东西。抗卸载，但是不要在烧东西的时候关掉。能各种各样地坏，但是不妨碍它好用。");
 loadTag("./icons/slime_ball.png", 3467, 181, -1358, "沼泽刷怪塔", "asdasdeogirth");
 loadTag("./icons/nahida.png", 448, 64, 704, "像素画-纳西妲", "asdasdeogirth");
 loadTag("./icons/genshin.png", 640, 64, 640, "像素画-原神", "asdasdeogirth");
@@ -292,5 +304,6 @@ loadTag("./icons/end_portal_frame_top.png", 463, 21, 1553, "末地传送门", "a
 loadTag("./icons/sand.png", 463, 20, 1555, "末地门刷沙机", "asdasdeogirth");
 loadTag("./icons/light_blue_concrete_powder.png", 669, 274, 64, "祭坛刷沙收集与混凝土固化", "asdasdeogirth");
 loadTag("./icons/magma_cube.png", 248, 79, 400, "岩浆怪塔收集", "asdasdeogirth");
+
 </script>
 </html>
