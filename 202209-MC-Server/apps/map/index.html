@@ -78,6 +78,13 @@
 	border: none;
 	background-color: rgba(64, 64, 64, 0.5);
 }
+#description #coordinate{
+	position: absolute;
+	left: 16px;
+	bottom: 16px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+}
 	</style>
     <title>服务器地图</title>
 </head>
@@ -122,7 +129,7 @@ function updateDescription(){
 		return;
 	}
 	description.style.display = "";
-	description.innerHTML = "<img src=\"" + chosen.img.src + "\"/><p class=\"title\">" + chosen.name + "</p><p class=\"content\">" + chosen.desc + "</p><button id=\"close\" onclick=\"chosen.ac = false; chosen = null; repaint(); updateDescription(); \">x</button>";
+	description.innerHTML = "<img src=\"" + chosen.img.src + "\"/><p class=\"title\">" + chosen.name + "</p><p class=\"content\">" + chosen.desc + "</p><button id=\"close\" onclick=\"chosen.ac = false; chosen = null; repaint(); updateDescription(); \">x</button><p id=\"coordinate\">坐标：<a id=\"copy\" title=\"/tp 0 0 0\">0 0 0</a></p>";
 }
 
 function repaint(){
@@ -189,33 +196,39 @@ var leftClick = false;
 var lx = null;
 var ly = null;
 
+function leftclick(ox, oy){
+	leftClick = true;
+	lx = ox;
+	ly = oy;
+	var fl = true;
+	tags.sort(function (a, b){return a.ac * 1000 + a.y - b.ac * 1000 - b.y;});
+	for(var i = 0; i < tags.length; ++i){
+		x = tags[i].x,
+		z = tags[i].z;
+		var tx = Math.round(width / 2 + ox + x * sc);
+		var ty = Math.round(height / 2 + oy + z * sc);
+		if(tx - 16 <= lx && lx < tx + 16 && ty - 16 <= ly && ly < ty + 16){
+			if(chosen != null) chosen.ac = false;
+			chosen = tags[i];
+			chosen.ac = true;
+			fl = false;
+		}
+	}
+	if(fl){
+		if(chosen != null) chosen.ac = false;
+		chosen = null;
+	}
+	updateDescription();
+	repaint();
+}
+
 canvas.onmousedown = function(){
 	var event = event || window.event;
-	if(event.button == 0){
-		leftClick = true;
-		lx = event.offsetX;
-		ly = event.offsetY;
-		var fl = true;
-		tags.sort(function (a, b){return a.ac * 1000 + a.y - b.ac * 1000 - b.y;});
-		for(var i = 0; i < tags.length; ++i){
-			x = tags[i].x,
-			z = tags[i].z;
-			var tx = Math.round(width / 2 + ox + x * sc);
-			var ty = Math.round(height / 2 + oy + z * sc);
-			if(tx - 16 <= lx && lx < tx + 16 && ty - 16 <= ly && ly < ty + 16){
-				if(chosen != null) chosen.ac = false;
-				chosen = tags[i];
-				chosen.ac = true;
-				fl = false;
-			}
-		}
-		if(fl){
-			if(chosen != null) chosen.ac = false;
-			chosen = null;
-		}
-		updateDescription();
-		repaint();
-	}
+	if(event.button == 0) leftclick(event.offsetX, event.offset);
+}
+canvas.ontouchstart = function(){
+	var event = event || window.event;
+	leftclick(event.offsetX, event.offset);
 }
 
 canvas.onmouseup = function(){
@@ -227,13 +240,20 @@ canvas.onmouseup = function(){
 	}
 }
 
-canvas.onmouseout = function(){
+canvas.ontouchend = function(){
+	var event = event || window.event;
 	leftClick = false;
 	lx = null;
 	ly = null;
 }
 
-canvas.onmousemove = function(){
+canvas.ontouchcancel = canvas.onmouseout = function(){
+	leftClick = false;
+	lx = null;
+	ly = null;
+}
+
+canvas.ontouchmove = canvas.onmousemove = function(){
 	var event = event || window.event;
 	if(leftClick && lx != null && ly != null){
 		ox += event.offsetX - lx;
