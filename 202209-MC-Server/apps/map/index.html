@@ -4,12 +4,73 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../../../main.css"/>
 	<style>
+@font-face{
+	font-family: "Mojangles";
+	src: url("../../Mojangles.ttf");
+}
 #main{
 	position: fixed;
 	left: 0px;
 	top: 0px;
 	width: 100%;
 	height: 100%;
+}
+#description{
+	position: fixed;
+	z-index: 999;
+	right: 10px;
+	top: 10px;
+	bottom: 10px;
+	width: 240px;
+	background-color: rgba(240, 240, 240, .8);
+	font-family: Mojangles;
+}
+#description .title{
+	margin-left: 56px;
+	margin-top: 14px;
+	margin-bottom: 16px;
+	margin-right: 48px;
+	font-size: 32px;
+}
+#description .content{
+	margin-left: 16px;
+	margin-top: 0px;
+	font-size: 16px;
+}
+#description img{
+	position: relative;
+	left: 16px;
+	top: 16px;
+	width: 32px;
+	image-rendering: pixelated;
+	float: left;
+}
+#description #close{
+	font-family: Mojangles;
+	font-size: 24px;
+	padding-left: 8px;
+	padding-bottom: 4px;
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	width: 32px;
+	height: 32px;
+	border: none;
+	background-color: transparent;
+}
+#description #close:hover{
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	border: none;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+#description #close:active{
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	border: none;
+	background-color: rgba(64, 64, 64, 0.5);
 }
 	</style>
     <title>服务器地图</title>
@@ -28,11 +89,13 @@
         <a href="../../tutorial/">教程</a>
         <a href="../../apps/">应用</a>
     </div>
-	<canvas id="main"/>
+	<canvas id="main"></canvas>
+	<div id="description" style="display: none;"></div>
 </body>
 <script>
 const menu = document.getElementById("div_menu");
 const canvas = document.getElementById("main");
+const description = document.getElementById("description");
 const cxt = canvas.getContext("2d");
 var width = 0;
 var height = 0;
@@ -46,6 +109,15 @@ if(isNaN(sc) || !isFinite(sc)) sc = 1.0;
 var images = [];
 var tags = [];
 let chosen = null;
+
+function updateDescription(){
+	if(chosen == null){
+		description.style.display = "none";
+		return;
+	}
+	description.style.display = "";
+	description.innerHTML = "<img src=\"" + chosen.img.src + "\"/><p class=\"title\">" + chosen.name + "</p><p class=\"content\">" + chosen.desc + "</p><button id=\"close\" onclick=\"chosen.ac = false; chosen = null; repaint(); updateDescription(); \">x</button>";
+}
 
 function repaint(){
 	tags.sort(function (a, b){return a.ac * 1000 + a.y - b.ac * 1000 - b.y;});
@@ -135,6 +207,7 @@ canvas.onmousedown = function(){
 			if(chosen != null) chosen.ac = false;
 			chosen = null;
 		}
+		updateDescription();
 		repaint();
 	}
 }
@@ -180,6 +253,7 @@ function resizeEvent(){
 	canvas.style.top = menu.clientHeight + "px";
 	width = canvas.width = canvas.clientWidth;
 	height = canvas.height = canvas.clientHeight;
+	description.style.top = (10 + menu.clientHeight) + "px";
 	repaint();
 }
 
