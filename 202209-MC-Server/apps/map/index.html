@@ -79,9 +79,11 @@
 	background-color: rgba(64, 64, 64, 0.5);
 }
 #description #coordinate{
+	white-space: pre;
+	line-height: 20px;
 	position: absolute;
 	left: 16px;
-	bottom: 16px;
+	bottom: 14px;
 	margin-left: 0px;
 	margin-bottom: 0px;
 }
@@ -160,7 +162,7 @@ function updateDescription(){
 	description.style.display = "";
 	cmd = "/tp " + chosen.x + ' ' + chosen.y + ' ' + chosen.z;
 	description.innerHTML = "<img src=\"" + chosen.img.src + "\"/><p class=\"title\">" + chosen.name + "</p><p class=\"content\">" + chosen.desc + 
-	"</p><button id=\"close\" onclick=\"chosen.ac = false; chosen = null; repaint(); updateDescription(); \">x</button><p id=\"coordinate\">坐标：<a id=\"copy\" title=\"点击复制：" + cmd +
+	"</p><button id=\"close\" onclick=\"chosen.ac = false; chosen = null; repaint(); updateDescription(); \">x</button><p id=\"coordinate\">坐标：\n<a id=\"copy\" title=\"点击复制：" + cmd +
 	"\"  onclick=\"navigator.clipboard.writeText('" + cmd + "');\">[" + chosen.x + ', ' + chosen.y + ', ' + chosen.z + "]</a></p>";
 }
 
