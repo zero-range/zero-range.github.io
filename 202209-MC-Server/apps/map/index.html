@@ -14,6 +14,7 @@
 	top: 0px;
 	width: 100%;
 	height: 100%;
+	touch-action: none;
 }
 #description{
 	position: fixed;
@@ -88,7 +89,6 @@
 	position: absolute;
 	bottom: 16px;
 	left: 16px;
-	tabindex: -1;
 }
 .dimensions{
 	width: 32px;
@@ -98,7 +98,6 @@
 	padding-top: 2px;
 	padding-bottom: 3px;
 	background: rgba(255, 255, 255, 0.3);
-	tabindex: -1;
 }
 .dimensions:hover{
 	background: rgba(255, 255, 255, 0.8);
@@ -122,10 +121,10 @@
     </div>
 	<canvas id="main"></canvas>
 	<div id="description" style="display: none;"></div>
-	<div id="select_dimensions">
-		<img src="./icons/overworld.png" id="overworld" class="dimensions" onclick="setDimension(0);"></img>
-		<img src="./icons/nether.png" id="nether" class="dimensions" onclick="setDimension(1);"></img>
-		<img src="./icons/end.png" id="end" class="dimensions" onclick="setDimension(2);"></img>
+	<div id="select_dimensions" tabindex="-1">
+		<img src="./icons/overworld.png" id="overworld" class="dimensions" onclick="setDimension(0);" tabindex="-1"></img>
+		<img src="./icons/nether.png" id="nether" class="dimensions" onclick="setDimension(1);" tabindex="-1"></img>
+		<img src="./icons/end.png" id="end" class="dimensions" onclick="setDimension(2);" tabindex="-1"></img>
 	</div>
 </body>
 <script>
@@ -152,6 +151,7 @@ if(isNaN(dimension) || !isFinite(dimension)) dimension = 0;
 var images = [[], [], []];
 var tags = [[], [], []];
 let chosen = null;
+var touches = 0;
 
 function updateDescription(){
 	if(chosen == null){
@@ -228,9 +228,9 @@ function loadTag(dimension, src, x, y, z, name, desc){
 var leftClick = false;
 var lx = null;
 var ly = null;
+var ldis = null;
 
 function leftclick(cx, cy){
-	leftClick = true;
 	lx = cx;
 	ly = cy;
 	var fl = true;
@@ -255,49 +255,7 @@ function leftclick(cx, cy){
 	repaint();
 }
 
-canvas.onmousedown = function(){
-	var event = event || window.event;
-	if(event.button == 0) leftclick(event.offsetX, event.offsetY);
-}
-canvas.ontouchstart = function(){
-	var event = event || window.event;
-	leftclick(event.offsetX, event.offset);
-}
-
-canvas.onmouseup = function(){
-	var event = event || window.event;
-	if(event.button == 0){
-		leftClick = false;
-		lx = null;
-		ly = null;
-	}
-}
-
-canvas.ontouchend = function(){
-	var event = event || window.event;
-	leftClick = false;
-	lx = null;
-	ly = null;
-}
-
-canvas.ontouchcancel = canvas.onmouseout = function(){
-	leftClick = false;
-	lx = null;
-	ly = null;
-}
-
-canvas.ontouchmove = canvas.onmousemove = function(){
-	var event = event || window.event;
-	if(leftClick && lx != null && ly != null){
-		ox += event.offsetX - lx;
-		oy += event.offsetY - ly;
-		lx = event.offsetX;
-		ly = event.offsetY;
-		repaint();
-	}
-}
-
-function scale(x){
+function scale(x, cx, cy){
 	var rsc = sc;
 	sc = x;
 	const U = Math.pow(0.998, -1000);
@@ -305,16 +263,94 @@ function scale(x){
 	if(sc > U) sc = U;
 	if(sc < D) sc = D;
 	p = sc / rsc;
-	var px = event.offsetX - width / 2;
-	var py = event.offsetY - height / 2;
+	var px = cx - width / 2;
+	var py = cy - height / 2;
 	ox = px + (ox - px) * p;
 	oy = py + (oy - py) * p;
 	repaint();
 }
 
+canvas.addEventListener("mousedown", function(event){
+	if(event.button == 0){
+		leftClick = true;
+		leftclick(event.offsetX, event.offsetY);
+	}
+}, false);
+
+canvas.addEventListener("touchstart", function(event){
+	var len = event.touches.length;
+	touches = Math.max(touches, len);
+	lx = 0.0, ly = 0.0;
+	var rc = canvas.getBoundingClientRect();
+	for(var i = 0; i < len; ++i){
+		lx += event.touches[i].clientX - rc.x,
+		ly += event.touches[i].clientY - rc.y;
+	}
+	lx /= len, ly /= len;
+	if(touches == 1)
+		leftclick(lx, ly);
+}, false);
+
+canvas.addEventListener("mouseup", function(event){
+	if(event.button == 0){
+		leftClick = false;
+		lx = null;
+		ly = null;
+	}
+}, false);
+
+canvas.addEventListener("touchend", function(event){
+	touches = 0, lx = null, ly = null, ldis = null;
+	return false;
+}, false);
+
+canvas.addEventListener("mouseout", function(event){
+	leftClick = false;
+	lx = null;
+	ly = null;
+}, false);
+
+canvas.addEventListener("touchcancel", function(event){
+	lx = null;
+	ly = null;
+	ldis = null;
+}, false);
+
+canvas.addEventListener("mousemove", function(event){
+	if(leftClick && lx != null && ly != null){
+		ox += event.offsetX - lx;
+		oy += event.offsetY - ly;
+		lx = event.offsetX;
+		ly = event.offsetY;
+		repaint();
+	}
+}, false);
+
+canvas.addEventListener("touchmove", function(event){
+	var len = event.touches.length;
+	touches = Math.max(touches, len);
+	var rc = canvas.getBoundingClientRect();
+	if(touches == 1){
+		var x = event.touches[0].clientX - rc.x;
+		var y = event.touches[0].clientY - rc.y;
+		ox += x - lx, oy += y - ly,
+		lx = x, ly = y;
+		repaint();
+	}else if(touches == 2){
+		var x1 = event.touches[0].clientX - rc.x;
+		var y1 = event.touches[0].clientY - rc.y;
+		var x2 = event.touches[1].clientX - rc.x;
+		var y2 = event.touches[1].clientY - rc.y;
+		var dis = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+		if(ldis != null) scale(sc / ldis * dis, lx, ly);
+		ldis = dis;
+	}
+	return false;
+}, false);
+
 canvas.onmousewheel = function(){
 	var event = event || window.event;
-	scale(sc * Math.pow(0.998, event.deltaY));
+	scale(sc * Math.pow(0.998, event.deltaY), event.offsetX, event.offsetY);
 	return false;
 }
 
