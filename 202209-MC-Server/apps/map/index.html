@@ -129,7 +129,10 @@ function updateDescription(){
 		return;
 	}
 	description.style.display = "";
-	description.innerHTML = "<img src=\"" + chosen.img.src + "\"/><p class=\"title\">" + chosen.name + "</p><p class=\"content\">" + chosen.desc + "</p><button id=\"close\" onclick=\"chosen.ac = false; chosen = null; repaint(); updateDescription(); \">x</button><p id=\"coordinate\">坐标：<a id=\"copy\" title=\"/tp 0 0 0\">0 0 0</a></p>";
+	cmd = "/tp " + chosen.x + ' ' + chosen.y + ' ' + chosen.z;
+	description.innerHTML = "<img src=\"" + chosen.img.src + "\"/><p class=\"title\">" + chosen.name + "</p><p class=\"content\">" + chosen.desc + 
+	"</p><button id=\"close\" onclick=\"chosen.ac = false; chosen = null; repaint(); updateDescription(); \">x</button><p id=\"coordinate\">坐标：<a id=\"copy\" title=\"点击复制：" + cmd +
+	"\"  onclick=\"navigator.clipboard.writeText('" + cmd + "');\">" + chosen.x + ' ' + chosen.y + ' ' + chosen.z + "</a></p>";
 }
 
 function repaint(){
@@ -196,10 +199,10 @@ var leftClick = false;
 var lx = null;
 var ly = null;
 
-function leftclick(ox, oy){
+function leftclick(cx, cy){
 	leftClick = true;
-	lx = ox;
-	ly = oy;
+	lx = cx;
+	ly = cy;
 	var fl = true;
 	tags.sort(function (a, b){return a.ac * 1000 + a.y - b.ac * 1000 - b.y;});
 	for(var i = 0; i < tags.length; ++i){
@@ -224,7 +227,7 @@ function leftclick(ox, oy){
 
 canvas.onmousedown = function(){
 	var event = event || window.event;
-	if(event.button == 0) leftclick(event.offsetX, event.offset);
+	if(event.button == 0) leftclick(event.offsetX, event.offsetY);
 }
 canvas.ontouchstart = function(){
 	var event = event || window.event;
