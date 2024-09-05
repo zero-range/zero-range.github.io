@@ -60,7 +60,7 @@
         "x": 609,
         "y": 66,
         "z": -161,
-        "description": "zero_range 随手造的南瓜机。本质只是叠单片。不过就这也让 zero_range 造错了几次。"
+        "description": "zero_range 随手造的南瓜机。本质只是叠单片。\nzero_range：啊啊啊怎么又造错了？"
     },
     {
         "name": "村民交易",
@@ -204,7 +204,7 @@
         "x": 100,
         "y": 49,
         "z": 0,
-        "description": "Chong_Sheng 造的刷沙机。开机起来声音巨大，zero_range 说开机时像是在向四个蜂蜜快分发沙子和铁砧。"
+        "description": "Chong_Sheng 造的刷沙机。开机起来声音巨大。\nzero_range：开机时像是在向四个蜂蜜快分发沙子和铁砧。"
     },
     {
         "name": "末地祭坛刷沙机",
@@ -240,7 +240,7 @@
         "x": 304,
         "y": 49,
         "z": 29,
-        "description": "Chong_Sheng 造的堆叠式甘蔗机，MathYellow 和 zero_range 也都做了一小部分。有了这个机器甘蔗不用愁了。\n[2024.8.17] Chong_Sheng：铺水…你们谁能帮我铺水嘛QAQ"
+        "description": "Chong_Sheng 造的堆叠式甘蔗机，MathYellow 和 zero_range 也都做了一小部分。有了这个机器甘蔗不用愁了。\n[2024.8.17] Chong_Sheng：铺水…你们谁能帮我铺水嘛？QAQ"
     },
     {
         "name": "凋零玫瑰塔",
@@ -249,6 +249,6 @@
         "x": -13,
         "y": 10,
         "z": 267,
-        "description": "MathYellow 造的凋零玫瑰塔，介绍要 MathYellow 来写。"
+        "description": "MathYellow 造的凋零玫瑰塔。使用时千万不要拆掉地毯，不要攻击凋零，也不要在机器处下线。\nMathYellow：太开心了！这是我建造的第一个机器！"
     }
 ]
