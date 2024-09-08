@@ -182,14 +182,40 @@ function updateDescription(){
 	"\"  onclick=\"navigator.clipboard.writeText('" + cmd + "');\">[" + chosen.x + ', ' + chosen.y + ', ' + chosen.z + "]</a></p>";
 }
 
+function drawTag(tag){
+	if((tag.minScale == null || sc > tag.minScale) && (tag.maxScale == null || sc < tag.maxScale)){
+		img = tag.img,
+		x = tag.x,
+		z = tag.z,
+		ac = tag.ac;
+		var tx = Math.round(width / 2 + ox + x * sc);
+		var ty = Math.round(height / 2 + oy + z * sc);
+		if(ac){
+			cxt.drawImage(img, tx - 20, ty - 20, 40, 40);
+			cxt.lineWidth = '2';
+			cxt.strokeStyle = 'black';
+			cxt.strokeRect(tx - 21, ty - 21, 42, 42);
+			cxt.strokeStyle = 'white';
+			cxt.strokeRect(tx - 23, ty - 23, 46, 46);
+		}else{
+			cxt.drawImage(img, tx - 16, ty - 16, 32, 32);
+			cxt.lineWidth = '1';
+			cxt.strokeStyle = 'black';
+			cxt.strokeRect(tx - 17, ty - 17, 33, 33);
+			cxt.strokeStyle = 'white';
+			cxt.strokeRect(tx - 18, ty - 18, 35, 35);
+		}
+	}
+}
+
 function repaint(){
-	tags[dimension].sort(function (a, b){return a.ac * 1000 + a.y - b.ac * 1000 - b.y;});
 	cxt.imageSmoothingEnabled = false;
 	cxt.clearRect(0, 0, width, height);
 	for(var i = 0; i < images[dimension].length; ++i){
 		[img, x, y, s] = images[dimension][i];
 		cxt.drawImage(img, width / 2 + ox + (x - 128 * s / 2) * sc, height / 2 + oy + (y - 128 * s / 2) * sc, 128 * s * sc, 128 * s * sc);
 	}
+	for(var i = 0; i < tags[dimension].length; ++i) if(!tags[dimension][i].ac) drawTag(tags[dimension][i]);
 	for(var i = 0; i < titles[dimension].length; ++i) if((titles[dimension][i].minScale == null || sc > titles[dimension][i].minScale) && (titles[dimension][i].maxScale == null || sc < titles[dimension][i].maxScale)){
 		x = titles[dimension][i].x,
 		z = titles[dimension][i].z,
@@ -205,29 +231,7 @@ function repaint(){
 		cxt.textBaseline = "middle";
 		cxt.fillText(title, width / 2 + ox + x * sc, height / 2 + oy + z * sc);
 	}
-	for(var i = 0; i < tags[dimension].length; ++i) if((tags[dimension][i].minScale == null || sc > tags[dimension][i].minScale) && (tags[dimension][i].maxScale == null || sc < tags[dimension][i].maxScale)){
-		img = tags[dimension][i].img,
-		x = tags[dimension][i].x,
-		z = tags[dimension][i].z,
-		ac = tags[dimension][i].ac;
-		var tx = Math.round(width / 2 + ox + x * sc);
-		var ty = Math.round(height / 2 + oy + z * sc);
-		if(ac){
-			cxt.drawImage(img, tx - 20, ty - 20, 40, 40);
-			cxt.lineWidth = '2';
-			cxt.strokeStyle = 'black';
-			cxt.strokeRect(tx - 22, ty - 21, 42, 42);
-			cxt.strokeStyle = 'white';
-			cxt.strokeRect(tx - 24, ty - 23, 46, 46);
-		}else{
-			cxt.drawImage(img, tx - 16, ty - 16, 32, 32);
-			cxt.lineWidth = '1';
-			cxt.strokeStyle = 'black';
-			cxt.strokeRect(tx - 17, ty - 17, 33, 33);
-			cxt.strokeStyle = 'white';
-			cxt.strokeRect(tx - 18, ty - 18, 35, 35);
-		}
-	}
+	for(var i = 0; i < tags[dimension].length; ++i) if(tags[dimension][i].ac) drawTag(tags[dimension][i]);
 }
 
 function loadImage(dimension, src, x, y, s){
@@ -277,7 +281,6 @@ function leftclick(cx, cy){
 	lx = cx;
 	ly = cy;
 	var fl = true;
-	tags[dimension].sort(function (a, b){return a.ac * 1000 + a.y - b.ac * 1000 - b.y;});
 	for(var i = 0; i < tags[dimension].length; ++i) if((tags[dimension][i].minScale == null || sc > tags[dimension][i].minScale) && (tags[dimension][i].maxScale == null || sc < tags[dimension][i].maxScale)){
 		x = tags[dimension][i].x,
 		z = tags[dimension][i].z;

@@ -1,5 +1,32 @@
 [
     {
+        "name": "下界传送门",
+        "image": "./icons/nether_portal.png",
+        "dimension": 0,
+        "x": 653,
+        "y": 63,
+        "z": -229,
+        "description": "竹岛的下界传送门，是去往服务器各处重要的交通要道。"
+    },
+    {
+        "name": "下界传送门",
+        "image": "./icons/nether_portal.png",
+        "dimension": 0,
+        "x": 463,
+        "y": 20,
+        "z": 1555,
+        "description": "要塞的下界传送门，是去往末地的重要交通要道。"
+    },
+    {
+        "name": "下界传送门",
+        "image": "./icons/nether_portal.png",
+        "dimension": 0,
+        "x": 322,
+        "y": 79,
+        "z": 400,
+        "description": "岩浆怪塔的下界传送门。由于 zero_range 的建造错误，从这里进入下界会被传送到岩浆怪塔的下界门内。\nzero_range：进去后小心不要被岩浆怪打到，从没有刷怪平台的一侧出去就行。"
+    },
+    {
         "name": "刷铁塔",
         "image": "./icons/iron_golem.png",
         "dimension": 0,
@@ -117,23 +144,13 @@
         "description": "zero_range 生成投影并和 Chong_Sheng（、yzb?） 一起造的像素画，表达了全服成员共同的志向。被贴在各个重要的公共设施上。"
     },
     {
-        "name": "末地传送门",
+        "name": "末地传送门与刷沙机",
         "image": "./icons/end_portal_frame_top.png",
         "dimension": 0,
         "x": 463,
         "y": 21,
         "z": 1553,
-        "description": "末地传送门。是重要的交通通道，也是末地门刷沙机的一部分。"
-    },
-    {
-        "name": "末地门刷沙机",
-        "image": "./icons/sand.png",
-        "dimension": 0,
-        "x": 463,
-        "y": 20,
-        "z": 1555,
-        "description": "Chong_Sheng 造的刷沙机。Chong_Sheng 说开机时人一定要待在末地。坏过一次，但被 Chong_Sheng 光速修好。",
-        "minScale": 0.6
+        "description": "末地传送门。是重要的交通通道，也是末地门刷沙机的一部分。末地门刷沙机由 Chong_Sheng 建造。Chong_Sheng 说开机时人一定要待在末地。坏过一次，但被 Chong_Sheng 光速修好。"
     },
     {
         "name": "祭坛刷沙收集与混凝土固化",
