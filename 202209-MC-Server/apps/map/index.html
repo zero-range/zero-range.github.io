@@ -166,6 +166,7 @@ if(isNaN(dimension) || !isFinite(dimension)) dimension = 0;
 
 var images = [[], [], []];
 var tags = [[], [], []];
+var titles = [[], [], []];
 let chosen = null;
 var touches = 0;
 
@@ -189,7 +190,22 @@ function repaint(){
 		[img, x, y, s] = images[dimension][i];
 		cxt.drawImage(img, width / 2 + ox + (x - 128 * s / 2) * sc, height / 2 + oy + (y - 128 * s / 2) * sc, 128 * s * sc, 128 * s * sc);
 	}
-	for(var i = 0; i < tags[dimension].length; ++i){
+	for(var i = 0; i < titles[dimension].length; ++i) if((titles[dimension][i].minScale == null || sc > titles[dimension][i].minScale) && (titles[dimension][i].maxScale == null || sc < titles[dimension][i].maxScale)){
+		x = titles[dimension][i].x,
+		z = titles[dimension][i].z,
+		title = titles[dimension][i].title;
+		cxt.fillStyle = '#363636',
+		cxt.font = titles[dimension][i].fontSize + "px Mojangles",
+		cxt.textAlign = "center",
+		cxt.textBaseline = "middle";
+		cxt.fillText(title, width / 2 + ox + x * sc + titles[dimension][i].fontSize / 16, height / 2 + oy + z * sc + titles[dimension][i].fontSize / 16);
+		cxt.fillStyle = '#FFFFFF',
+		cxt.font = titles[dimension][i].fontSize + "px Mojangles",
+		cxt.textAlign = "center",
+		cxt.textBaseline = "middle";
+		cxt.fillText(title, width / 2 + ox + x * sc, height / 2 + oy + z * sc);
+	}
+	for(var i = 0; i < tags[dimension].length; ++i) if((tags[dimension][i].minScale == null || sc > tags[dimension][i].minScale) && (tags[dimension][i].maxScale == null || sc < tags[dimension][i].maxScale)){
 		img = tags[dimension][i].img,
 		x = tags[dimension][i].x,
 		z = tags[dimension][i].z,
@@ -224,7 +240,17 @@ function loadImage(dimension, src, x, y, s){
 	}
 }
 
-function loadTag(dimension, src, x, y, z, name, desc){
+function loadTitle(dimension, title, x, z, fontSize, maxScale){
+	titles[dimension].push({
+		title: title,
+		x: x,
+		z: z,
+		fontSize: fontSize,
+		maxScale: maxScale
+	});
+}
+
+function loadTag(dimension, src, x, y, z, name, desc, minScale){
 	var img = new Image();
 	img.src = src;
 	img.onload = () => {
@@ -235,7 +261,8 @@ function loadTag(dimension, src, x, y, z, name, desc){
 			z: z,
 			name: name,
 			desc: desc,
-			ac: false
+			ac: false,
+			minScale: minScale
 		});
 		repaint();
 	}
@@ -251,7 +278,7 @@ function leftclick(cx, cy){
 	ly = cy;
 	var fl = true;
 	tags[dimension].sort(function (a, b){return a.ac * 1000 + a.y - b.ac * 1000 - b.y;});
-	for(var i = 0; i < tags[dimension].length; ++i){
+	for(var i = 0; i < tags[dimension].length; ++i) if((tags[dimension][i].minScale == null || sc > tags[dimension][i].minScale) && (tags[dimension][i].maxScale == null || sc < tags[dimension][i].maxScale)){
 		x = tags[dimension][i].x,
 		z = tags[dimension][i].z;
 		var tx = Math.round(width / 2 + ox + x * sc);
@@ -424,9 +451,13 @@ Http.onreadystatechange = function(){
 		res = JSON.parse(Http.responseText);
 		for(var i = 0; i < res.length; ++i){
 			var tag = res[i];
-			loadTag(tag["dimension"], tag["image"], tag["x"], tag["y"], tag["z"], tag["name"], tag["description"]);
+			loadTag(tag["dimension"], tag["image"], tag["x"], tag["y"], tag["z"], tag["name"], tag["description"], tag["minScale"]);
 		}
 	}
 }
+
+loadTitle(0, "竹岛", 640, -158, 24, null);
+loadTitle(0, "开服地", 800, 72, 24, null);
+loadTitle(0, "伐木林", 840, -240, 24, null);
 </script>
 </html>

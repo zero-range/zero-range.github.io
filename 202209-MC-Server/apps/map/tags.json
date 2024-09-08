@@ -6,7 +6,8 @@
         "x": 630,
         "y": 62,
         "z": -191,
-        "description": "Chong_Sheng 在前前期做的刷铁塔，特别好用。一开始效率很低，没想到竟是服主忘了开困难。"
+        "description": "Chong_Sheng 在前前期做的刷铁塔，特别好用。一开始效率很低，没想到竟是服主忘了开困难。",
+        "minScale": 0.6
     },
     {
         "name": "村民繁殖",
@@ -15,7 +16,8 @@
         "x": 661,
         "y": 66,
         "z": -159,
-        "description": "Chong_Sheng 在开服第一天做的村民繁殖，位于当初竹岛村庄的中心。为村民交易所和刷铁塔贡献极大。"
+        "description": "Chong_Sheng 在开服第一天做的村民繁殖，位于当初竹岛村庄的中心。为村民交易所和刷铁塔贡献极大。",
+        "minScale": 0.6
     },
     {
         "name": "简易树场",
@@ -24,7 +26,8 @@
         "x": 684,
         "y": 66,
         "z": -172,
-        "description": "Chong_Sheng 制造的简单树场。效率不高但是什么树种都可以生产。假人 hsds 是这里的常客。"
+        "description": "Chong_Sheng 制造的简单树场。效率不高但是什么树种都可以生产。假人 hsds 是这里的常客。",
+        "minScale": 0.6
     },
     {
         "name": "刷石机",
@@ -33,7 +36,8 @@
         "x": 609,
         "y": 66,
         "z": -119,
-        "description": "zero_range 制造的大叔牌刷石机。绝对不抗卸载，开机一定要小心。坏了无数次，但修起来极快。产量不高，不过暂时够用。"
+        "description": "zero_range 制造的大叔牌刷石机。绝对不抗卸载，开机一定要小心。坏了无数次，但修起来极快。产量不高，不过暂时够用。",
+        "minScale": 0.6
     },
     {
         "name": "喷射合成站",
@@ -42,7 +46,8 @@
         "x": 659,
         "y": 64,
         "z": -202,
-        "description": "Chong_Sheng 做的喷射合成站。非常好用。需要辅助模组 ItemScroller、Tweakeroo 和 TweakerMore。"
+        "description": "Chong_Sheng 做的喷射合成站。非常好用。需要辅助模组 ItemScroller、Tweakeroo 和 TweakerMore。",
+        "minScale": 0.6
     },
     {
         "name": "小甘蔗机",
@@ -51,7 +56,8 @@
         "x": 641,
         "y": 67,
         "z": -113,
-        "description": "Chong_Sheng 在前前期做的甘蔗机。为全服生产了好几盒烟花后光荣退休。"
+        "description": "Chong_Sheng 在前前期做的甘蔗机。为全服生产了好几盒烟花后光荣退休。",
+        "minScale": 0.6
     },
     {
         "name": "小南瓜机",
@@ -60,7 +66,8 @@
         "x": 609,
         "y": 66,
         "z": -161,
-        "description": "zero_range 随手造的南瓜机。本质只是叠单片。\nzero_range：啊啊啊怎么又造错了？"
+        "description": "zero_range 随手造的南瓜机。本质只是叠单片。\nzero_range：啊啊啊怎么又造错了？",
+        "minScale": 0.6
     },
     {
         "name": "村民交易",
@@ -69,7 +76,8 @@
         "x": 654,
         "y": 42,
         "z": -175,
-        "description": "位于地下二层。共同造的村民交易所，配套刷线机，拥有常用村民和全套附魔书交易。原址位于竹岛南部，现已拆除。"
+        "description": "位于地下二层。共同造的村民交易所，配套刷线机，拥有常用村民和全套附魔书交易。原址位于竹岛南部，现已拆除。",
+        "minScale": 0.6
     },
     {
         "name": "40速熔炉组",
@@ -78,7 +86,8 @@
         "x": 664,
         "y": 52,
         "z": -152,
-        "description": "位于地下一层。由 zero_range 和 Chong_Sheng 制造，能快速烧东西。抗卸载，但是不要在烧东西的时候关掉。能各种各样地坏，但是不妨碍它好用。"
+        "description": "位于地下一层。由 zero_range 和 Chong_Sheng 制造，能快速烧东西。抗卸载，但是不要在烧东西的时候关掉。能各种各样地坏，但是不妨碍它好用。",
+        "minScale": 0.6
     },
     {
         "name": "沼泽刷怪塔",
@@ -123,7 +132,8 @@
         "x": 463,
         "y": 20,
         "z": 1555,
-        "description": "Chong_Sheng 造的刷沙机。Chong_Sheng 说开机时人一定要待在末地。坏过一次，但被 Chong_Sheng 光速修好。"
+        "description": "Chong_Sheng 造的刷沙机。Chong_Sheng 说开机时人一定要待在末地。坏过一次，但被 Chong_Sheng 光速修好。",
+        "minScale": 0.6
     },
     {
         "name": "祭坛刷沙收集与混凝土固化",
@@ -132,7 +142,8 @@
         "x": 669,
         "y": 274,
         "z": 64,
-        "description": "Chong_Sheng 的作品。Chong_Sheng 一直想把它换成自适应打包收集，不过做像素画时还挺好用。"
+        "description": "Chong_Sheng 的作品。Chong_Sheng 一直想把它换成自适应打包收集，不过做像素画时还挺好用。",
+        "minScale": 0.6
     },
     {
         "name": "岩浆怪塔收集",
