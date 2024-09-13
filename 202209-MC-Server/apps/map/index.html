@@ -164,7 +164,7 @@ if(isNaN(sc) || !isFinite(sc)) sc = 1.0;
 var dimension = parseInt(localStorage.getItem("dimension"));
 if(isNaN(dimension) || !isFinite(dimension)) dimension = 0;
 
-var images = [[], [], []];
+var images = [new Map(), new Map(), new Map()];
 var tags = [[], [], []];
 var titles = [[], [], []];
 let chosen = null;
@@ -211,9 +211,24 @@ function drawTag(tag){
 function repaint(){
 	cxt.imageSmoothingEnabled = false;
 	cxt.clearRect(0, 0, width, height);
-	for(var i = 0; i < images[dimension].length; ++i){
-		[img, x, y, s] = images[dimension][i];
-		cxt.drawImage(img, width / 2 + ox + (x - 128 * s / 2) * sc, height / 2 + oy + (y - 128 * s / 2) * sc, 128 * s * sc, 128 * s * sc);
+	var lx = Math.ceil((-width - ox) / sc / 128) - 1;
+	var rx = Math.floor((width - ox) / sc / 128) + 1;
+	var ly = Math.ceil((-height - oy) / sc / 128) - 1;
+	var ry = Math.floor((height - oy) / sc / 128) + 1;
+	for(var cx = lx; cx <= rx; ++cx) for(var cy = ly; cy <= ry; ++cy){
+		var x = cx * 128, z = cy * 128;
+		var key = x + ' ' + z;
+		if(images[dimension].has(key)){
+			let arr = images[dimension].get(key);
+			for(var i = 0; i < arr.length; ++i){
+				let img = arr[i];
+				if(!img.image.src) img.image.src = img.src, img.image.onload = repaint;
+				else{
+					var s = img.s;
+					cxt.drawImage(img.image, width / 2 + ox + (x - 128 * s / 2) * sc, height / 2 + oy + (z - 128 * s / 2) * sc, 128 * s * sc, 128 * s * sc);
+				}
+			}
+		}
 	}
 	for(var i = 0; i < tags[dimension].length; ++i) if(!tags[dimension][i].ac) drawTag(tags[dimension][i]);
 	for(var i = 0; i < titles[dimension].length; ++i) if((titles[dimension][i].minScale == null || sc > titles[dimension][i].minScale) && (titles[dimension][i].maxScale == null || sc < titles[dimension][i].maxScale)){
@@ -234,14 +249,17 @@ function repaint(){
 	for(var i = 0; i < tags[dimension].length; ++i) if(tags[dimension][i].ac) drawTag(tags[dimension][i]);
 }
 
-function loadImage(dimension, src, x, y, s){
+function loadImage(dimension, src, x, z, s){
 	var img = new Image();
-	img.src = src;
-	img.onload = () => {
-		images[dimension].push([img, x, y, s]);
-		images[dimension].sort(function (a, b){return b[3] - a[3]; });
-		repaint();
-	}
+	var key = x + ' ' + z;
+	if(!images[dimension].has(key)) images[dimension].set(key, []);
+	images[dimension].get(key).push({
+		image: img,
+		s: s,
+		src: src
+	});
+	images[dimension].get(key).sort(function (a, b){return b.s - a.s; });
+	img.onload = repaint();
 }
 
 function loadTitle(dimension, title, x, z, fontSize, maxScale){
@@ -435,29 +453,34 @@ window.onunload = function (){
 	localStorage.setItem("dimension", dimension);
 }
 
-imgSrc = ['0 0 256 384.png', '0 0 3456 -1280.png', '0 0 3456 -1408.png', '0 0 384 384.png', '0 0 384 640.png', '0 0 384 768.png', '0 0 512 -128.png', '0 0 512 640.png', '0 0 512 768.png', '0 0 640 -128.png', '0 0 640 -256.png', '0 0 640 0.png', '0 0 640 128.png', '0 0 640 640.png', '0 3 -576 -576.png', '0 3 -576 448.png', '0 3 1472 -576.png', '0 3 1472 448.png', '0 3 2496 -576.png', '0 3 2496 448.png', '0 3 3520 -1600.png', '0 3 448 -576.png', '0 3 448 1472.png', '0 3 448 448.png', '1 0 -128 -128.png', '1 0 -128 -256.png', '1 0 -128 0.png', '1 0 -128 128.png', '1 0 -128 256.png', '1 0 -256 -128.png', '1 0 -256 -256.png', '1 0 -256 0.png', '1 0 -256 128.png', '1 0 -256 256.png', '1 0 0 -128.png', '1 0 0 -256.png', '1 0 0 0.png', '1 0 0 128.png', '1 0 0 256.png', '1 0 128 -128.png', '1 0 128 -256.png', '1 0 128 0.png', '1 0 128 128.png', '1 0 128 256.png', '1 0 256 -128.png', '1 0 256 -256.png', '1 0 256 0.png', '1 0 256 128.png', '1 0 256 256.png', '2 0 -128 0.png', '2 0 0 -128.png', '2 0 0 -256.png', '2 0 0 0.png', '2 0 0 128.png', '2 0 0 256.png', '2 0 128 0.png', '2 0 256 0.png', '2 0 384 0.png'];
-
-for(var i = 0; i < imgSrc.length; ++i){
-	[dim, s, x, y] = imgSrc[i].match(/[-\d]+/g);
-	dim = parseInt(dim),
-	s = parseInt(s),
-	x = parseInt(x),
-	y = parseInt(y);
-	loadImage(dim, "./terrain/" + imgSrc[i], x, y, 1 << s);
-}
-
-const Http = new XMLHttpRequest();
-Http.open("GET", "./tags.json");
-Http.send();
-Http.onreadystatechange = function(){
-	if(this.readyState == 4 && this.status == 200){
-		res = JSON.parse(Http.responseText);
-		for(var i = 0; i < res.length; ++i){
-			var tag = res[i];
-			loadTag(tag["dimension"], tag["image"], tag["x"], tag["y"], tag["z"], tag["name"], tag["description"], tag["minScale"]);
-		}
+function loadJSON(url, func){
+	const Http = new XMLHttpRequest();
+	Http.open("GET", url);
+	Http.send();
+	Http.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200)
+			func(JSON.parse(Http.responseText));
 	}
 }
+
+loadJSON("./terrain.json", function(res){
+	for(var i = 0; i < res.length; ++i){
+		[dim, s, x, y] = res[i].match(/[-\d]+/g);
+		dim = parseInt(dim),
+		s = parseInt(s),
+		x = parseInt(x),
+		y = parseInt(y);
+		loadImage(dim, "./terrain/" + res[i], x, y, 1 << s);
+	}
+})
+
+loadJSON("./tags.json", function(res){
+	for(var i = 0; i < res.length; ++i){
+		var tag = res[i];
+		loadTag(tag["dimension"], tag["image"], tag["x"], tag["y"], tag["z"], tag["name"], tag["description"], tag["minScale"]);
+	}
+})
+
 
 loadTitle(0, "竹岛", 640, -158, 24, null);
 loadTitle(0, "开服地", 800, 72, 24, null);
