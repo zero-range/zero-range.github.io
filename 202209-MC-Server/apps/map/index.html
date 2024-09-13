@@ -222,7 +222,7 @@ function repaint(){
 			let arr = images[dimension].get(key);
 			for(var i = 0; i < arr.length; ++i){
 				let img = arr[i];
-				if(!img.image.src) img.image.src = img.src, img.image.onload = repaint;
+				if(!img.image.src) img.image.src = img.src, img.image.onload = function(){repaint(); };
 				else{
 					var s = img.s;
 					cxt.drawImage(img.image, width / 2 + ox + (x - 128 * s / 2) * sc, height / 2 + oy + (z - 128 * s / 2) * sc, 128 * s * sc, 128 * s * sc);
@@ -259,7 +259,7 @@ function loadImage(dimension, src, x, z, s){
 		src: src
 	});
 	images[dimension].get(key).sort(function (a, b){return b.s - a.s; });
-	img.onload = repaint();
+	img.onload = function(){repaint(); }
 }
 
 function loadTitle(dimension, title, x, z, fontSize, maxScale){
