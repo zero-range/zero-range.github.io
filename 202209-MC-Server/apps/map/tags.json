@@ -144,6 +144,15 @@
         "description": "zero_range 生成投影并和 Chong_Sheng（、yzb?） 一起造的像素画，表达了全服成员共同的志向。被贴在各个重要的公共设施上。"
     },
     {
+        "name": "黑曜石机",
+        "image": "./icons/obsidian.png",
+        "dimension": 0,
+        "x": 450,
+        "y": 122,
+        "z": 40,
+        "description": "MathYellow 造的黑曜石机。"
+    },
+    {
         "name": "末地传送门与刷沙机",
         "image": "./icons/end_portal_frame_top.png",
         "dimension": 0,
