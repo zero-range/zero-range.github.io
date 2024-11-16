@@ -1,6 +1,6 @@
 [
     {
-        "name": "下界传送门",
+        "name": "下界传送门-竹岛",
         "image": "./icons/nether_portal.png",
         "dimension": 0,
         "x": 653,
@@ -9,7 +9,7 @@
         "description": "竹岛的下界传送门，是去往服务器各处重要的交通要道。"
     },
     {
-        "name": "下界传送门",
+        "name": "下界传送门-要塞",
         "image": "./icons/nether_portal.png",
         "dimension": 0,
         "x": 463,
@@ -18,13 +18,107 @@
         "description": "要塞的下界传送门，是去往末地的重要交通要道。"
     },
     {
+        "name": "下界传送门-岩浆怪塔",
+        "image": "./icons/nether_portal.png",
+        "dimension": 0,
+        "x": 389,
+        "y": 71,
+        "z": 400,
+        "description": "岩浆怪塔的下界传送门。",
+        "minScale": 0.6
+    },
+    {
+        "name": "下界传送门-黑曜石机",
+        "image": "./icons/nether_portal.png",
+        "dimension": 0,
+        "x": 288,
+        "y": 122,
+        "z": 33,
+        "description": "黑曜石机的下界传送门。",
+        "minScale": 0.6
+    },
+    {
+        "name": "下界传送门-像素画",
+        "image": "./icons/nether_portal.png",
+        "dimension": 0,
+        "x": 571,
+        "y": 63,
+        "z": 567,
+        "description": "像素画的下界传送门。",
+        "minScale": 0.6
+    },
+    {
+        "name": "下界传送门-沼泽刷怪塔",
+        "image": "./icons/nether_portal.png",
+        "dimension": 0,
+        "x": 3461,
+        "y": 63,
+        "z": -1326,
+        "description": "沼泽刷怪塔的下界传送门。",
+        "minScale": 0.6
+    },
+    {
         "name": "下界传送门",
         "image": "./icons/nether_portal.png",
         "dimension": 0,
-        "x": 322,
+        "x": 1994,
+        "y": 70,
+        "z": -998,
+        "description": "神秘的下界传送门，可能是某次探索的见证。"
+    },
+    {
+        "name": "下界传送门",
+        "image": "./icons/nether_portal.png",
+        "dimension": 0,
+        "x": 1705,
+        "y": 125,
+        "z": -1437,
+        "description": "神秘的下界传送门，可能是某次探索的见证。"
+    },
+    {
+        "name": "下界传送门",
+        "image": "./icons/nether_portal.png",
+        "dimension": 0,
+        "x": -429,
+        "y": 63,
+        "z": 2363,
+        "description": "神秘的下界传送门，可能是某次探索的见证。"
+    },
+    {
+        "name": "下界传送门",
+        "image": "./icons/nether_portal.png",
+        "dimension": 0,
+        "x": -999,
+        "y": 105,
+        "z": 2002,
+        "description": "神秘的下界传送门，可能是某次探索的见证。"
+    },
+    {
+        "name": "下界传送门",
+        "image": "./icons/nether_portal.png",
+        "dimension": 0,
+        "x": 670,
         "y": 79,
-        "z": 400,
-        "description": "岩浆怪塔的下界传送门。由于 zero_range 的建造错误，从这里进入下界会被传送到岩浆怪塔的下界门内。\nzero_range：进去后小心不要被岩浆怪打到，从没有刷怪平台的一侧出去就行。"
+        "z": -4769,
+        "description": "神秘的下界传送门，可能是某次探索的见证。"
+    },
+    {
+        "name": "下界传送门",
+        "image": "./icons/nether_portal.png",
+        "dimension": 0,
+        "x": 5226,
+        "y": 70,
+        "z": -3315,
+        "description": "神秘的下界传送门，可能是某次探索的见证。"
+    },
+    {
+        "name": "下界传送门",
+        "image": "./icons/nether_portal.png",
+        "dimension": 0,
+        "x": -4528,
+        "y": 66,
+        "z": -984,
+        "description": "神秘的下界传送门，可能是某次探索的见证。"
     },
     {
         "name": "刷铁塔",
@@ -117,6 +211,16 @@
         "minScale": 0.6
     },
     {
+        "name": "催熟机",
+        "image": "./icons/wheat.png",
+        "dimension": 0,
+        "x": 672,
+        "y": 68,
+        "z": -157,
+        "description": "MathYellow 造的催熟机。",
+        "minScale": 0.6
+    },
+    {
         "name": "沼泽刷怪塔",
         "image": "./icons/slime_ball.png",
         "dimension": 0,
@@ -124,6 +228,15 @@
         "y": 181,
         "z": -1358,
         "description": "zero_range 造的沼泽刷怪塔。非常好用，不过路程有点儿远。"
+    },
+    {
+        "name": "掠夺者塔",
+        "image": "./icons/pillager.png",
+        "dimension": 0,
+        "x": 4425,
+        "y": 67,
+        "z": 87,
+        "description": "EverSlientStars 造的掠夺者塔。"
     },
     {
         "name": "像素画-纳西妲",
@@ -181,6 +294,145 @@
         "description": "zero_range 造的机器。不过自从使用岩浆块的僵尸猪灵塔修好了之后就几乎没有开机过。"
     },
     {
+        "name": "下界传送门-竹岛",
+        "image": "./icons/nether_portal.png",
+        "dimension": 1,
+        "x": 83,
+        "y": 129,
+        "z": -30,
+        "description": "竹岛的下界传送门，是去往服务器各处重要的交通要道。"
+    },
+    {
+        "name": "下界传送门-要塞",
+        "image": "./icons/nether_portal.png",
+        "dimension": 1,
+        "x": 57,
+        "y": 129,
+        "z": 190,
+        "description": "要塞的下界传送门，是去往末地的重要交通要道。"
+    },
+    {
+        "name": "下界传送门-岩浆怪塔",
+        "image": "./icons/nether_portal.png",
+        "dimension": 1,
+        "x": 48,
+        "y": 129,
+        "z": 50,
+        "description": "岩浆怪塔的下界传送门。",
+        "minScale": 0.6
+    },
+    {
+        "name": "下界传送门-黑曜石机",
+        "image": "./icons/nether_portal.png",
+        "dimension": 1,
+        "x": 36,
+        "y": 129,
+        "z": 4,
+        "description": "黑曜石机的下界传送门。",
+        "minScale": 0.6
+    },
+    {
+        "name": "下界传送门-像素画",
+        "image": "./icons/nether_portal.png",
+        "dimension": 1,
+        "x": 70,
+        "y": 129,
+        "z": 70,
+        "description": "像素画的下界传送门。",
+        "minScale": 0.6
+    },
+    {
+        "name": "下界传送门-沼泽刷怪塔",
+        "image": "./icons/nether_portal.png",
+        "dimension": 1,
+        "x": 431,
+        "y": 129,
+        "z": -169,
+        "description": "沼泽刷怪塔的下界传送门。"
+    },
+    {
+        "name": "下界传送门-刷沙机",
+        "image": "./icons/nether_portal.png",
+        "dimension": 1,
+        "x": 83,
+        "y": 129,
+        "z": 8,
+        "description": "刷沙机的下界传送门。",
+        "minScale": 0.6
+    },
+    {
+        "name": "下界传送门",
+        "image": "./icons/nether_portal.png",
+        "dimension": 1,
+        "x": 250,
+        "y": 129,
+        "z": -126,
+        "description": "神秘的下界传送门，可能是某次探索的见证。"
+    },
+    {
+        "name": "下界传送门",
+        "image": "./icons/nether_portal.png",
+        "dimension": 1,
+        "x": 213,
+        "y": 129,
+        "z": -179,
+        "description": "神秘的下界传送门，可能是某次探索的见证。"
+    },
+    {
+        "name": "下界传送门",
+        "image": "./icons/nether_portal.png",
+        "dimension": 1,
+        "x": -54,
+        "y": 129,
+        "z": 295,
+        "description": "神秘的下界传送门，可能是某次探索的见证。"
+    },
+    {
+        "name": "下界传送门",
+        "image": "./icons/nether_portal.png",
+        "dimension": 1,
+        "x": -125,
+        "y": 129,
+        "z": 250,
+        "description": "神秘的下界传送门，可能是某次探索的见证。"
+    },
+    {
+        "name": "下界传送门",
+        "image": "./icons/nether_portal.png",
+        "dimension": 1,
+        "x": 84,
+        "y": 129,
+        "z": -596,
+        "description": "神秘的下界传送门，可能是某次探索的见证。"
+    },
+    {
+        "name": "下界传送门",
+        "image": "./icons/nether_portal.png",
+        "dimension": 1,
+        "x": 652,
+        "y": 129,
+        "z": -416,
+        "description": "神秘的下界传送门，可能是某次探索的见证。"
+    },
+    {
+        "name": "下界传送门",
+        "image": "./icons/nether_portal.png",
+        "dimension": 1,
+        "x": -567,
+        "y": 129,
+        "z": -124,
+        "description": "神秘的下界传送门，可能是某次探索的见证。"
+    },
+    {
+        "name": "下界传送门-掠夺者塔",
+        "image": "./icons/nether_portal.png",
+        "dimension": 1,
+        "x": 550,
+        "y": 129,
+        "z": 10,
+        "description": "掠夺者塔的下界传送门。"
+    },
+    {
         "name": "蜂蜜机",
         "image": "./icons/honey_bottle.png",
         "dimension": 1,
@@ -215,6 +467,24 @@
         "y": 248,
         "z": 50,
         "description": "zero_range 造的机器。不过自从使用岩浆块的僵尸猪灵塔修好了之后就几乎没有开机过。"
+    },
+    {
+        "name": "恶魂塔遗址",
+        "image": "./icons/ghast.png",
+        "dimension": 1,
+        "x": -31,
+        "y": 129,
+        "z": -104,
+        "description": "Chong_Sheng 造的机器。由于一些神秘的设计问题，现已废弃。"
+    },
+    {
+        "name": "黑曜石机",
+        "image": "./icons/obsidian.png",
+        "dimension": 1,
+        "x": 59,
+        "y": 132,
+        "z": 0,
+        "description": "MathYellow 造的黑曜石机。"
     },
     {
         "name": "末影人经验塔",
