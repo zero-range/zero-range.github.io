@@ -25,7 +25,7 @@
         "y": 71,
         "z": 400,
         "description": "岩浆怪塔的下界传送门。",
-        "minScale": 0.6
+        "minScale": 0.3
     },
     {
         "name": "下界传送门-黑曜石机",
@@ -35,7 +35,7 @@
         "y": 122,
         "z": 33,
         "description": "黑曜石机的下界传送门。",
-        "minScale": 0.6
+        "minScale": 0.3
     },
     {
         "name": "下界传送门-像素画",
@@ -45,7 +45,7 @@
         "y": 63,
         "z": 567,
         "description": "像素画的下界传送门。",
-        "minScale": 0.6
+        "minScale": 0.3
     },
     {
         "name": "下界传送门-沼泽刷怪塔",
@@ -281,8 +281,7 @@
         "x": 669,
         "y": 274,
         "z": 64,
-        "description": "Chong_Sheng 的作品。Chong_Sheng 一直想把它换成自适应打包收集，不过做像素画时还挺好用。",
-        "minScale": 0.6
+        "description": "Chong_Sheng 的作品。Chong_Sheng 一直想把它换成自适应打包收集，不过做像素画时还挺好用。"
     },
     {
         "name": "岩浆怪塔收集",
@@ -319,7 +318,7 @@
         "y": 129,
         "z": 50,
         "description": "岩浆怪塔的下界传送门。",
-        "minScale": 0.6
+        "minScale": 1.2
     },
     {
         "name": "下界传送门-黑曜石机",
@@ -329,7 +328,7 @@
         "y": 129,
         "z": 4,
         "description": "黑曜石机的下界传送门。",
-        "minScale": 0.6
+        "minScale": 1.2
     },
     {
         "name": "下界传送门-像素画",
@@ -339,7 +338,7 @@
         "y": 129,
         "z": 70,
         "description": "像素画的下界传送门。",
-        "minScale": 0.6
+        "minScale": 1.2
     },
     {
         "name": "下界传送门-沼泽刷怪塔",
@@ -358,7 +357,7 @@
         "y": 129,
         "z": 8,
         "description": "刷沙机的下界传送门。",
-        "minScale": 0.6
+        "minScale": 1.2
     },
     {
         "name": "下界传送门",
