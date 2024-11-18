@@ -266,7 +266,7 @@
         "description": "MathYellow 造的黑曜石机。"
     },
     {
-        "name": "末地传送门与刷沙机",
+        "name": "末地传送门与末地门刷沙机",
         "image": "./icons/end_portal_frame_top.png",
         "dimension": 0,
         "x": 463,
@@ -275,7 +275,7 @@
         "description": "末地传送门。是重要的交通通道，也是末地门刷沙机的一部分。末地门刷沙机由 Chong_Sheng 建造。Chong_Sheng 说开机时人一定要待在末地。坏过一次，但被 Chong_Sheng 光速修好。"
     },
     {
-        "name": "祭坛刷沙收集与混凝土固化",
+        "name": "末地祭坛刷沙机收集与混凝土固化",
         "image": "./icons/light_blue_concrete_powder.png",
         "dimension": 0,
         "x": 669,
@@ -284,7 +284,7 @@
         "description": "Chong_Sheng 的作品。Chong_Sheng 一直想把它换成自适应打包收集，不过做像素画时还挺好用。"
     },
     {
-        "name": "岩浆怪塔收集",
+        "name": "岩浆怪塔",
         "image": "./icons/magma_cube.png",
         "dimension": 0,
         "x": 248,
@@ -350,13 +350,13 @@
         "description": "沼泽刷怪塔的下界传送门。"
     },
     {
-        "name": "下界传送门-刷沙机",
+        "name": "下界传送门-末地祭坛刷沙机",
         "image": "./icons/nether_portal.png",
         "dimension": 1,
         "x": 83,
         "y": 129,
         "z": 8,
-        "description": "刷沙机的下界传送门。",
+        "description": "末地祭坛刷沙机的下界传送门。",
         "minScale": 1.2
     },
     {
@@ -504,7 +504,7 @@
         "description": "Chong_Sheng 造的“生蚝农场”，现有大量潜影壳。"
     },
     {
-        "name": "末地门刷沙机收集",
+        "name": "末地门刷沙机",
         "image": "./icons/sand.png",
         "dimension": 2,
         "x": 100,
