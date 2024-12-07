@@ -12,8 +12,8 @@
         "name": "下界传送门-要塞",
         "image": "./icons/nether_portal.png",
         "dimension": 0,
-        "x": 463,
-        "y": 20,
+        "x": 466,
+        "y": 22,
         "z": 1555,
         "description": "要塞的下界传送门，是去往末地的重要交通要道。"
     },
@@ -217,7 +217,7 @@
         "x": 672,
         "y": 68,
         "z": -157,
-        "description": "MathYellow 造的催熟机。",
+        "description": "MathYellow 造的催熟机。用处说大不大说小不小，要消耗大量骨粉，但生产农作物和大型花非常方便。",
         "minScale": 0.6
     },
     {
@@ -263,7 +263,7 @@
         "x": 450,
         "y": 122,
         "z": 40,
-        "description": "MathYellow 造的黑曜石机。"
+        "description": "MathYellow 制作的大叔牌凋灵黑曜石机。利用了通过实体生成传送门与凋灵破坏方块的机制。其中刷石机的时钟因为奇怪的问题被多次更改，现在运行得非常稳定，只要你不打扰凋灵。"
     },
     {
         "name": "末地传送门与末地门刷沙机",
@@ -284,13 +284,13 @@
         "description": "Chong_Sheng 的作品。Chong_Sheng 一直想把它换成自适应打包收集，不过做像素画时还挺好用。"
     },
     {
-        "name": "岩浆怪塔",
-        "image": "./icons/magma_cube.png",
+        "name": "蛙明灯农场",
+        "image": "./icons/verdant_froglight_side.png",
         "dimension": 0,
         "x": 248,
         "y": 79,
         "z": 400,
-        "description": "zero_range 造的机器。不过自从使用岩浆块的僵尸猪灵塔修好了之后就几乎没有开机过。"
+        "description": "原为 zero-range 造的岩浆怪塔收集，MathYellow 将其修改为蛙明灯农场。"
     },
     {
         "name": "下界传送门-竹岛",
@@ -462,10 +462,10 @@
         "name": "岩浆怪塔",
         "image": "./icons/magma_cube.png",
         "dimension": 1,
-        "x": 57,
+        "x": 5,
         "y": 248,
         "z": 50,
-        "description": "zero_range 造的机器。不过自从使用岩浆块的僵尸猪灵塔修好了之后就几乎没有开机过。"
+        "description": "zero_range 造的机器。曾被用来生产僵尸猪灵塔的材料，现在主要为蛙明灯农场提供岩浆怪。"
     },
     {
         "name": "恶魂塔遗址",
@@ -504,13 +504,13 @@
         "description": "Chong_Sheng 造的“生蚝农场”，现有大量潜影壳。"
     },
     {
-        "name": "末地门刷沙机",
+        "name": "末地门刷沙机收集",
         "image": "./icons/sand.png",
         "dimension": 2,
         "x": 100,
         "y": 49,
         "z": 0,
-        "description": "Chong_Sheng 造的刷沙机。开机起来声音巨大。\nzero_range：开机时像是在向四个蜂蜜快分发沙子和铁砧。"
+        "description": "Chong_Sheng 造的刷沙机的收集部分。开机起来声音巨大。\nzero_range：开机时像是在向四个蜂蜜快分发沙子和铁砧。"
     },
     {
         "name": "末地祭坛刷沙机",
