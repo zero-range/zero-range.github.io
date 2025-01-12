@@ -1,0 +1,34 @@
+#div_information_table{
+	margin: 0 auto;
+	width: fit-content;
+    display: flex;
+	padding-bottom: 20pt;
+}
+.div_information{
+	padding-left: 10pt;
+	padding-right: 10pt;
+    width: 200px;
+    border-style: solid;
+    border-color: rgb(255,96,0);
+    border-width: 2px;
+    z-index: 0;
+	margin-left: 10pt;
+	margin-right: 10pt;
+}
+#div_news_table{
+	margin: 0 auto;
+	width: fit-content;
+    display: flex;
+	padding-bottom: 20pt;
+}
+.div_news{
+	padding-left: 10pt;
+	padding-right: 10pt;
+    width: 200px;
+    border-style: solid;
+    border-color: rgb(0, 128, 96);
+    border-width: 2px;
+    z-index: 0;
+	margin-left: 10pt;
+	margin-right: 10pt;
+}
