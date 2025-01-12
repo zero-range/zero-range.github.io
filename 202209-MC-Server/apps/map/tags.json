@@ -522,13 +522,13 @@
         "description": "Chong_Sheng 造的刷沙机。非常好用，但开机必须要假人或者玩家强加载，不然一定会坏。"
     },
     {
-        "name": "侦测器全树种树场",
+        "name": "侦测器树场",
         "image": "./icons/oak_sapling.png",
         "dimension": 2,
         "x": 319,
         "y": 50,
         "z": -23,
-        "description": "Chong_Sheng 造的 Fallen_Breath 牌树场，假人 Fallen_Breath 经常在这里挂机。虽然叫做“全树种”，但只能生产橡木、白桦木、金合欢木、云杉木和从林木。"
+        "description": "Chong_Sheng 造的 Fallen_Breath 牌树场，假人 Fallen_Breath 经常在这里挂机。能生产橡木、白桦木、金合欢木、云杉木和从林木。"
     },
     {
         "name": "深色橡木树场",
