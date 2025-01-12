@@ -522,13 +522,40 @@
         "description": "Chong_Sheng 造的刷沙机。非常好用，但开机必须要假人或者玩家强加载，不然一定会坏。"
     },
     {
-        "name": "树场",
+        "name": "侦测器全树种树场",
         "image": "./icons/oak_sapling.png",
         "dimension": 2,
         "x": 319,
         "y": 50,
         "z": -23,
-        "description": "Chong_Sheng 造的 Fallen_Breath 牌树场，假人 Fallen_Breath 经常在这里挂机。"
+        "description": "Chong_Sheng 造的 Fallen_Breath 牌树场，假人 Fallen_Breath 经常在这里挂机。虽然叫做“全树种”，但只能生产橡木、白桦木、金合欢木、云杉木和从林木。"
+    },
+    {
+        "name": "深色橡木树场",
+        "image": "./icons/dark_oak_sapling.png",
+        "dimension": 2,
+        "x": 349,
+        "y": 49,
+        "z": -20,
+        "description": "Chong_Sheng 造的深色橡木树场。"
+    },
+    {
+        "name": "生炸树场",
+        "image": "./icons/mangrove_propagule.png",
+        "dimension": 2,
+        "x": 344,
+        "y": 54,
+        "z": -46,
+        "description": "MathYellow 造的树场。原本是管理员们一起做的树场，但位置造错了。于是 MathYellow 重造了一遍。可以生产所有树种，还有下界菌类和蘑菇。"
+    },
+    {
+        "name": "下界菌类机",
+        "image": "./icons/warped_fungus.png",
+        "dimension": 2,
+        "x": 331,
+        "y": 49,
+        "z": 14,
+        "description": "zero_range 造的机器。"
     },
     {
         "name": "骨粉机",
