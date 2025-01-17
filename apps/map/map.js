@@ -24,6 +24,10 @@ var titles = [[], [], []];
 let chosen = null;
 var touches = 0;
 
+const paramsStr = window.location.search;
+const params = new URLSearchParams(paramsStr);
+window.history.replaceState('', '', window.location.href.substring(0, window.location.href.indexOf('?')));
+
 function updateDescription() {
 	if(chosen == null){
 		description.style.display = "none";
@@ -37,7 +41,7 @@ function updateDescription() {
 }
 
 function drawTag(tag) {
-	if((tag.minScale == null || sc > tag.minScale) && (tag.maxScale == null || sc < tag.maxScale)) {
+	if((tag.minScale == null || sc >= tag.minScale) && (tag.maxScale == null || sc <= tag.maxScale)) {
 		img = tag.img,
 		x = tag.x,
 		z = tag.z,
@@ -85,7 +89,7 @@ function repaint() {
 		}
 	}
 	for(var i = 0; i < tags[dimension].length; ++i) if(!tags[dimension][i].ac) drawTag(tags[dimension][i]);
-	for(var i = 0; i < titles[dimension].length; ++i) if((titles[dimension][i].minScale == null || sc > titles[dimension][i].minScale) && (titles[dimension][i].maxScale == null || sc < titles[dimension][i].maxScale)) {
+	for(var i = 0; i < titles[dimension].length; ++i) if((titles[dimension][i].minScale == null || sc >= titles[dimension][i].minScale) && (titles[dimension][i].maxScale == null || sc <= titles[dimension][i].maxScale)) {
 		x = titles[dimension][i].x,
 		z = titles[dimension][i].z,
 		title = titles[dimension][i].title;
@@ -103,21 +107,21 @@ function repaint() {
 	for(var i = 0; i < tags[dimension].length; ++i) if(tags[dimension][i].ac) drawTag(tags[dimension][i]);
 }
 
-function loadImage(dimension, src, x, z, s) {
+function loadImage(dim, src, x, z, s) {
 	var img = new Image();
 	var key = x + ' ' + z;
-	if(!images[dimension].has(key)) images[dimension].set(key, []);
-	images[dimension].get(key).push({
+	if(!images[dim].has(key)) images[dim].set(key, []);
+	images[dim].get(key).push({
 		image: img,
 		s: s,
 		src: src
 	});
-	images[dimension].get(key).sort(function (a, b) { return b.s - a.s; });
+	images[dim].get(key).sort(function (a, b) { return b.s - a.s; });
 	img.onload = function() { repaint(); }
 }
 
-function loadTitle(dimension, title, x, z, fontSize, maxScale) {
-	titles[dimension].push({
+function loadTitle(dim, title, x, z, fontSize, maxScale) {
+	titles[dim].push({
 		title: title,
 		x: x,
 		z: z,
@@ -126,11 +130,11 @@ function loadTitle(dimension, title, x, z, fontSize, maxScale) {
 	});
 }
 
-function loadTag(dimension, src, x, y, z, name, desc, minScale) {
+function loadTag(dim, src, x, y, z, name, desc, minScale, maxScale) {
 	var img = new Image();
 	img.src = src;
 	img.onload = () => {
-		tags[dimension].push({
+		var tag = {
 			img: img,
 			x: x,
 			y: y,
@@ -138,8 +142,22 @@ function loadTag(dimension, src, x, y, z, name, desc, minScale) {
 			name: name,
 			desc: desc,
 			ac: false,
-			minScale: minScale
-		});
+			minScale: minScale,
+			maxScale: maxScale
+		};
+		if(tag.name == decodeURI(params.get("focus"))){
+			ox = -tag.x;
+			oy = -tag.z;
+			sc = 1.0;
+			if (tag.minScale != null) sc = Math.max(sc, tag.minScale);
+			if (tag.maxScale != null) sc = Math.min(sc, tag.maxScale);
+			setDimension(dim);
+			if (chosen != null) chosen.ac = false;
+			chosen = tag;
+			tag.ac = true;
+			updateDescription();
+		}
+		tags[dim].push(tag);
 		repaint();
 	}
 }
@@ -153,7 +171,7 @@ function leftclick(cx, cy) {
 	lx = cx;
 	ly = cy;
 	var fl = true;
-	for(var i = 0; i < tags[dimension].length; ++i) if((tags[dimension][i].minScale == null || sc > tags[dimension][i].minScale) && (tags[dimension][i].maxScale == null || sc < tags[dimension][i].maxScale)) {
+	for(var i = 0; i < tags[dimension].length; ++i) if((tags[dimension][i].minScale == null || sc >= tags[dimension][i].minScale) && (tags[dimension][i].maxScale == null || sc <= tags[dimension][i].maxScale)) {
 		x = tags[dimension][i].x,
 		z = tags[dimension][i].z;
 		var tx = Math.round(width / 2 + ox + x * sc);
@@ -331,7 +349,7 @@ loadJSON("./terrain.json", function(res) {
 loadJSON("./tags.json", function(res) {
 	for(var i = 0; i < res.length; ++i) {
 		var tag = res[i];
-		loadTag(tag["dimension"], tag["image"], tag["x"], tag["y"], tag["z"], tag["name"], tag["description"], tag["minScale"]);
+		loadTag(tag["dimension"], tag["image"], tag["x"], tag["y"], tag["z"], tag["name"], tag["description"], tag["minScale"], tag["maxScale"]);
 	}
 })
 

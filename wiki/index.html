@@ -24,7 +24,7 @@ function loadMarkdown(title) {
 				var a = list.item(i);
 				if(a.className == "coordinate") {
 					[x, y, z] = JSON.parse(a.textContent);
-					cmd = "/tp " + x + ' ' + y + ' ' + z;
+					let cmd = "/tp " + x + ' ' + y + ' ' + z;
 					a.title = "点击复制：" + cmd;
 					a.onclick = function() { navigator.clipboard.writeText(cmd); };
 				} else if(~a.href.indexOf("player")) {
@@ -48,10 +48,9 @@ function loadMarkdown(title) {
 		}
 	}
 }
-url = window.location.href;
-i = url.indexOf("?");
-if (i == -1) loadMarkdown("main");
-else loadMarkdown(url.substring(i + 1));
+var paramStr = window.location.search;
+if (!paramStr) loadMarkdown("main");
+else loadMarkdown(paramStr.substring(1));
 	</script>
 	<title>NFLS 202209 MC服务器</title>
 </head>

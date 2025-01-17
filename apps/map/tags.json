@@ -1,6 +1,6 @@
 [
     {
-        "name": "下界传送门-竹岛",
+        "name": "下界传送门-竹岛（主世界）",
         "image": "./icons/nether_portal.png",
         "dimension": 0,
         "x": 653,
@@ -9,7 +9,7 @@
         "description": "竹岛的下界传送门，是去往服务器各处重要的交通要道。"
     },
     {
-        "name": "下界传送门-要塞",
+        "name": "下界传送门-要塞（主世界）",
         "image": "./icons/nether_portal.png",
         "dimension": 0,
         "x": 466,
@@ -18,7 +18,7 @@
         "description": "要塞的下界传送门，是去往末地的重要交通要道。"
     },
     {
-        "name": "下界传送门-岩浆怪塔",
+        "name": "下界传送门-岩浆怪塔（主世界）",
         "image": "./icons/nether_portal.png",
         "dimension": 0,
         "x": 389,
@@ -28,7 +28,7 @@
         "minScale": 0.3
     },
     {
-        "name": "下界传送门-黑曜石机",
+        "name": "下界传送门-黑曜石机（主世界）",
         "image": "./icons/nether_portal.png",
         "dimension": 0,
         "x": 288,
@@ -38,7 +38,7 @@
         "minScale": 0.3
     },
     {
-        "name": "下界传送门-像素画",
+        "name": "下界传送门-像素画（主世界）",
         "image": "./icons/nether_portal.png",
         "dimension": 0,
         "x": 571,
@@ -48,7 +48,7 @@
         "minScale": 0.3
     },
     {
-        "name": "下界传送门-沼泽刷怪塔",
+        "name": "下界传送门-沼泽刷怪塔（主世界）",
         "image": "./icons/nether_portal.png",
         "dimension": 0,
         "x": 3461,
@@ -257,7 +257,7 @@
         "description": "zero_range 生成投影并和 Chong_Sheng（、yzb?） 一起造的像素画，表达了全服成员共同的志向。被贴在各个重要的公共设施上。"
     },
     {
-        "name": "黑曜石机",
+        "name": "黑曜石机（主世界）",
         "image": "./icons/obsidian.png",
         "dimension": 0,
         "x": 450,
@@ -293,7 +293,7 @@
         "description": "原为 zero-range 造的岩浆怪塔收集，MathYellow 将其修改为蛙明灯农场。"
     },
     {
-        "name": "下界传送门-竹岛",
+        "name": "下界传送门-竹岛（下界）",
         "image": "./icons/nether_portal.png",
         "dimension": 1,
         "x": 83,
@@ -302,7 +302,7 @@
         "description": "竹岛的下界传送门，是去往服务器各处重要的交通要道。"
     },
     {
-        "name": "下界传送门-要塞",
+        "name": "下界传送门-要塞（下界）",
         "image": "./icons/nether_portal.png",
         "dimension": 1,
         "x": 57,
@@ -311,7 +311,7 @@
         "description": "要塞的下界传送门，是去往末地的重要交通要道。"
     },
     {
-        "name": "下界传送门-岩浆怪塔",
+        "name": "下界传送门-岩浆怪塔（下界）",
         "image": "./icons/nether_portal.png",
         "dimension": 1,
         "x": 48,
@@ -321,7 +321,7 @@
         "minScale": 1.2
     },
     {
-        "name": "下界传送门-黑曜石机",
+        "name": "下界传送门-黑曜石机（下界）",
         "image": "./icons/nether_portal.png",
         "dimension": 1,
         "x": 36,
@@ -331,7 +331,7 @@
         "minScale": 1.2
     },
     {
-        "name": "下界传送门-像素画",
+        "name": "下界传送门-像素画（下界）",
         "image": "./icons/nether_portal.png",
         "dimension": 1,
         "x": 70,
@@ -341,7 +341,7 @@
         "minScale": 1.2
     },
     {
-        "name": "下界传送门-沼泽刷怪塔",
+        "name": "下界传送门-沼泽刷怪塔（下界）",
         "image": "./icons/nether_portal.png",
         "dimension": 1,
         "x": 431,
@@ -350,7 +350,7 @@
         "description": "沼泽刷怪塔的下界传送门。"
     },
     {
-        "name": "下界传送门-末地祭坛刷沙机",
+        "name": "下界传送门-末地祭坛刷沙机（下界）",
         "image": "./icons/nether_portal.png",
         "dimension": 1,
         "x": 83,
@@ -423,7 +423,7 @@
         "description": "神秘的下界传送门，可能是某次探索的见证。"
     },
     {
-        "name": "下界传送门-掠夺者塔",
+        "name": "下界传送门-掠夺者塔（下界）",
         "image": "./icons/nether_portal.png",
         "dimension": 1,
         "x": 550,
@@ -462,8 +462,8 @@
         "name": "岩浆怪塔",
         "image": "./icons/magma_cube.png",
         "dimension": 1,
-        "x": 5,
-        "y": 248,
+        "x": 31,
+        "y": 128,
         "z": 50,
         "description": "zero_range 造的机器。曾被用来生产僵尸猪灵塔的材料，现在主要为蛙明灯农场提供岩浆怪。"
     },
@@ -477,7 +477,7 @@
         "description": "Chong_Sheng 造的机器。由于一些神秘的设计问题，现已废弃。"
     },
     {
-        "name": "黑曜石机",
+        "name": "黑曜石机（下界）",
         "image": "./icons/obsidian.png",
         "dimension": 1,
         "x": 59,
