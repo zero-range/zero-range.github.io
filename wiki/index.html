@@ -3,7 +3,38 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="../main.css"/>
+	<link rel="stylesheet" href="./wiki.css"/>
 	<link rel="icon" type="image/png" href="../icon.png">
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	<script>
+function loadMarkdown(title) {
+	const Http = new XMLHttpRequest();
+	Http.open("GET", "markdown/" + title + ".md");
+	Http.send();
+	Http.onreadystatechange = function() {
+		if(this.readyState == 4) {
+			var markdown = "";
+			if(this.status == 404) {
+				markdown = "# **" + decodeURI(title) + "**\n此页面目前没有内容。[返回上一页](javascript:history.go(-1))。"
+			} else markdown = Http.responseText;
+			divWiki = document.getElementById("div_wiki");
+			divWiki.innerHTML = marked.parse(markdown);
+			list = divWiki.getElementsByClassName("coordinate");
+			for(var i = 0; i < list.length; ++i) {
+				a = list.item(i);
+				[x, y, z] = JSON.parse(a.textContent);
+				cmd = "/tp " + x + ' ' + y + ' ' + z;
+				a.title = "点击复制：" + cmd;
+				a.onclick = function() { navigator.clipboard.writeText(cmd); };
+			}
+		}
+	}
+}
+url = window.location.href;
+i = url.indexOf("?");
+if (i == -1) loadMarkdown("main");
+else loadMarkdown(url.substr(i + 1));
+	</script>
 	<title>NFLS 202209 MC服务器</title>
 </head>
 <body>
@@ -22,8 +53,8 @@
 		<a style="background: rgba(128,128,128,.3);" href="../wiki/">百科</a>
 	</div>
 	<div id="div_main">
-		<h2>正在加入</h2>
-		<p id="bottom"><span style="color: rgba(160, 160, 160)">Provided by </span><img src="../zr.svg"/><b>zero-range. </span></p>
+		<div id="div_wiki" class="crossnote markdown-preview  "></div>
+		<p id="bottom"><span style="color: rgba(160, 160, 160)">Provided by </span><img src="../zr.svg"/><b>zero-range. </b></p>
 	</div>
 </body>
 </html>
