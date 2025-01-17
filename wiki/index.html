@@ -19,13 +19,31 @@ function loadMarkdown(title) {
 			} else markdown = Http.responseText;
 			divWiki = document.getElementById("div_wiki");
 			divWiki.innerHTML = marked.parse(markdown);
-			list = divWiki.getElementsByClassName("coordinate");
+			list = divWiki.getElementsByTagName("a");
 			for(var i = 0; i < list.length; ++i) {
-				a = list.item(i);
-				[x, y, z] = JSON.parse(a.textContent);
-				cmd = "/tp " + x + ' ' + y + ' ' + z;
-				a.title = "点击复制：" + cmd;
-				a.onclick = function() { navigator.clipboard.writeText(cmd); };
+				var a = list.item(i);
+				if(a.className == "coordinate") {
+					[x, y, z] = JSON.parse(a.textContent);
+					cmd = "/tp " + x + ' ' + y + ' ' + z;
+					a.title = "点击复制：" + cmd;
+					a.onclick = function() { navigator.clipboard.writeText(cmd); };
+				} else if(~a.href.indexOf("player")) {
+					name = a.href.substring(a.href.lastIndexOf("/") + 1);
+					const Http = new XMLHttpRequest();
+					Http.open("GET", "https://playerdb.co/api/player/minecraft/" + name);
+					Http.send();
+					let cur = a;
+					Http.onreadystatechange = function(){
+						if(this.readyState == 4 && this.status == 200){
+							res = JSON.parse(Http.responseText);
+							avatar = "";
+							if(res.code == "player.found"){
+								avatar = res["data"]["player"]["avatar"];
+							}
+							cur.innerHTML = "<img class=\"icon\" src=\"" + avatar + "\"/>" + cur.innerHTML;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -33,7 +51,7 @@ function loadMarkdown(title) {
 url = window.location.href;
 i = url.indexOf("?");
 if (i == -1) loadMarkdown("main");
-else loadMarkdown(url.substr(i + 1));
+else loadMarkdown(url.substring(i + 1));
 	</script>
 	<title>NFLS 202209 MC服务器</title>
 </head>
