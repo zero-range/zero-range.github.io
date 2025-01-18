@@ -38,13 +38,13 @@
         "minScale": 0.3
     },
     {
-        "name": "下界传送门-像素画（主世界）",
+        "name": "下界传送门-地图画（主世界）",
         "image": "./icons/nether_portal.png",
         "dimension": 0,
         "x": 571,
         "y": 63,
         "z": 567,
-        "description": "像素画的下界传送门。",
+        "description": "地图画的下界传送门。",
         "minScale": 0.3
     },
     {
@@ -239,22 +239,22 @@
         "description": "EverSlientStars 造的掠夺者塔。"
     },
     {
-        "name": "像素画-纳西妲",
+        "name": "地图画-纳西妲",
         "image": "./icons/nahida.png",
         "dimension": 0,
         "x": 448,
         "y": 64,
         "z": 704,
-        "description": "由 zero_range 提供投影和材料，Chong_Sheng 和 zero_range 联合造的 256*256 像素画。由于 zero_range 的代码中的一个错误，像素画比原图显得亮一些，而且有些失真。不过 Chong_Sheng 对此很满意。\nChong_Sheng：哈哈哈！🥵我的纳西妲！🥵哧溜哧溜斯哈斯哈¥#$%&🥵🥵🥵！"
+        "description": "由 zero_range 提供投影和材料，Chong_Sheng 和 zero_range 联合造的 256*256 地图画。由于 zero_range 的代码中的一个错误，地图画比原图显得亮一些，而且有些失真。不过 Chong_Sheng 对此很满意。\nChong_Sheng：哈哈哈！🥵我的纳西妲！🥵哧溜哧溜斯哈斯哈¥#$%&🥵🥵🥵！"
     },
     {
-        "name": "像素画-原神",
+        "name": "地图画-原神",
         "image": "./icons/genshin.png",
         "dimension": 0,
         "x": 640,
         "y": 64,
         "z": 640,
-        "description": "zero_range 生成投影并和 Chong_Sheng（、yzb?） 一起造的像素画，表达了全服成员共同的志向。被贴在各个重要的公共设施上。"
+        "description": "zero_range 生成投影并和 Chong_Sheng（、yzb?） 一起造的地图画，表达了全服成员共同的志向。被贴在各个重要的公共设施上。"
     },
     {
         "name": "黑曜石机（主世界）",
@@ -281,7 +281,7 @@
         "x": 669,
         "y": 274,
         "z": 64,
-        "description": "Chong_Sheng 的作品。Chong_Sheng 一直想把它换成自适应打包收集，不过做像素画时还挺好用。"
+        "description": "Chong_Sheng 的作品。Chong_Sheng 一直想把它换成自适应打包收集，不过做地图画时还挺好用。"
     },
     {
         "name": "蛙明灯农场",
@@ -331,13 +331,13 @@
         "minScale": 1.2
     },
     {
-        "name": "下界传送门-像素画（下界）",
+        "name": "下界传送门-地图画（下界）",
         "image": "./icons/nether_portal.png",
         "dimension": 1,
         "x": 70,
         "y": 129,
         "z": 70,
-        "description": "像素画的下界传送门。",
+        "description": "地图画的下界传送门。",
         "minScale": 1.2
     },
     {
