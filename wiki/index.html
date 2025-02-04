@@ -17,6 +17,7 @@ function loadMarkdown(title) {
 			if(this.status == 404) {
 				markdown = "# **" + decodeURI(title) + "**\n此页面目前没有内容。[返回上一页](javascript:history.go(-1))。"
 			} else markdown = Http.responseText;
+			markdown = markdown.replace(/\s+PICTURE\(\s*(.+?)\s*,\s*(.*?)\s*\)/, "<div class=\"picture\"><img src=\"$1\"/><span style=\"text-align: center; \">$2</span></div>");
 			divWiki = document.getElementById("div_wiki");
 			divWiki.innerHTML = marked.parse(markdown);
 			list = divWiki.getElementsByTagName("a");
