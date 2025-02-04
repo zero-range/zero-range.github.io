@@ -1,7 +1,8 @@
 [
 	{
 		"name": "下界传送门-竹岛（主世界）",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
+		"subscript": "bamboo_island.png",
 		"dimension": 0,
 		"x": 653,
 		"y": 63,
@@ -10,7 +11,8 @@
 	},
 	{
 		"name": "下界传送门-要塞（主世界）",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
+		"subscript": "stronghold.png",
 		"dimension": 0,
 		"x": 466,
 		"y": 22,
@@ -19,7 +21,8 @@
 	},
 	{
 		"name": "下界传送门-岩浆怪塔（主世界）",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
+		"subscript": "magma_cube.png",
 		"dimension": 0,
 		"x": 389,
 		"y": 71,
@@ -29,7 +32,8 @@
 	},
 	{
 		"name": "下界传送门-黑曜石机（主世界）",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
+		"subscript": "obsidian.png",
 		"dimension": 0,
 		"x": 288,
 		"y": 122,
@@ -39,7 +43,8 @@
 	},
 	{
 		"name": "下界传送门-地图画（主世界）",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
+		"subscript": "nahida.png",
 		"dimension": 0,
 		"x": 571,
 		"y": 63,
@@ -49,7 +54,8 @@
 	},
 	{
 		"name": "下界传送门-沼泽刷怪塔（主世界）",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
+		"subscript": "slime_ball.png",
 		"dimension": 0,
 		"x": 3461,
 		"y": 63,
@@ -58,8 +64,30 @@
 		"minScale": 0.6
 	},
 	{
+		"name": "下界传送门-掠夺者塔（主世界）",
+		"image": "nether_portal.png",
+		"subscript": "pillager.png",
+		"dimension": 0,
+		"x": 4426,
+		"y": 195,
+		"z": 86,
+		"description": "掠夺者塔的下界传送门。",
+		"minScale": 0.6
+	},
+	{
+		"name": "下界传送门-监守者伪和平（主世界）",
+		"image": "nether_portal.png",
+		"subscript": "warden.png",
+		"dimension": 0,
+		"x": 6761,
+		"y": -17,
+		"z": -3902,
+		"description": "监守者伪和平的下界传送门。",
+		"minScale": 0.6
+	},
+	{
 		"name": "下界传送门",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
 		"dimension": 0,
 		"x": 1994,
 		"y": 70,
@@ -68,7 +96,7 @@
 	},
 	{
 		"name": "下界传送门",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
 		"dimension": 0,
 		"x": 1705,
 		"y": 125,
@@ -77,7 +105,7 @@
 	},
 	{
 		"name": "下界传送门",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
 		"dimension": 0,
 		"x": -429,
 		"y": 63,
@@ -86,7 +114,7 @@
 	},
 	{
 		"name": "下界传送门",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
 		"dimension": 0,
 		"x": -999,
 		"y": 105,
@@ -95,7 +123,7 @@
 	},
 	{
 		"name": "下界传送门",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
 		"dimension": 0,
 		"x": 670,
 		"y": 79,
@@ -104,7 +132,7 @@
 	},
 	{
 		"name": "下界传送门",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
 		"dimension": 0,
 		"x": 5226,
 		"y": 70,
@@ -113,7 +141,7 @@
 	},
 	{
 		"name": "下界传送门",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
 		"dimension": 0,
 		"x": -4528,
 		"y": 66,
@@ -122,7 +150,7 @@
 	},
 	{
 		"name": "老刷铁塔遗址",
-		"image": "./icons/iron_golem.png",
+		"image": "iron_golem.png",
 		"dimension": 0,
 		"x": 630,
 		"y": 62,
@@ -132,7 +160,7 @@
 	},
 	{
 		"name": "村民繁殖",
-		"image": "./icons/villager.png",
+		"image": "villager.png",
 		"dimension": 0,
 		"x": 661,
 		"y": 66,
@@ -142,7 +170,7 @@
 	},
 	{
 		"name": "简易树场",
-		"image": "./icons/oak_sapling.png",
+		"image": "oak_sapling.png",
 		"dimension": 0,
 		"x": 684,
 		"y": 66,
@@ -152,7 +180,7 @@
 	},
 	{
 		"name": "刷石机",
-		"image": "./icons/cobblestone.png",
+		"image": "cobblestone.png",
 		"dimension": 0,
 		"x": 609,
 		"y": 66,
@@ -162,7 +190,7 @@
 	},
 	{
 		"name": "喷射合成站",
-		"image": "./icons/crafting_table_top.png",
+		"image": "crafting_table_top.png",
 		"dimension": 0,
 		"x": 659,
 		"y": 64,
@@ -172,7 +200,7 @@
 	},
 	{
 		"name": "小甘蔗机",
-		"image": "./icons/sugar_cane.png",
+		"image": "sugar_cane.png",
 		"dimension": 0,
 		"x": 641,
 		"y": 67,
@@ -182,7 +210,7 @@
 	},
 	{
 		"name": "小南瓜机",
-		"image": "./icons/pumpkin_top.png",
+		"image": "pumpkin_top.png",
 		"dimension": 0,
 		"x": 609,
 		"y": 66,
@@ -192,7 +220,7 @@
 	},
 	{
 		"name": "村民交易",
-		"image": "./icons/emerald.png",
+		"image": "emerald.png",
 		"dimension": 0,
 		"x": 654,
 		"y": 42,
@@ -202,7 +230,7 @@
 	},
 	{
 		"name": "40速熔炉组",
-		"image": "./icons/furnace_front_on.png",
+		"image": "furnace_front_on.png",
 		"dimension": 0,
 		"x": 664,
 		"y": 52,
@@ -212,7 +240,7 @@
 	},
 	{
 		"name": "催熟机",
-		"image": "./icons/wheat.png",
+		"image": "wheat.png",
 		"dimension": 0,
 		"x": 672,
 		"y": 68,
@@ -222,16 +250,16 @@
 	},
 	{
 		"name": "沼泽刷怪塔",
-		"image": "./icons/slime_ball.png",
+		"image": "slime_ball.png",
 		"dimension": 0,
-		"x": 3467,
-		"y": 181,
-		"z": -1358,
+		"x": 3448,
+		"y": 72,
+		"z": -1357,
 		"description": "zero_range 造的沼泽刷怪塔。非常好用，不过路程有点儿远。"
 	},
 	{
 		"name": "掠夺者塔",
-		"image": "./icons/pillager.png",
+		"image": "pillager.png",
 		"dimension": 0,
 		"x": 4425,
 		"y": 67,
@@ -240,7 +268,7 @@
 	},
 	{
 		"name": "地图画-纳西妲",
-		"image": "./icons/nahida.png",
+		"image": "nahida.png",
 		"dimension": 0,
 		"x": 448,
 		"y": 64,
@@ -249,7 +277,7 @@
 	},
 	{
 		"name": "地图画-原神",
-		"image": "./icons/genshin.png",
+		"image": "genshin.png",
 		"dimension": 0,
 		"x": 640,
 		"y": 64,
@@ -258,7 +286,7 @@
 	},
 	{
 		"name": "黑曜石机（主世界）",
-		"image": "./icons/obsidian.png",
+		"image": "obsidian.png",
 		"dimension": 0,
 		"x": 450,
 		"y": 122,
@@ -267,7 +295,7 @@
 	},
 	{
 		"name": "末地传送门与末地门刷沙机",
-		"image": "./icons/end_portal_frame_top.png",
+		"image": "end_portal_frame_top.png",
 		"dimension": 0,
 		"x": 463,
 		"y": 21,
@@ -276,7 +304,7 @@
 	},
 	{
 		"name": "末地祭坛刷沙机收集与混凝土固化",
-		"image": "./icons/light_blue_concrete_powder.png",
+		"image": "light_blue_concrete_powder.png",
 		"dimension": 0,
 		"x": 669,
 		"y": 274,
@@ -285,7 +313,7 @@
 	},
 	{
 		"name": "蛙明灯农场",
-		"image": "./icons/verdant_froglight_side.png",
+		"image": "verdant_froglight_side.png",
 		"dimension": 0,
 		"x": 248,
 		"y": 79,
@@ -293,8 +321,18 @@
 		"description": "原为 zero-range 造的岩浆怪塔收集，MathYellow 将其修改为蛙明灯农场。"
 	},
 	{
+		"name": "监守者伪和平",
+		"image": "warden.png",
+		"dimension": 0,
+		"x": 6794,
+		"y": 11,
+		"z": -3899,
+		"description": "zero-range 造的监守者伪和平。在修建地图画和大型建筑时极其有用。"
+	},
+	{
 		"name": "下界传送门-竹岛（下界）",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
+		"subscript": "bamboo_island.png",
 		"dimension": 1,
 		"x": 83,
 		"y": 129,
@@ -303,7 +341,8 @@
 	},
 	{
 		"name": "下界传送门-要塞（下界）",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
+		"subscript": "stronghold.png",
 		"dimension": 1,
 		"x": 57,
 		"y": 129,
@@ -312,7 +351,8 @@
 	},
 	{
 		"name": "下界传送门-岩浆怪塔（下界）",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
+		"subscript": "magma_cube.png",
 		"dimension": 1,
 		"x": 48,
 		"y": 129,
@@ -322,7 +362,8 @@
 	},
 	{
 		"name": "下界传送门-黑曜石机（下界）",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
+		"subscript": "obsidian.png",
 		"dimension": 1,
 		"x": 36,
 		"y": 129,
@@ -332,7 +373,8 @@
 	},
 	{
 		"name": "下界传送门-地图画（下界）",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
+		"subscript": "nahida.png",
 		"dimension": 1,
 		"x": 70,
 		"y": 129,
@@ -342,7 +384,8 @@
 	},
 	{
 		"name": "下界传送门-沼泽刷怪塔（下界）",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
+		"subscript": "slime_ball.png",
 		"dimension": 1,
 		"x": 431,
 		"y": 129,
@@ -351,7 +394,8 @@
 	},
 	{
 		"name": "下界传送门-末地祭坛刷沙机（下界）",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
+		"subscript": "light_blue_concrete_powder.png",
 		"dimension": 1,
 		"x": 83,
 		"y": 129,
@@ -360,8 +404,28 @@
 		"minScale": 1.2
 	},
 	{
+		"name": "下界传送门-掠夺者塔（下界）",
+		"image": "nether_portal.png",
+		"subscript": "pillager.png",
+		"dimension": 1,
+		"x": 550,
+		"y": 129,
+		"z": 10,
+		"description": "掠夺者塔的下界传送门。"
+	},
+	{
+		"name": "下界传送门-监守者伪和平（下界）",
+		"image": "nether_portal.png",
+		"subscript": "warden.png",
+		"dimension": 1,
+		"x": 851,
+		"y": 131,
+		"z": -487,
+		"description": "监守者伪和平的下界传送门。"
+	},
+	{
 		"name": "下界传送门",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
 		"dimension": 1,
 		"x": 250,
 		"y": 129,
@@ -370,7 +434,7 @@
 	},
 	{
 		"name": "下界传送门",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
 		"dimension": 1,
 		"x": 213,
 		"y": 129,
@@ -379,7 +443,7 @@
 	},
 	{
 		"name": "下界传送门",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
 		"dimension": 1,
 		"x": -54,
 		"y": 129,
@@ -388,7 +452,7 @@
 	},
 	{
 		"name": "下界传送门",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
 		"dimension": 1,
 		"x": -125,
 		"y": 129,
@@ -397,7 +461,7 @@
 	},
 	{
 		"name": "下界传送门",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
 		"dimension": 1,
 		"x": 84,
 		"y": 129,
@@ -406,7 +470,7 @@
 	},
 	{
 		"name": "下界传送门",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
 		"dimension": 1,
 		"x": 652,
 		"y": 129,
@@ -415,7 +479,7 @@
 	},
 	{
 		"name": "下界传送门",
-		"image": "./icons/nether_portal.png",
+		"image": "nether_portal.png",
 		"dimension": 1,
 		"x": -567,
 		"y": 129,
@@ -423,17 +487,8 @@
 		"description": "神秘的下界传送门，可能是某次探索的见证。"
 	},
 	{
-		"name": "下界传送门-掠夺者塔（下界）",
-		"image": "./icons/nether_portal.png",
-		"dimension": 1,
-		"x": 550,
-		"y": 129,
-		"z": 10,
-		"description": "掠夺者塔的下界传送门。"
-	},
-	{
 		"name": "蜂蜜机",
-		"image": "./icons/honey_bottle.png",
+		"image": "honey_bottle.png",
 		"dimension": 1,
 		"x": 115,
 		"y": 129,
@@ -442,7 +497,7 @@
 	},
 	{
 		"name": "僵尸猪灵塔",
-		"image": "./icons/gold_ingot.png",
+		"image": "gold_ingot.png",
 		"dimension": 1,
 		"x": 203,
 		"y": 247,
@@ -451,7 +506,7 @@
 	},
 	{
 		"name": "猪灵交易",
-		"image": "./icons/quartz.png",
+		"image": "quartz.png",
 		"dimension": 1,
 		"x": 210,
 		"y": 235,
@@ -460,7 +515,7 @@
 	},
 	{
 		"name": "岩浆怪塔",
-		"image": "./icons/magma_cube.png",
+		"image": "magma_cube.png",
 		"dimension": 1,
 		"x": 31,
 		"y": 128,
@@ -469,7 +524,7 @@
 	},
 	{
 		"name": "恶魂塔遗址",
-		"image": "./icons/ghast.png",
+		"image": "ghast.png",
 		"dimension": 1,
 		"x": -31,
 		"y": 129,
@@ -478,7 +533,7 @@
 	},
 	{
 		"name": "黑曜石机（下界）",
-		"image": "./icons/obsidian.png",
+		"image": "obsidian.png",
 		"dimension": 1,
 		"x": 59,
 		"y": 132,
@@ -487,7 +542,7 @@
 	},
 	{
 		"name": "末影人经验塔",
-		"image": "./icons/experience_orb.png",
+		"image": "experience_orb.png",
 		"dimension": 2,
 		"x": 24,
 		"y": 6,
@@ -496,7 +551,7 @@
 	},
 	{
 		"name": "潜影贝农场",
-		"image": "./icons/shulker.png",
+		"image": "shulker.png",
 		"dimension": 2,
 		"x": -711,
 		"y": 62,
@@ -505,7 +560,7 @@
 	},
 	{
 		"name": "末地门刷沙机收集",
-		"image": "./icons/sand.png",
+		"image": "sand.png",
 		"dimension": 2,
 		"x": 100,
 		"y": 49,
@@ -514,7 +569,7 @@
 	},
 	{
 		"name": "末地祭坛刷沙机",
-		"image": "./icons/light_blue_concrete_powder.png",
+		"image": "light_blue_concrete_powder.png",
 		"dimension": 2,
 		"x": 0,
 		"y": 61,
@@ -523,7 +578,7 @@
 	},
 	{
 		"name": "侦测器树场",
-		"image": "./icons/oak_sapling.png",
+		"image": "oak_sapling.png",
 		"dimension": 2,
 		"x": 319,
 		"y": 50,
@@ -532,7 +587,7 @@
 	},
 	{
 		"name": "深色橡木树场",
-		"image": "./icons/dark_oak_sapling.png",
+		"image": "dark_oak_sapling.png",
 		"dimension": 2,
 		"x": 349,
 		"y": 49,
@@ -541,7 +596,7 @@
 	},
 	{
 		"name": "生炸树场",
-		"image": "./icons/mangrove_propagule.png",
+		"image": "mangrove_propagule.png",
 		"dimension": 2,
 		"x": 344,
 		"y": 54,
@@ -550,7 +605,7 @@
 	},
 	{
 		"name": "下界菌类机",
-		"image": "./icons/warped_fungus.png",
+		"image": "warped_fungus.png",
 		"dimension": 2,
 		"x": 331,
 		"y": 49,
@@ -559,7 +614,7 @@
 	},
 	{
 		"name": "骨粉机",
-		"image": "./icons/bone_meal.png",
+		"image": "bone_meal.png",
 		"dimension": 2,
 		"x": 304,
 		"y": 43,
@@ -568,7 +623,7 @@
 	},
 	{
 		"name": "甘蔗机",
-		"image": "./icons/sugar_cane.png",
+		"image": "sugar_cane.png",
 		"dimension": 2,
 		"x": 304,
 		"y": 49,
@@ -577,7 +632,7 @@
 	},
 	{
 		"name": "凋零玫瑰塔",
-		"image": "./icons/wither_rose.png",
+		"image": "wither_rose.png",
 		"dimension": 2,
 		"x": -13,
 		"y": 10,

@@ -29,7 +29,7 @@ const params = new URLSearchParams(paramsStr);
 window.history.replaceState('', '', window.location.href.substring(0, window.location.href.indexOf('?')));
 
 function updateDescription() {
-	if(chosen == null){
+	if(chosen == null) {
 		description.style.display = "none";
 		return;
 	}
@@ -43,25 +43,38 @@ function updateDescription() {
 function drawTag(tag) {
 	if((tag.minScale == null || sc >= tag.minScale) && (tag.maxScale == null || sc <= tag.maxScale)) {
 		img = tag.img,
+		sub = tag.sub,
 		x = tag.x,
 		z = tag.z,
 		ac = tag.ac;
 		var tx = Math.round(width / 2 + ox + x * sc);
 		var ty = Math.round(height / 2 + oy + z * sc);
-		if(ac){
+		if(ac) {
 			cxt.drawImage(img, tx - 20, ty - 20, 40, 40);
 			cxt.lineWidth = '2';
 			cxt.strokeStyle = 'black';
 			cxt.strokeRect(tx - 21, ty - 21, 42, 42);
 			cxt.strokeStyle = 'white';
 			cxt.strokeRect(tx - 23, ty - 23, 46, 46);
-		}else{
+			if(sub) {
+				cxt.drawImage(sub, tx + 8, ty + 8, 15, 15);
+				cxt.lineWidth = '1';
+				cxt.strokeStyle = 'white';
+				cxt.strokeRect(tx + 7, ty + 7, 17, 17);
+			}
+		} else {
 			cxt.drawImage(img, tx - 16, ty - 16, 32, 32);
 			cxt.lineWidth = '1';
 			cxt.strokeStyle = 'black';
 			cxt.strokeRect(tx - 17, ty - 17, 33, 33);
 			cxt.strokeStyle = 'white';
 			cxt.strokeRect(tx - 18, ty - 18, 35, 35);
+			if(sub) {
+				cxt.drawImage(sub, tx + 6, ty + 6, 12, 12);
+				cxt.lineWidth = '1';
+				cxt.strokeStyle = 'white';
+				cxt.strokeRect(tx + 5, ty + 5, 14, 14);
+			}
 		}
 	}
 }
@@ -130,12 +143,17 @@ function loadTitle(dim, title, x, z, fontSize, maxScale) {
 	});
 }
 
-function loadTag(dim, src, x, y, z, name, desc, minScale, maxScale) {
+function loadTag(dim, src, sub, x, y, z, name, desc, minScale, maxScale) {
 	var img = new Image();
-	img.src = src;
+	img.src = "../icons/" + src;
+	if (sub) {
+		var subscript = new Image();
+		subscript.src = "../icons/" + sub;
+	} else var subscript = null; 
 	img.onload = () => {
 		var tag = {
 			img: img,
+			sub: subscript,
 			x: x,
 			y: y,
 			z: z,
@@ -145,7 +163,7 @@ function loadTag(dim, src, x, y, z, name, desc, minScale, maxScale) {
 			minScale: minScale,
 			maxScale: maxScale
 		};
-		if(tag.name == decodeURI(params.get("focus"))){
+		if(tag.name == decodeURI(params.get("focus"))) {
 			ox = -tag.x;
 			oy = -tag.z;
 			sc = 1.0;
@@ -349,7 +367,7 @@ loadJSON("./terrain.json", function(res) {
 loadJSON("./tags.json", function(res) {
 	for(var i = 0; i < res.length; ++i) {
 		var tag = res[i];
-		loadTag(tag["dimension"], tag["image"], tag["x"], tag["y"], tag["z"], tag["name"], tag["description"], tag["minScale"], tag["maxScale"]);
+		loadTag(tag["dimension"], tag["image"], tag["subscript"], tag["x"], tag["y"], tag["z"], tag["name"], tag["description"], tag["minScale"], tag["maxScale"]);
 	}
 })
 
