@@ -17,7 +17,10 @@ function loadMarkdown(title) {
 			if(this.status == 404) {
 				markdown = "# **" + decodeURI(title) + "**\n此页面目前没有内容。[返回上一页](javascript:history.go(-1))。"
 			} else markdown = Http.responseText;
-			markdown = markdown.replace(/\s+PICTURE\(\s*(.+?)\s*,\s*(.*?)\s*\)/, "<div class=\"picture\"><img src=\"$1\"/><span style=\"text-align: center; \">$2</span></div>");
+			markdown = markdown.replaceAll(/PICTURE\(\s*(.+?)\s*,\s*(.*?)\s*\)/g, "<div class=\"picture\"><img src=\"images/$1\"/><span style=\"text-align: center; \">$2</span></div>");
+			markdown = markdown.replaceAll(/ITEM\(\s*(.+?)\s*,\s*(.*?)\s*\)/g, "<img class=\"icon\" src=\"icons/$1\"/>$2");
+			markdown = markdown.replaceAll(/POSITION\(\s*(.+?)\s*,\s*(.+?)\s*,\s*(.*?)\s*\,\s*(.*?)\s*\,\s*(.*?)\s*\)/g, "[$1](../map/?focus=$2) <a class=\"coordinate\">[$3, $4, $5]</a>");
+			markdown = markdown.replaceAll(/POSITION\(\s*(.+?)\s*,\s*(.*?)\s*\,\s*(.*?)\s*\,\s*(.*?)\s*\)/g, "$1 <a class=\"coordinate\">[$2, $3, $4]</a>");
 			divWiki = document.getElementById("div_wiki");
 			divWiki.innerHTML = marked.parse(markdown);
 			list = divWiki.getElementsByTagName("a");
