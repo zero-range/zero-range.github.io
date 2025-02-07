@@ -20,71 +20,73 @@ ICON(bamboo_island.png)竹岛
 
 ### 主世界
 
-刷石机
+ICON(cobblestone.png)刷石机
 
-南瓜机
+ICON(pumpkin.png)南瓜机
 
-喷射合成站
+ICON(crafting_table.png)喷射合成站
 
-村民繁殖
+ICON(villager.png)村民繁殖
 
-[刷铁塔](?刷铁塔)
+[ICON(iron_golem.png)刷铁塔](?刷铁塔)
 
-村民交易
+ICON(emerald.png)村民交易
 
-小甘蔗机
+ICON(sugar_cane.png,bamboo_island.png)小甘蔗机
 
-40速熔炉组
+ICON(furnace.png)40速熔炉组
 
-简易树厂
+ICON(oak_sapling.png)简易树厂
 
-[沼泽刷怪塔](?沼泽刷怪塔)
+[ICON(slime_ball.png)沼泽刷怪塔](?沼泽刷怪塔)
 
-掠夺者塔
+ICON(pillager.png)掠夺者塔
 
-伪和平
+ICON(warden.png)伪和平
 
 ### 下界
 
-蜂蜜机
+ICON(honey_bottle.png)蜂蜜机
 
-僵尸猪灵塔
+ICON(zombie_villager.png)僵尸猪灵塔
 
-猪灵交易
+ICON(piglin.png)猪灵交易
+
+ICON(wither.png)杀凋机
 
 ### 末地
 
-潜影贝农场
+ICON(shulker.png)潜影贝农场
 
-凋零玫瑰塔
+ICON(wither_rose.png)凋零玫瑰塔
 
-末影人经验塔
+ICON(experience_orb.png)末影人经验塔
 
-骨粉机
+ICON(bone_meal.png)骨粉机
 
-大型甘蔗机
+ICON(sugar_cane.png)大甘蔗机
 
-下界菌类农场
+ICON(warped_fungus.png)下界菌类农场
 
-红树胎生苗农场
+ICON(mangrove_propagule.png)红树胎生苗农场
 
-侦测器树厂
+ICON(jungle_sapling.png)侦测器树厂
 
-单格全树种树厂
+ICON(shroomlight.png)单格全树种树厂
 
-深色橡木树厂
+ICON(dark_oak_sapling.png)深色橡木树厂
 
 ### 多维度
 
-凋灵骷髅塔
+ICON(wither_skeleton.png)凋灵骷髅塔
 
-[岩浆怪塔与蛙明灯农场](?岩浆怪塔与蛙明灯农场)
+[ICON(verdant_froglight.png)岩浆怪塔与蛙明灯农场](?岩浆怪塔与蛙明灯农场)
 
-[黑曜石机](?黑曜石机)
+[ICON(obsidian.png)黑曜石机](?黑曜石机)
 
-末地门刷沙机
+ICON(end_portal_frame.png)末地门刷沙机
 
-末地祭坛刷沙机
+ICON(light_blue_concrete_powder.png)末地祭坛刷沙机
 
 ## 建筑
 
@@ -92,9 +94,9 @@ ICON(bamboo_island.png)竹岛
 
 风神像
 
-地图画《原神》
+ICON(genshin.png)地图画《原神》
 
-地图画《纳西妲》
+ICON(nahida.png)地图画《纳西妲》
 
 匣中阁
 

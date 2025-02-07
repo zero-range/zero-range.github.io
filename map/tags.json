@@ -190,7 +190,7 @@
 	},
 	{
 		"name": "喷射合成站",
-		"image": "crafting_table_top.png",
+		"image": "crafting_table.png",
 		"dimension": 0,
 		"x": 659,
 		"y": 64,
@@ -210,7 +210,7 @@
 	},
 	{
 		"name": "小南瓜机",
-		"image": "pumpkin_top.png",
+		"image": "pumpkin.png",
 		"dimension": 0,
 		"x": 609,
 		"y": 66,
@@ -230,7 +230,7 @@
 	},
 	{
 		"name": "40速熔炉组",
-		"image": "furnace_front_on.png",
+		"image": "furnace.png",
 		"dimension": 0,
 		"x": 664,
 		"y": 52,
@@ -295,7 +295,7 @@
 	},
 	{
 		"name": "末地传送门与末地门刷沙机",
-		"image": "end_portal_frame_top.png",
+		"image": "end_portal_frame.png",
 		"dimension": 0,
 		"x": 463,
 		"y": 21,
@@ -313,7 +313,7 @@
 	},
 	{
 		"name": "蛙明灯农场",
-		"image": "verdant_froglight_side.png",
+		"image": "verdant_froglight.png",
 		"dimension": 0,
 		"x": 248,
 		"y": 79,
@@ -506,7 +506,7 @@
 	},
 	{
 		"name": "猪灵交易",
-		"image": "quartz.png",
+		"image": "piglin.png",
 		"dimension": 1,
 		"x": 210,
 		"y": 235,
@@ -578,7 +578,7 @@
 	},
 	{
 		"name": "侦测器树场",
-		"image": "oak_sapling.png",
+		"image": "jungle_sapling.png",
 		"dimension": 2,
 		"x": 319,
 		"y": 50,
@@ -622,7 +622,7 @@
 		"description": "zero_range 造的骨粉机。在树场旁边专门给树场提供骨粉，被称为传奇耐卸王，因为怎么卸载炸服都坏不掉。"
 	},
 	{
-		"name": "甘蔗机",
+		"name": "大甘蔗机",
 		"image": "sugar_cane.png",
 		"dimension": 2,
 		"x": 304,

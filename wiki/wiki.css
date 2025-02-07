@@ -10,8 +10,20 @@
 #div_wiki img { width: 200pt; }
 #div_wiki .icon {
 	width: 12pt;
-	transform: translate(0, 12%);
+	height: 12pt;
+	display: inline-block;
+	transform: translate(0, 11%);
 	margin-right: 3pt;
+	image-rendering: pixelated;
+	position: relative;
+	background-size: 100% 100%;
+}
+#div_wiki .subscript {
+	width: 4.5pt;
+	height: 4.5pt;
+	position: fixed;
+	left: 8.4pt;
+	top: 8.4pt;
 	image-rendering: pixelated;
 }
 #div_wiki a { color: #0969da; }
