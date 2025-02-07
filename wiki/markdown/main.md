@@ -52,7 +52,7 @@ ICON(warden.png)伪和平
 
 ICON(honey_bottle.png)蜂蜜机
 
-ICON(zombie_villager.png)僵尸猪灵塔
+ICON(gold_ingot.png)僵尸猪灵塔
 
 ICON(piglin.png)猪灵交易
 
