@@ -57,10 +57,10 @@ function drawTag(tag) {
 			cxt.strokeStyle = 'white';
 			cxt.strokeRect(tx - 23, ty - 23, 46, 46);
 			if(sub) {
-				cxt.drawImage(sub, tx + 8, ty + 8, 15, 15);
+				cxt.drawImage(sub, tx + 5, ty + 5, 20, 20);
 				cxt.lineWidth = '1';
 				cxt.strokeStyle = 'white';
-				cxt.strokeRect(tx + 7, ty + 7, 17, 17);
+				cxt.strokeRect(tx + 4, ty + 4, 21, 21);
 			}
 		} else {
 			cxt.drawImage(img, tx - 16, ty - 16, 32, 32);
@@ -70,10 +70,10 @@ function drawTag(tag) {
 			cxt.strokeStyle = 'white';
 			cxt.strokeRect(tx - 18, ty - 18, 35, 35);
 			if(sub) {
-				cxt.drawImage(sub, tx + 6, ty + 6, 12, 12);
+				cxt.drawImage(sub, tx + 4, ty + 4, 16, 16);
 				cxt.lineWidth = '1';
 				cxt.strokeStyle = 'white';
-				cxt.strokeRect(tx + 5, ty + 5, 14, 14);
+				cxt.strokeRect(tx + 3, ty + 3, 17, 17);
 			}
 		}
 	}

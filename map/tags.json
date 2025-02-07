@@ -86,6 +86,16 @@
 		"minScale": 0.6
 	},
 	{
+		"name": "下界传送门-凋零骷髅塔（主世界）",
+		"image": "nether_portal.png",
+		"subscript": "wither_skeleton.png",
+		"dimension": 0,
+		"x": 9368,
+		"y": 104,
+		"z": 9074,
+		"description": "凋零骷髅塔的下界传送门。"
+	},
+	{
 		"name": "下界传送门",
 		"image": "nether_portal.png",
 		"dimension": 0,
@@ -169,13 +179,13 @@
 		"minScale": 0.6
 	},
 	{
-		"name": "简易树场",
+		"name": "简易树厂",
 		"image": "oak_sapling.png",
 		"dimension": 0,
 		"x": 684,
 		"y": 66,
 		"z": -172,
-		"description": "Chong_Sheng 制造的简单树场。效率不高但是几乎什么树种都可以生产。假人 hsds 是这里的常客。",
+		"description": "Chong_Sheng 制造的简单树厂。效率不高但是几乎什么树种都可以生产。假人 hsds 是这里的常客。",
 		"minScale": 0.6
 	},
 	{
@@ -330,6 +340,15 @@
 		"description": "zero-range 造的监守者伪和平。在修建地图画和大型建筑时极其有用。"
 	},
 	{
+		"name": "凋零骷髅塔（主世界）",
+		"image": "wither_skeleton.png",
+		"dimension": 0,
+		"x": 9564,
+		"y": 110,
+		"z": 9222,
+		"description": "MathYellow 造的凋零骷髅塔。"
+	},
+	{
 		"name": "下界传送门-竹岛（下界）",
 		"image": "nether_portal.png",
 		"subscript": "bamboo_island.png",
@@ -422,6 +441,17 @@
 		"y": 131,
 		"z": -487,
 		"description": "监守者伪和平的下界传送门。"
+	},
+	{
+		"name": "下界传送门-凋零骷髅塔（下界）",
+		"image": "nether_portal.png",
+		"subscript": "wither_skeleton.png",
+		"dimension": 1,
+		"x": 1172,
+		"y": 129,
+		"z": 1134,
+		"description": "凋零骷髅塔的下界传送门。",
+		"minScale": 0.6
 	},
 	{
 		"name": "下界传送门",
@@ -541,6 +571,24 @@
 		"description": "MathYellow 制作的大叔牌凋灵黑曜石机。利用了通过实体生成传送门与凋灵破坏方块的机制。其中刷石机的时钟因为奇怪的问题被多次更改，现在运行得非常稳定，只要你不打扰凋灵。"
 	},
 	{
+		"name": "杀凋机",
+		"image": "nether_star.png",
+		"dimension": 1,
+		"x": 147,
+		"y": 128,
+		"z": -98,
+		"description": "Chong_Sheng 造的机器。"
+	},
+	{
+		"name": "凋零骷髅塔（下界）",
+		"image": "wither_skeleton.png",
+		"dimension": 1,
+		"x": 1195,
+		"y": 58,
+		"z": 1150,
+		"description": "MathYellow 造的凋零骷髅塔，众多服务器成员参与了清理周围地形的工作。"
+	},
+	{
 		"name": "末影人经验塔",
 		"image": "experience_orb.png",
 		"dimension": 2,
@@ -577,57 +625,77 @@
 		"description": "Chong_Sheng 造的刷沙机。非常好用，但开机必须要假人或者玩家强加载，不然一定会坏。"
 	},
 	{
-		"name": "侦测器树场",
+		"name": "侦测器树厂",
 		"image": "jungle_sapling.png",
 		"dimension": 2,
 		"x": 319,
 		"y": 50,
 		"z": -23,
-		"description": "Chong_Sheng 造的 Fallen_Breath 牌树场，假人 Fallen_Breath 经常在这里挂机。能生产橡木、白桦木、金合欢木、云杉木和从林木。"
+		"description": "Chong_Sheng 造的 Fallen_Breath 牌树厂，假人 Fallen_Breath 经常在这里挂机。能生产橡木、白桦木、金合欢木、云杉木和从林木。"
 	},
 	{
-		"name": "深色橡木树场",
+		"name": "深色橡木树厂",
 		"image": "dark_oak_sapling.png",
 		"dimension": 2,
 		"x": 349,
 		"y": 49,
 		"z": -20,
-		"description": "Chong_Sheng 造的深色橡木树场。"
+		"description": "Chong_Sheng 造的深色橡木树厂。"
 	},
 	{
-		"name": "生炸树场",
-		"image": "mangrove_propagule.png",
+		"name": "单格全树种树厂-下界菌类",
+		"image": "warped_stem.png",
+		"subscript": "warped_fungus.png",
 		"dimension": 2,
 		"x": 344,
 		"y": 54,
 		"z": -46,
-		"description": "MathYellow 造的树场。原本是管理员们一起做的树场，但位置造错了。于是 MathYellow 重造了一遍。可以生产所有树种，还有下界菌类和蘑菇。"
+		"description": "原本是管理员们一起做的树厂，但位置造错了，无法种植红树树苗。于是 MathYellow 重造了一遍，结果位置仍然不对。zero-range 在一旁又做了一个同样的树厂，而这个用来生产下界菌类。"
 	},
 	{
-		"name": "下界菌类机",
+		"name": "单格全树种树厂-红树",
+		"image": "warped_stem.png",
+		"subscript": "mangrove_propagule.png",
+		"dimension": 2,
+		"x": 344,
+		"y": 54,
+		"z": -71,
+		"description": "用来生产红树的树厂。"
+	},
+	{
+		"name": "下界菌类农场",
 		"image": "warped_fungus.png",
 		"dimension": 2,
-		"x": 331,
-		"y": 49,
-		"z": 14,
+		"x": 334,
+		"y": 60,
+		"z": 8,
+		"description": "zero_range 造的机器。"
+	},
+	{
+		"name": "红树胎生苗农场",
+		"image": "mangrove_propagule.png",
+		"dimension": 2,
+		"x": 324,
+		"y": 57,
+		"z": -64,
 		"description": "zero_range 造的机器。"
 	},
 	{
 		"name": "骨粉机",
 		"image": "bone_meal.png",
 		"dimension": 2,
-		"x": 304,
-		"y": 43,
-		"z": 11,
-		"description": "zero_range 造的骨粉机。在树场旁边专门给树场提供骨粉，被称为传奇耐卸王，因为怎么卸载炸服都坏不掉。"
+		"x": 312,
+		"y": 54,
+		"z": 7,
+		"description": "zero_range 造的骨粉机。在树厂旁边专门给树厂提供骨粉，被称为传奇耐卸王，因为怎么卸载炸服都坏不掉。"
 	},
 	{
 		"name": "大甘蔗机",
 		"image": "sugar_cane.png",
 		"dimension": 2,
-		"x": 304,
-		"y": 49,
-		"z": 29,
+		"x": 332,
+		"y": 70,
+		"z": 33,
 		"description": "Chong_Sheng 造的堆叠式甘蔗机，MathYellow 和 zero_range 也都做了一小部分。有了这个机器甘蔗不用愁了。\n[2024.8.17] Chong_Sheng：铺水…你们谁能帮我铺水嘛？QAQ"
 	},
 	{

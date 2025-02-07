@@ -1,5 +1,7 @@
 # **NFLS 202209 MC服务器 百科**
 
+<ul id="cols"><li>
+
 ## 地区
 
 ICON(bamboo_island.png)竹岛
@@ -44,6 +46,8 @@ ICON(pillager.png)掠夺者塔
 
 ICON(warden.png)伪和平
 
+</li><li>
+
 ### 下界
 
 ICON(honey_bottle.png)蜂蜜机
@@ -52,7 +56,7 @@ ICON(zombie_villager.png)僵尸猪灵塔
 
 ICON(piglin.png)猪灵交易
 
-ICON(wither.png)杀凋机
+ICON(nether_star.png)杀凋机
 
 ### 末地
 
@@ -88,6 +92,8 @@ ICON(end_portal_frame.png)末地门刷沙机
 
 ICON(light_blue_concrete_powder.png)末地祭坛刷沙机
 
+</li><li>
+
 ## 建筑
 
 竹岛大厅
@@ -113,3 +119,5 @@ ICON(nahida.png)地图画《纳西妲》
 [Nelson_haode](?player/Nelson_haode)
 
 [Starist0511](?player/Starist0511)
+
+</li></ul>
