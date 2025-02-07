@@ -4,17 +4,17 @@
 
 ICON(bamboo_island.png)竹岛
 
-伐木林
+ICON(woodcutting_forest.png)伐木林
 
-开服地
+ICON(server_starting_land.png)开服地
 
-东伯利亚
+ICON(donberia.png)东伯利亚
 
-中程岛
+ICON(mid_journey_island.png)中程岛
 
-下界工业区
+ICON(nether_industrial_area.png)下界工业区
 
-末地工业区
+ICON(end_industrial_area.png)末地工业区
 
 ## 机器
 
@@ -72,7 +72,7 @@ ICON(mangrove_propagule.png)红树胎生苗农场
 
 ICON(jungle_sapling.png)侦测器树厂
 
-ICON(shroomlight.png)单格全树种树厂
+ICON(warped_stem.png)单格全树种树厂
 
 ICON(dark_oak_sapling.png)深色橡木树厂
 
