@@ -2,7 +2,7 @@
 
 ## 地区
 
-竹岛
+ICON(bamboo_island.png)竹岛
 
 伐木林
 
