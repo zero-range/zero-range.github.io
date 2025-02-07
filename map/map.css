@@ -108,3 +108,13 @@
 	background: rgba(255, 255, 255, 0.3);
 }
 #reset:hover { background: rgba(255, 255, 255, 0.8); }
+#show_tags {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	font-family: Mojangles;
+	font-size: 16px;
+	padding: 6px;
+	border: none;
+	background: rgba(255, 255, 255, 0.8);
+}

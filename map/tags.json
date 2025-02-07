@@ -37,7 +37,7 @@
 		"dimension": 0,
 		"x": 288,
 		"y": 122,
-		"z": 33,
+		"z": 34,
 		"description": "黑曜石机的下界传送门。",
 		"minScale": 0.3
 	},
@@ -353,7 +353,7 @@
 		"image": "nether_portal.png",
 		"subscript": "bamboo_island.png",
 		"dimension": 1,
-		"x": 83,
+		"x": 84,
 		"y": 129,
 		"z": -30,
 		"description": "竹岛的下界传送门，是去往服务器各处重要的交通要道。"
@@ -439,7 +439,7 @@
 		"dimension": 1,
 		"x": 851,
 		"y": 131,
-		"z": -487,
+		"z": -486,
 		"description": "监守者伪和平的下界传送门。"
 	},
 	{

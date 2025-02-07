@@ -30,6 +30,7 @@
 		<img src="../icons/end.png" id="end" class="dimensions" onclick="setDimension(2);" tabindex="-1"></img>
 	</div>
 	<button id="reset" onclick="ox = 0.0, oy = 0.0, sc = 1.0, repaint(); ">←回到原点</button>
+	<div id="show_tags"><input id="show_tags_checkbox" type="checkbox" onclick="showTags = document.getElementById('show_tags_checkbox').checked, repaint(); " checked /><label>显示图标</label></div>
 </body>
 </html>
 <script src="./map.js"></script>

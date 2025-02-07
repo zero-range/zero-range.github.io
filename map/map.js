@@ -17,6 +17,8 @@ var sc = parseFloat(localStorage.getItem("sc"));
 if(isNaN(sc) || !isFinite(sc)) sc = 1.0;
 var dimension = parseInt(localStorage.getItem("dimension"));
 if(isNaN(dimension) || !isFinite(dimension)) dimension = 0;
+var showTags = !(localStorage.getItem("showTags") == "false");
+document.getElementById("show_tags_checkbox").checked = showTags;
 
 var images = [new Map(), new Map(), new Map()];
 var tags = [[], [], []];
@@ -41,6 +43,7 @@ function updateDescription() {
 }
 
 function drawTag(tag) {
+	if(!showTags) return;
 	if((tag.minScale == null || sc >= tag.minScale) && (tag.maxScale == null || sc <= tag.maxScale)) {
 		img = tag.img,
 		sub = tag.sub,
@@ -189,16 +192,18 @@ function leftclick(cx, cy) {
 	lx = cx;
 	ly = cy;
 	var fl = true;
-	for(var i = 0; i < tags[dimension].length; ++i) if((tags[dimension][i].minScale == null || sc >= tags[dimension][i].minScale) && (tags[dimension][i].maxScale == null || sc <= tags[dimension][i].maxScale)) {
-		x = tags[dimension][i].x,
-		z = tags[dimension][i].z;
-		var tx = Math.round(width / 2 + ox + x * sc);
-		var ty = Math.round(height / 2 + oy + z * sc);
-		if(tx - 16 <= lx && lx < tx + 16 && ty - 16 <= ly && ly < ty + 16) {
-			if(chosen != null) chosen.ac = false;
-			chosen = tags[dimension][i];
-			chosen.ac = true;
-			fl = false;
+	if(showTags) {
+		for(var i = 0; i < tags[dimension].length; ++i) if((tags[dimension][i].minScale == null || sc >= tags[dimension][i].minScale) && (tags[dimension][i].maxScale == null || sc <= tags[dimension][i].maxScale)) {
+			x = tags[dimension][i].x,
+			z = tags[dimension][i].z;
+			var tx = Math.round(width / 2 + ox + x * sc);
+			var ty = Math.round(height / 2 + oy + z * sc);
+			if(tx - 16 <= lx && lx < tx + 16 && ty - 16 <= ly && ly < ty + 16) {
+				if(chosen != null) chosen.ac = false;
+				chosen = tags[dimension][i];
+				chosen.ac = true;
+				fl = false;
+			}
 		}
 	}
 	if(fl) {
@@ -330,6 +335,7 @@ function resizeEvent() {
 	height = canvas.height = canvas.clientHeight;
 	description.style.top = (10 + menu.clientHeight) + "px";
 	document.getElementById("reset").style.top = (16 + menu.clientHeight) + "px";
+	document.getElementById("show_tags").style.top = (16 + menu.clientHeight) + "px";
 	repaint();
 }
 
@@ -341,6 +347,7 @@ window.onunload = function () {
 	localStorage.setItem("oy", oy),
 	localStorage.setItem("sc", sc),
 	localStorage.setItem("dimension", dimension);
+	localStorage.setItem("showTags", showTags);
 }
 
 function loadJSON(url, func) {
