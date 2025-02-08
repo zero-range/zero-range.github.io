@@ -320,6 +320,7 @@ canvas.onmousewheel = function() {
 
 function setDimension(x) {
 	if(x == dimension) return;
+	if(chosen) chosen.ac = false;
 	chosen = null;
 	dimensions[dimension].style.border = "none";
 	dimension = x;
