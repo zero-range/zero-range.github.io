@@ -21,12 +21,23 @@
 	background-color: rgba(240, 240, 240, .8);
 	font-family: Mojangles;
 }
+#description .title_div {
+	height: 64px;
+	margin-left: 28px;
+}
 #description .title {
-	margin-left: 56px;
+	margin-left: 28px;
 	margin-top: 14px;
-	margin-bottom: 16px;
+	margin-bottom: 0px;
 	margin-right: 40px;
-	font-size: 32px;
+}
+#description .position {
+	margin-left: 28px;
+	margin-top: 4px;
+	margin-bottom: 16px;
+	height: 16px;
+	font-size: 16px;
+	color: #636363;
 }
 #description .content {
 	white-space: pre-wrap;
@@ -94,9 +105,7 @@
 	padding-bottom: 3px;
 	background: rgba(255, 255, 255, 0.3);
 }
-.dimensions:hover {
-	background: rgba(255, 255, 255, 0.8);
-}
+.dimensions:hover { background: rgba(255, 255, 255, 0.8); }
 #reset {
 	position: absolute;
 	top: 16px;

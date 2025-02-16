@@ -37,7 +37,8 @@ function updateDescription() {
 	}
 	description.style.display = "";
 	cmd = "/tp " + chosen.x + ' ' + chosen.y + ' ' + chosen.z;
-	description.innerHTML = "<img src=\"" + chosen.img.src + "\"/><p class=\"title\">" + chosen.name + "</p><p class=\"content\">" + chosen.desc + 
+	description.innerHTML = "<img src=\"" + chosen.img.src + "\"/><div class=\"title_div\"><p class=\"title\" style=\"font-size: " + chosen.fontSize + "px\">" + chosen.name + "</p><p class=\"position\">" +
+	chosen.pos + "</p></div><p class=\"content\">" + chosen.desc + 
 	"</p><button id=\"close\" onclick=\"chosen.ac = false; chosen = null; repaint(); updateDescription(); \">x</button><p id=\"coordinate\">坐标：\n<a id=\"copy\" title=\"点击复制：" + cmd +
 	"\"  onclick=\"navigator.clipboard.writeText('" + cmd + "');\">[" + chosen.x + ', ' + chosen.y + ', ' + chosen.z + "]</a></p>";
 }
@@ -146,13 +147,15 @@ function loadTitle(dim, title, x, z, fontSize, maxScale) {
 	});
 }
 
-function loadTag(dim, src, sub, x, y, z, name, desc, minScale, maxScale) {
+function loadTag(dim, src, sub, x, y, z, name, desc, pos, fontSize, minScale, maxScale) {
 	var img = new Image();
 	img.src = "../icons/" + src;
 	if (sub) {
 		var subscript = new Image();
 		subscript.src = "../icons/" + sub;
-	} else var subscript = null; 
+	} else var subscript = null;
+	if (!pos) pos = "";
+	if (!fontSize) fontSize = 32;
 	img.onload = () => {
 		var tag = {
 			img: img,
@@ -162,21 +165,27 @@ function loadTag(dim, src, sub, x, y, z, name, desc, minScale, maxScale) {
 			z: z,
 			name: name,
 			desc: desc,
+			pos: pos,
+			fontSize: fontSize,
 			ac: false,
 			minScale: minScale,
 			maxScale: maxScale
 		};
 		if(tag.name == decodeURI(params.get("focus"))) {
-			ox = -tag.x;
-			oy = -tag.z;
-			sc = 1.0;
-			if (tag.minScale != null) sc = Math.max(sc, tag.minScale);
-			if (tag.maxScale != null) sc = Math.min(sc, tag.maxScale);
-			setDimension(dim);
-			if (chosen != null) chosen.ac = false;
-			chosen = tag;
-			tag.ac = true;
-			updateDescription();
+			let pos = params.get("pos");
+			let td = params.get("dim");
+			if ((!pos || decodeURI(pos) == tag.pos) && (!td || td == "" + dim)) {
+				ox = -tag.x;
+				oy = -tag.z;
+				sc = 1.0;
+				if (tag.minScale != null) sc = Math.max(sc, tag.minScale);
+				if (tag.maxScale != null) sc = Math.min(sc, tag.maxScale);
+				setDimension(dim);
+				if (chosen != null) chosen.ac = false;
+				chosen = tag;
+				tag.ac = true;
+				updateDescription();
+			}
 		}
 		tags[dim].push(tag);
 		repaint();
@@ -375,7 +384,7 @@ loadJSON("./terrain.json", function(res) {
 loadJSON("./tags.json", function(res) {
 	for(var i = 0; i < res.length; ++i) {
 		var tag = res[i];
-		loadTag(tag["dimension"], tag["image"], tag["subscript"], tag["x"], tag["y"], tag["z"], tag["name"], tag["description"], tag["minScale"], tag["maxScale"]);
+		loadTag(tag["dimension"], tag["image"], tag["subscript"], tag["x"], tag["y"], tag["z"], tag["name"], tag["description"], tag["position"], tag["fontSize"], tag["minScale"], tag["maxScale"]);
 	}
 })
 
@@ -384,6 +393,8 @@ loadTitle(0, "竹岛", 640, -158, 24, null);
 loadTitle(0, "开服地", 800, 72, 24, null);
 loadTitle(0, "伐木林", 840, -240, 24, null);
 loadTitle(0, "中程岛", -640, 150, 24, null);
+loadTitle(0, "与海", -240, 0, 24, null);
+loadTitle(0, "间海", 240, 1120, 24, null);
 loadTitle(0, "东伯利亚", 1800, -1300, 24, null);
 loadTitle(1, "下界工业区", 100, 0, 24, null);
 loadTitle(2, "末地工业区", 320, 0, 24, null);

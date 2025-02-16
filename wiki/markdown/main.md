@@ -98,13 +98,13 @@ ICON(light_blue_concrete_powder.png)末地祭坛刷沙机
 
 竹岛大厅
 
-风神像
+ICON(anemo_archon_statue.png)风神像
 
 ICON(genshin.png)地图画《原神》
 
 ICON(nahida.png)地图画《纳西妲》
 
-匣中阁
+ICON(chest_pavilion.png)匣中阁
 
 ## 玩家
 

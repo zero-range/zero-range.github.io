@@ -1,6 +1,8 @@
 [
 	{
-		"name": "下界传送门-竹岛（主世界）",
+		"name": "下界传送门-竹岛",
+		"position": "主世界 竹岛",
+		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "bamboo_island.png",
 		"dimension": 0,
@@ -10,7 +12,9 @@
 		"description": "竹岛的下界传送门，是去往服务器各处重要的交通要道。"
 	},
 	{
-		"name": "下界传送门-要塞（主世界）",
+		"name": "下界传送门-要塞",
+		"position": "主世界 间海",
+		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "stronghold.png",
 		"dimension": 0,
@@ -20,7 +24,9 @@
 		"description": "要塞的下界传送门，是去往末地的重要交通要道。"
 	},
 	{
-		"name": "下界传送门-岩浆怪塔（主世界）",
+		"name": "下界传送门-岩浆怪塔",
+		"position": "主世界 与海",
+		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "magma_cube.png",
 		"dimension": 0,
@@ -31,7 +37,9 @@
 		"minScale": 0.3
 	},
 	{
-		"name": "下界传送门-黑曜石机（主世界）",
+		"name": "下界传送门-黑曜石机",
+		"position": "主世界 与海",
+		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "obsidian.png",
 		"dimension": 0,
@@ -42,7 +50,9 @@
 		"minScale": 0.3
 	},
 	{
-		"name": "下界传送门-地图画（主世界）",
+		"name": "下界传送门-地图画",
+		"position": "主世界 间海",
+		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "nahida.png",
 		"dimension": 0,
@@ -53,7 +63,9 @@
 		"minScale": 0.3
 	},
 	{
-		"name": "下界传送门-沼泽刷怪塔（主世界）",
+		"name": "下界传送门-沼泽刷怪塔",
+		"position": "主世界 ？？？",
+		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "slime_ball.png",
 		"dimension": 0,
@@ -64,7 +76,9 @@
 		"minScale": 0.6
 	},
 	{
-		"name": "下界传送门-掠夺者塔（主世界）",
+		"name": "下界传送门-掠夺者塔",
+		"position": "主世界 ？？？",
+		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "pillager.png",
 		"dimension": 0,
@@ -75,7 +89,9 @@
 		"minScale": 0.6
 	},
 	{
-		"name": "下界传送门-监守者伪和平（主世界）",
+		"name": "下界传送门-监守者伪和平",
+		"position": "主世界 ？？？",
+		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "warden.png",
 		"dimension": 0,
@@ -86,7 +102,9 @@
 		"minScale": 0.6
 	},
 	{
-		"name": "下界传送门-凋零骷髅塔（主世界）",
+		"name": "下界传送门-凋零骷髅塔",
+		"position": "主世界 ？？？",
+		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "wither_skeleton.png",
 		"dimension": 0,
@@ -96,7 +114,21 @@
 		"description": "凋零骷髅塔的下界传送门。"
 	},
 	{
+		"name": "下界传送门-匣中阁",
+		"position": "主世界 与西海岸",
+		"fontSize": 18,
+		"image": "nether_portal.png",
+		"subscript": "chest_pavilion.png",
+		"dimension": 0,
+		"x": -1333,
+		"y": 86,
+		"z": 78,
+		"description": "匣中阁的下界传送门。"
+	},
+	{
 		"name": "下界传送门",
+		"position": "主世界 东伯利亚",
+		"fontSize": 28,
 		"image": "nether_portal.png",
 		"dimension": 0,
 		"x": 1994,
@@ -106,6 +138,8 @@
 	},
 	{
 		"name": "下界传送门",
+		"position": "主世界 东伯利亚",
+		"fontSize": 28,
 		"image": "nether_portal.png",
 		"dimension": 0,
 		"x": 1705,
@@ -115,6 +149,8 @@
 	},
 	{
 		"name": "下界传送门",
+		"position": "主世界 ？？？",
+		"fontSize": 28,
 		"image": "nether_portal.png",
 		"dimension": 0,
 		"x": -429,
@@ -124,6 +160,8 @@
 	},
 	{
 		"name": "下界传送门",
+		"position": "主世界 ？？？",
+		"fontSize": 28,
 		"image": "nether_portal.png",
 		"dimension": 0,
 		"x": -999,
@@ -133,6 +171,8 @@
 	},
 	{
 		"name": "下界传送门",
+		"position": "主世界 ？？？",
+		"fontSize": 28,
 		"image": "nether_portal.png",
 		"dimension": 0,
 		"x": 670,
@@ -142,6 +182,8 @@
 	},
 	{
 		"name": "下界传送门",
+		"position": "主世界 ？？？",
+		"fontSize": 28,
 		"image": "nether_portal.png",
 		"dimension": 0,
 		"x": 5226,
@@ -151,6 +193,8 @@
 	},
 	{
 		"name": "下界传送门",
+		"position": "主世界 ？？？",
+		"fontSize": 28,
 		"image": "nether_portal.png",
 		"dimension": 0,
 		"x": -4528,
@@ -160,6 +204,7 @@
 	},
 	{
 		"name": "老刷铁塔遗址",
+		"fontSize": 24,
 		"image": "iron_golem.png",
 		"dimension": 0,
 		"x": 630,
@@ -170,6 +215,7 @@
 	},
 	{
 		"name": "村民繁殖",
+		"position": "主世界 竹岛",
 		"image": "villager.png",
 		"dimension": 0,
 		"x": 661,
@@ -180,6 +226,7 @@
 	},
 	{
 		"name": "简易树厂",
+		"position": "主世界 竹岛",
 		"image": "oak_sapling.png",
 		"dimension": 0,
 		"x": 684,
@@ -190,6 +237,7 @@
 	},
 	{
 		"name": "刷石机",
+		"position": "主世界 竹岛",
 		"image": "cobblestone.png",
 		"dimension": 0,
 		"x": 609,
@@ -200,6 +248,8 @@
 	},
 	{
 		"name": "喷射合成站",
+		"position": "主世界 竹岛",
+		"fontSize": 28,
 		"image": "crafting_table.png",
 		"dimension": 0,
 		"x": 659,
@@ -210,6 +260,7 @@
 	},
 	{
 		"name": "小甘蔗机",
+		"position": "主世界 竹岛",
 		"image": "sugar_cane.png",
 		"dimension": 0,
 		"x": 641,
@@ -220,6 +271,7 @@
 	},
 	{
 		"name": "小南瓜机",
+		"position": "主世界 竹岛",
 		"image": "pumpkin.png",
 		"dimension": 0,
 		"x": 609,
@@ -230,6 +282,7 @@
 	},
 	{
 		"name": "村民交易",
+		"position": "主世界 竹岛",
 		"image": "emerald.png",
 		"dimension": 0,
 		"x": 654,
@@ -240,6 +293,8 @@
 	},
 	{
 		"name": "40速熔炉组",
+		"position": "主世界 竹岛",
+		"fontSize": 26,
 		"image": "furnace.png",
 		"dimension": 0,
 		"x": 664,
@@ -250,6 +305,7 @@
 	},
 	{
 		"name": "催熟机",
+		"position": "主世界 竹岛",
 		"image": "wheat.png",
 		"dimension": 0,
 		"x": 672,
@@ -259,7 +315,20 @@
 		"minScale": 0.6
 	},
 	{
+		"name": "320速熔炉组",
+		"fontSize": 22,
+		"position": "主世界 伐木林",
+		"image": "big_furnace.png",
+		"dimension": 0,
+		"x": 708,
+		"y": 83,
+		"z": -232,
+		"description": "MathYellow 造的熔炉组。"
+	},
+	{
 		"name": "沼泽刷怪塔",
+		"position": "主世界 ？？？",
+		"fontSize": 28,
 		"image": "slime_ball.png",
 		"dimension": 0,
 		"x": 3448,
@@ -269,6 +338,7 @@
 	},
 	{
 		"name": "掠夺者塔",
+		"position": "主世界 ？？？",
 		"image": "pillager.png",
 		"dimension": 0,
 		"x": 4425,
@@ -278,6 +348,8 @@
 	},
 	{
 		"name": "地图画-纳西妲",
+		"position": "主世界 间海",
+		"fontSize": 21,
 		"image": "nahida.png",
 		"dimension": 0,
 		"x": 448,
@@ -287,6 +359,8 @@
 	},
 	{
 		"name": "地图画-原神",
+		"position": "主世界 间海",
+		"fontSize": 24,
 		"image": "genshin.png",
 		"dimension": 0,
 		"x": 640,
@@ -295,7 +369,8 @@
 		"description": "zero_range 生成投影并和 Chong_Sheng（、yzb?） 一起造的地图画，表达了全服成员共同的志向。被贴在各个重要的公共设施上。"
 	},
 	{
-		"name": "黑曜石机（主世界）",
+		"name": "黑曜石机",
+		"position": "主世界 与海",
 		"image": "obsidian.png",
 		"dimension": 0,
 		"x": 450,
@@ -305,6 +380,8 @@
 	},
 	{
 		"name": "末地传送门与末地门刷沙机",
+		"position": "主世界 间海",
+		"fontSize": 20,
 		"image": "end_portal_frame.png",
 		"dimension": 0,
 		"x": 463,
@@ -314,6 +391,8 @@
 	},
 	{
 		"name": "末地祭坛刷沙机收集与混凝土固化",
+		"position": "主世界 开服地",
+		"fontSize": 18,
 		"image": "light_blue_concrete_powder.png",
 		"dimension": 0,
 		"x": 669,
@@ -323,6 +402,8 @@
 	},
 	{
 		"name": "蛙明灯农场",
+		"position": "主世界 与海",
+		"fontSize": 28,
 		"image": "verdant_froglight.png",
 		"dimension": 0,
 		"x": 248,
@@ -332,6 +413,8 @@
 	},
 	{
 		"name": "监守者伪和平",
+		"position": "主世界 ？？？",
+		"fontSize": 24,
 		"image": "warden.png",
 		"dimension": 0,
 		"x": 6794,
@@ -340,7 +423,9 @@
 		"description": "zero-range 造的监守者伪和平。在修建地图画和大型建筑时极其有用。"
 	},
 	{
-		"name": "凋零骷髅塔（主世界）",
+		"name": "凋零骷髅塔",
+		"position": "主世界 ？？？",
+		"fontSize": 28,
 		"image": "wither_skeleton.png",
 		"dimension": 0,
 		"x": 9564,
@@ -349,7 +434,29 @@
 		"description": "MathYellow 造的凋零骷髅塔。"
 	},
 	{
-		"name": "下界传送门-竹岛（下界）",
+		"name": "匣中阁",
+		"position": "主世界 与西海岸",
+		"image": "chest_pavilion.png",
+		"dimension": 0,
+		"x": -1389,
+		"y": 114,
+		"z": 138,
+		"description": "服务器成员们建造的新年建筑，用于庆祝乙巳新年。"
+	},
+	{
+		"name": "风神像",
+		"position": "主世界 风神像广场",
+		"image": "anemo_archon_statue.png",
+		"dimension": 0,
+		"x": 957,
+		"y": 77,
+		"z": -552,
+		"description": "Chong_Sheng 给 MathYellow 的生日礼物。"
+	},
+	{
+		"name": "下界传送门-竹岛",
+		"position": "下界 下界工业区",
+		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "bamboo_island.png",
 		"dimension": 1,
@@ -359,7 +466,9 @@
 		"description": "竹岛的下界传送门，是去往服务器各处重要的交通要道。"
 	},
 	{
-		"name": "下界传送门-要塞（下界）",
+		"name": "下界传送门-要塞",
+		"position": "下界 下界工业区",
+		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "stronghold.png",
 		"dimension": 1,
@@ -369,7 +478,9 @@
 		"description": "要塞的下界传送门，是去往末地的重要交通要道。"
 	},
 	{
-		"name": "下界传送门-岩浆怪塔（下界）",
+		"name": "下界传送门-岩浆怪塔",
+		"position": "下界 下界工业区",
+		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "magma_cube.png",
 		"dimension": 1,
@@ -380,7 +491,9 @@
 		"minScale": 1.2
 	},
 	{
-		"name": "下界传送门-黑曜石机（下界）",
+		"name": "下界传送门-黑曜石机",
+		"position": "下界 下界工业区",
+		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "obsidian.png",
 		"dimension": 1,
@@ -391,7 +504,9 @@
 		"minScale": 1.2
 	},
 	{
-		"name": "下界传送门-地图画（下界）",
+		"name": "下界传送门-地图画",
+		"position": "下界 下界工业区",
+		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "nahida.png",
 		"dimension": 1,
@@ -402,7 +517,9 @@
 		"minScale": 1.2
 	},
 	{
-		"name": "下界传送门-沼泽刷怪塔（下界）",
+		"name": "下界传送门-沼泽刷怪塔",
+		"position": "下界 ？？？",
+		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "slime_ball.png",
 		"dimension": 1,
@@ -412,7 +529,9 @@
 		"description": "沼泽刷怪塔的下界传送门。"
 	},
 	{
-		"name": "下界传送门-末地祭坛刷沙机（下界）",
+		"name": "下界传送门-末地祭坛刷沙机",
+		"position": "下界 下界工业区",
+		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "light_blue_concrete_powder.png",
 		"dimension": 1,
@@ -423,7 +542,9 @@
 		"minScale": 1.2
 	},
 	{
-		"name": "下界传送门-掠夺者塔（下界）",
+		"name": "下界传送门-掠夺者塔",
+		"position": "下界 ？？？",
+		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "pillager.png",
 		"dimension": 1,
@@ -433,7 +554,9 @@
 		"description": "掠夺者塔的下界传送门。"
 	},
 	{
-		"name": "下界传送门-监守者伪和平（下界）",
+		"name": "下界传送门-监守者伪和平",
+		"position": "下界 ？？？",
+		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "warden.png",
 		"dimension": 1,
@@ -443,7 +566,9 @@
 		"description": "监守者伪和平的下界传送门。"
 	},
 	{
-		"name": "下界传送门-凋零骷髅塔（下界）",
+		"name": "下界传送门-凋零骷髅塔",
+		"position": "下界 ？？？",
+		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "wither_skeleton.png",
 		"dimension": 1,
@@ -454,7 +579,21 @@
 		"minScale": 0.6
 	},
 	{
+		"name": "下界传送门-匣中阁",
+		"position": "下界 下界工业区",
+		"fontSize": 18,
+		"image": "nether_portal.png",
+		"subscript": "chest_pavilion.png",
+		"dimension": 1,
+		"x": -163,
+		"y": 129,
+		"z": 14,
+		"description": "匣中阁的下界传送门。"
+	},
+	{
 		"name": "下界传送门",
+		"position": "下界 ？？？",
+		"fontSize": 28,
 		"image": "nether_portal.png",
 		"dimension": 1,
 		"x": 250,
@@ -464,6 +603,8 @@
 	},
 	{
 		"name": "下界传送门",
+		"position": "下界 ？？？",
+		"fontSize": 28,
 		"image": "nether_portal.png",
 		"dimension": 1,
 		"x": 213,
@@ -473,6 +614,8 @@
 	},
 	{
 		"name": "下界传送门",
+		"position": "下界 ？？？",
+		"fontSize": 28,
 		"image": "nether_portal.png",
 		"dimension": 1,
 		"x": -54,
@@ -482,6 +625,8 @@
 	},
 	{
 		"name": "下界传送门",
+		"position": "下界 ？？？",
+		"fontSize": 28,
 		"image": "nether_portal.png",
 		"dimension": 1,
 		"x": -125,
@@ -491,6 +636,8 @@
 	},
 	{
 		"name": "下界传送门",
+		"position": "下界 ？？？",
+		"fontSize": 28,
 		"image": "nether_portal.png",
 		"dimension": 1,
 		"x": 84,
@@ -500,6 +647,8 @@
 	},
 	{
 		"name": "下界传送门",
+		"position": "下界 ？？？",
+		"fontSize": 28,
 		"image": "nether_portal.png",
 		"dimension": 1,
 		"x": 652,
@@ -509,6 +658,8 @@
 	},
 	{
 		"name": "下界传送门",
+		"position": "下界 ？？？",
+		"fontSize": 28,
 		"image": "nether_portal.png",
 		"dimension": 1,
 		"x": -567,
@@ -518,6 +669,7 @@
 	},
 	{
 		"name": "蜂蜜机",
+		"position": "下界 下界工业区",
 		"image": "honey_bottle.png",
 		"dimension": 1,
 		"x": 115,
@@ -527,6 +679,8 @@
 	},
 	{
 		"name": "僵尸猪灵塔",
+		"position": "下界 下界工业区",
+		"fontSize": 28,
 		"image": "gold_ingot.png",
 		"dimension": 1,
 		"x": 203,
@@ -536,6 +690,7 @@
 	},
 	{
 		"name": "猪灵交易",
+		"position": "下界 下界工业区",
 		"image": "piglin.png",
 		"dimension": 1,
 		"x": 210,
@@ -545,6 +700,7 @@
 	},
 	{
 		"name": "岩浆怪塔",
+		"position": "下界 下界工业区",
 		"image": "magma_cube.png",
 		"dimension": 1,
 		"x": 31,
@@ -554,6 +710,8 @@
 	},
 	{
 		"name": "恶魂塔遗址",
+		"position": "下界 下界工业区",
+		"fontSize": 28,
 		"image": "ghast.png",
 		"dimension": 1,
 		"x": -31,
@@ -562,7 +720,8 @@
 		"description": "Chong_Sheng 造的机器。由于一些神秘的设计问题，现已废弃。"
 	},
 	{
-		"name": "黑曜石机（下界）",
+		"name": "黑曜石机",
+		"position": "下界 下界工业区",
 		"image": "obsidian.png",
 		"dimension": 1,
 		"x": 59,
@@ -572,6 +731,7 @@
 	},
 	{
 		"name": "杀凋机",
+		"position": "下界 下界工业区",
 		"image": "nether_star.png",
 		"dimension": 1,
 		"x": 147,
@@ -580,7 +740,9 @@
 		"description": "Chong_Sheng 造的机器。"
 	},
 	{
-		"name": "凋零骷髅塔（下界）",
+		"name": "凋零骷髅塔",
+		"position": "下界 ？？？",
+		"fontSize": 28,
 		"image": "wither_skeleton.png",
 		"dimension": 1,
 		"x": 1195,
@@ -590,6 +752,8 @@
 	},
 	{
 		"name": "末影人经验塔",
+		"position": "末地 中央岛屿北部",
+		"fontSize": 24,
 		"image": "experience_orb.png",
 		"dimension": 2,
 		"x": 24,
@@ -599,6 +763,8 @@
 	},
 	{
 		"name": "潜影贝农场",
+		"position": "末地 中央岛屿西部",
+		"fontSize": 28,
 		"image": "shulker.png",
 		"dimension": 2,
 		"x": -711,
@@ -608,6 +774,8 @@
 	},
 	{
 		"name": "末地门刷沙机收集",
+		"position": "末地 黑曜石平台",
+		"fontSize": 22,
 		"image": "sand.png",
 		"dimension": 2,
 		"x": 100,
@@ -617,6 +785,8 @@
 	},
 	{
 		"name": "末地祭坛刷沙机",
+		"position": "末地 末地祭坛",
+		"fontSize": 22,
 		"image": "light_blue_concrete_powder.png",
 		"dimension": 2,
 		"x": 0,
@@ -626,6 +796,8 @@
 	},
 	{
 		"name": "侦测器树厂",
+		"position": "末地 末地工业区",
+		"fontSize": 28,
 		"image": "jungle_sapling.png",
 		"dimension": 2,
 		"x": 319,
@@ -635,6 +807,8 @@
 	},
 	{
 		"name": "深色橡木树厂",
+		"position": "末地 末地工业区",
+		"fontSize": 24,
 		"image": "dark_oak_sapling.png",
 		"dimension": 2,
 		"x": 349,
@@ -644,6 +818,8 @@
 	},
 	{
 		"name": "单格全树种树厂-下界菌类",
+		"position": "末地 末地工业区",
+		"fontSize": 20,
 		"image": "warped_stem.png",
 		"subscript": "warped_fungus.png",
 		"dimension": 2,
@@ -654,6 +830,8 @@
 	},
 	{
 		"name": "单格全树种树厂-红树",
+		"position": "末地 末地工业区",
+		"fontSize": 20,
 		"image": "warped_stem.png",
 		"subscript": "mangrove_propagule.png",
 		"dimension": 2,
@@ -664,6 +842,8 @@
 	},
 	{
 		"name": "下界菌类农场",
+		"position": "末地 末地工业区",
+		"fontSize": 24,
 		"image": "warped_fungus.png",
 		"dimension": 2,
 		"x": 334,
@@ -673,6 +853,8 @@
 	},
 	{
 		"name": "红树胎生苗农场",
+		"position": "末地 末地工业区",
+		"fontSize": 20,
 		"image": "mangrove_propagule.png",
 		"dimension": 2,
 		"x": 324,
@@ -682,6 +864,7 @@
 	},
 	{
 		"name": "骨粉机",
+		"position": "末地 末地工业区",
 		"image": "bone_meal.png",
 		"dimension": 2,
 		"x": 312,
@@ -691,6 +874,7 @@
 	},
 	{
 		"name": "大甘蔗机",
+		"position": "末地 末地工业区",
 		"image": "sugar_cane.png",
 		"dimension": 2,
 		"x": 332,
@@ -700,6 +884,8 @@
 	},
 	{
 		"name": "凋零玫瑰塔",
+		"position": "末地 末地工业区",
+		"fontSize": 28,
 		"image": "wither_rose.png",
 		"dimension": 2,
 		"x": -13,
