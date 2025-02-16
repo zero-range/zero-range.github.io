@@ -775,7 +775,7 @@
 	{
 		"name": "末地门刷沙机收集",
 		"position": "末地 黑曜石平台",
-		"fontSize": 22,
+		"fontSize": 18,
 		"image": "sand.png",
 		"dimension": 2,
 		"x": 100,
@@ -786,7 +786,7 @@
 	{
 		"name": "末地祭坛刷沙机",
 		"position": "末地 末地祭坛",
-		"fontSize": 22,
+		"fontSize": 18,
 		"image": "light_blue_concrete_powder.png",
 		"dimension": 2,
 		"x": 0,
