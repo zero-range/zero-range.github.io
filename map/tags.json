@@ -115,7 +115,7 @@
 	},
 	{
 		"name": "下界传送门-匣中阁",
-		"position": "主世界 与西海岸",
+		"position": "主世界 与海西岸",
 		"fontSize": 18,
 		"image": "nether_portal.png",
 		"subscript": "chest_pavilion.png",
@@ -435,7 +435,7 @@
 	},
 	{
 		"name": "匣中阁",
-		"position": "主世界 与西海岸",
+		"position": "主世界 与海西岸",
 		"image": "chest_pavilion.png",
 		"dimension": 0,
 		"x": -1389,
