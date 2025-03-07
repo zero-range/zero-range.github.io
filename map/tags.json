@@ -204,6 +204,7 @@
 	},
 	{
 		"name": "老刷铁塔遗址",
+		"position": "主世界 竹岛",
 		"fontSize": 24,
 		"image": "iron_golem.png",
 		"dimension": 0,
