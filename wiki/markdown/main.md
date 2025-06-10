@@ -62,7 +62,7 @@ ICON(nether_star.png)杀凋机
 
 ICON(shulker.png)潜影贝农场
 
-ICON(wither_rose.png)凋零玫瑰塔
+ICON(wither_rose.png)凋灵玫瑰塔
 
 ICON(experience_orb.png)末影人经验塔
 
