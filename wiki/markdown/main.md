@@ -30,7 +30,7 @@ ICON(crafting_table.png)喷射合成站
 
 ICON(villager.png)村民繁殖
 
-[ICON(iron_golem.png)刷铁塔](?刷铁塔)
+[ICON(iron_golem.png)4核刷铁塔（已拆除）](?4核刷铁塔（已拆除）)
 
 ICON(emerald.png)村民交易
 
