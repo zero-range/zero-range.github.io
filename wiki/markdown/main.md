@@ -30,7 +30,9 @@ ICON(crafting_table.png)喷射合成站
 
 ICON(villager.png)村民繁殖
 
-[ICON(iron_golem.png)4核刷铁塔（已拆除）](?4核刷铁塔（已拆除）)
+[ICON(iron_golem_removed.png)4核刷铁塔（已拆除）](?4核刷铁塔（已拆除）)
+
+[ICON(iron_golem.png)24核刷铁塔](?24核刷铁塔)
 
 ICON(emerald.png)村民交易
 
@@ -44,7 +46,7 @@ ICON(oak_sapling.png)简易树厂
 
 ICON(pillager.png)掠夺者塔
 
-ICON(warden.png)伪和平
+ICON(warden.png)监守者伪和平
 
 </li><li>
 
@@ -52,9 +54,11 @@ ICON(warden.png)伪和平
 
 ICON(honey_bottle.png)蜂蜜机
 
-ICON(gold_ingot.png)僵尸猪灵塔
+ICON(zombified_piglin.png,magma_block.png)岩浆块猪灵塔
 
-ICON(piglin.png)猪灵交易
+ICON(zombified_piglin.png,nether_portal.png)堆门猪灵塔
+
+ICON(gold_ingot.png)猪灵交易
 
 ICON(nether_star.png)杀凋机
 
@@ -80,6 +84,8 @@ ICON(warped_stem.png)单格全树种树厂
 
 ICON(dark_oak_sapling.png)深色橡木树厂
 
+ICON(mushroom_block.png)蘑菇柄机
+
 ### 多维度
 
 ICON(wither_skeleton.png)凋灵骷髅塔
@@ -96,7 +102,7 @@ ICON(light_blue_concrete_powder.png)末地祭坛刷沙机
 
 ## 建筑
 
-竹岛大厅
+ICON(bamboo_island_main_hall.png)竹岛大厅
 
 ICON(anemo_archon_statue.png)风神像
 

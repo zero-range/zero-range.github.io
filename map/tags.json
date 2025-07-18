@@ -203,15 +203,15 @@
 		"description": "神秘的下界传送门，可能是某次探索的见证。"
 	},
 	{
-		"name": "老刷铁塔遗址",
+		"name": "4核刷铁塔（已拆除）",
 		"position": "主世界 竹岛",
 		"fontSize": 24,
-		"image": "iron_golem.png",
+		"image": "iron_golem_removed.png",
 		"dimension": 0,
 		"x": 630,
 		"y": 62,
 		"z": -191,
-		"description": "Chong_Sheng 在前前期做的刷铁塔，特别好用。一开始效率很低，没想到竟是服主忘了开困难。现已停用。",
+		"description": "Chong_Sheng 在前前期做的刷铁塔，特别好用。一开始效率很低，没想到竟是服主忘了开困难。现已拆除。",
 		"minScale": 0.6
 	},
 	{
@@ -219,10 +219,10 @@
 		"position": "主世界 竹岛",
 		"image": "villager.png",
 		"dimension": 0,
-		"x": 661,
-		"y": 66,
-		"z": -159,
-		"description": "Chong_Sheng 在开服第一天做的村民繁殖，位于当初竹岛村庄的中心。为村民交易所和刷铁塔贡献极大。",
+		"x": 640,
+		"y": 51,
+		"z": -161,
+		"description": "Chong_Sheng 在开服第一天做的村民繁殖，当初位于当初竹岛村庄的中心。为村民交易所和刷铁塔贡献极大。后被 MathYellow 移至地下。",
 		"minScale": 0.6
 	},
 	{
@@ -325,6 +325,17 @@
 		"y": 83,
 		"z": -232,
 		"description": "MathYellow 造的熔炉组。"
+	},
+	{
+		"name": "24核刷铁塔",
+		"position": "主世界 开服地",
+		"fontSize": 24,
+		"image": "iron_golem.png",
+		"dimension": 0,
+		"x": 835,
+		"y": 135,
+		"z": 78,
+		"description": "服务器成员共同造的24核刷铁塔。"
 	},
 	{
 		"name": "沼泽刷怪塔",
@@ -453,6 +464,29 @@
 		"y": 77,
 		"z": -552,
 		"description": "Chong_Sheng 给 MathYellow 的生日礼物。"
+	},
+	{
+		"name": "堆门猪灵塔收集",
+		"position": "主世界 ？？？",
+		"fontSize": 24,
+		"image": "zombified_piglin.png",
+		"subscript": "nether_portal.png",
+		"dimension": 0,
+		"x": 692,
+		"y": 125,
+		"z": -3230,
+		"description": "MathYellow 造的堆门猪灵塔收集。"
+	},
+	{
+		"name": "守卫者塔（在建）",
+		"position": "主世界 ？？？",
+		"fontSize": 24,
+		"image": "guardian.png",
+		"dimension": 0,
+		"x": -368,
+		"y": 61,
+		"z": -305,
+		"description": "？？？"
 	},
 	{
 		"name": "下界传送门-竹岛",
@@ -679,10 +713,11 @@
 		"description": "Chong_Sheng 造的蜂蜜机，主要生产机器要用的蜂蜜块。现有的储量完全够用了，所以一般无人打理。"
 	},
 	{
-		"name": "僵尸猪灵塔",
+		"name": "岩浆块猪灵塔",
 		"position": "下界 下界工业区",
 		"fontSize": 28,
-		"image": "gold_ingot.png",
+		"image": "zombified_piglin.png",
+		"subscript": "magma_block.png",
 		"dimension": 1,
 		"x": 203,
 		"y": 247,
@@ -750,6 +785,18 @@
 		"y": 58,
 		"z": 1150,
 		"description": "MathYellow 造的凋零骷髅塔，众多服务器成员参与了清理周围地形的工作。"
+	},
+	{
+		"name": "堆门猪灵塔",
+		"position": "下界 ？？？",
+		"fontSize": 18,
+		"image": "zombified_piglin.png",
+		"subscript": "nether_portal.png",
+		"dimension": 1,
+		"x": 87,
+		"y": 129,
+		"z": -405,
+		"description": "zero-range 造的堆门猪灵塔"
 	},
 	{
 		"name": "末影人经验塔",
@@ -893,5 +940,16 @@
 		"y": 10,
 		"z": 267,
 		"description": "MathYellow 造的凋灵玫瑰塔。使用时千万不要拆掉地毯，不要攻击凋零，也不要在机器处下线。\nMathYellow：太开心了！这是我建造的第一个机器！"
+	},
+	{
+		"name": "蘑菇柄机",
+		"position": "末地 末地工业区",
+		"fontSize": 24,
+		"image": "mushroom_block.png",
+		"dimension": 2,
+		"x": 359,
+		"y": 55,
+		"z": 9,
+		"description": "MathYellow 造的蘑菇柄机。用于制作地图画。"
 	}
 ]
