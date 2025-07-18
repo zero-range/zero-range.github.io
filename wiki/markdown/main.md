@@ -40,6 +40,8 @@ ICON(sugar_cane.png,bamboo_island.png)小甘蔗机
 
 ICON(furnace.png)40速熔炉组
 
+ICON(big_furnace.png)320速熔炉组
+
 ICON(oak_sapling.png)简易树厂
 
 [ICON(slime_ball.png)沼泽刷怪塔](?沼泽刷怪塔)
