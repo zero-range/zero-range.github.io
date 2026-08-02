@@ -21,7 +21,8 @@
 		"x": 466,
 		"y": 22,
 		"z": 1555,
-		"description": "要塞的下界传送门，是去往末地的重要交通要道。"
+		"description": "要塞的下界传送门，是去往末地的重要交通要道。",
+		"minScale": 1.5
 	},
 	{
 		"name": "下界传送门-岩浆怪塔",
@@ -123,7 +124,34 @@
 		"x": -1333,
 		"y": 86,
 		"z": 78,
-		"description": "匣中阁的下界传送门。"
+		"description": "匣中阁的下界传送门。",
+		"minScale": 0.3
+	},
+	{
+		"name": "下界传送门-春宵舫",
+		"position": "主世界 与海",
+		"fontSize": 18,
+		"image": "nether_portal.png",
+		"subscript": "spring_night_boat.png",
+		"dimension": 0,
+		"x": -519,
+		"y": 185,
+		"z": -722,
+		"description": "春宵舫的下界传送门。",
+		"minScale": 0.3
+	},
+	{
+		"name": "下界传送门-刷冰机",
+		"position": "主世界 ？？？",
+		"fontSize": 18,
+		"image": "nether_portal.png",
+		"subscript": "ice.png",
+		"dimension": 0,
+		"x": -428,
+		"y": 63,
+		"z": 2363,
+		"description": "刷冰机的下界传送门。",
+		"minScale": 0.6
 	},
 	{
 		"name": "下界传送门",
@@ -145,17 +173,6 @@
 		"x": 1705,
 		"y": 125,
 		"z": -1437,
-		"description": "神秘的下界传送门，可能是某次探索的见证。"
-	},
-	{
-		"name": "下界传送门",
-		"position": "主世界 ？？？",
-		"fontSize": 28,
-		"image": "nether_portal.png",
-		"dimension": 0,
-		"x": -429,
-		"y": 63,
-		"z": 2363,
 		"description": "神秘的下界传送门，可能是某次探索的见证。"
 	},
 	{
@@ -305,14 +322,124 @@
 		"minScale": 0.6
 	},
 	{
-		"name": "催熟机",
+		"name": "多用作物机",
 		"position": "主世界 竹岛",
 		"image": "wheat.png",
 		"dimension": 0,
 		"x": 672,
 		"y": 68,
 		"z": -157,
-		"description": "MathYellow 造的催熟机。用处说大不大说小不小，要消耗大量骨粉，但生产农作物和大型花非常方便。",
+		"description": "MathYellow 造的多用作物机。",
+		"minScale": 0.6
+	},
+	{
+		"name": "铜傀儡分类机",
+		"position": "主世界 竹岛",
+		"image": "copper_golem.png",
+		"dimension": 0,
+		"x": 661,
+		"y": 65,
+		"z": -156,
+		"description": "MathYellow 造的铜傀儡分类机。",
+		"minScale": 0.6
+	},
+	{
+		"name": "地毯机",
+		"position": "主世界 竹岛",
+		"image": "lime_carpet.png",
+		"dimension": 0,
+		"x": 619,
+		"y": 70,
+		"z": -136,
+		"description": "MathYellow 造的地毯机。",
+		"minScale": 0.6
+	},
+	{
+		"name": "铁轨机",
+		"position": "主世界 竹岛",
+		"image": "rail.png",
+		"dimension": 0,
+		"x": 610,
+		"y": 70,
+		"z": -136,
+		"description": "MathYellow 造的铁轨机。",
+		"minScale": 0.6
+	},
+	{
+		"name": "骨粉海带机",
+		"position": "主世界 竹岛",
+		"image": "kelp.png",
+		"dimension": 0,
+		"x": 653,
+		"y": 64,
+		"z": -113,
+		"description": "MathYellow 造的骨粉海带机。",
+		"minScale": 0.6
+	},
+	{
+		"name": "骨粉竹子机",
+		"position": "主世界 竹岛",
+		"image": "bamboo.png",
+		"dimension": 0,
+		"x": 673,
+		"y": 65,
+		"z": -144,
+		"description": "MathYellow 造的骨粉竹子机。",
+		"minScale": 0.6
+	},
+	{
+		"name": "岩浆机",
+		"position": "主世界 竹岛",
+		"image": "lava_bucket.png",
+		"dimension": 0,
+		"x": 677,
+		"y": 62,
+		"z": -193,
+		"description": "MathYellow 造的岩浆机。它真的算机器吗？",
+		"minScale": 0.6
+	},
+	{
+		"name": "羊毛机",
+		"position": "主世界 竹岛",
+		"image": "white_wool.png",
+		"dimension": 0,
+		"x": 642,
+		"y": 63,
+		"z": -92,
+		"description": "MathYellow 造的羊毛机。",
+		"minScale": 0.6
+	},
+	{
+		"name": "红石元件合成站",
+		"position": "主世界 竹岛",
+		"image": "repeater.png",
+		"dimension": 0,
+		"x": 687,
+		"y": 64,
+		"z": -106,
+		"description": "MathYellow 造的红石元件合成站。",
+		"minScale": 0.6
+	},
+	{
+		"name": "烟花金胡萝卜合成站",
+		"position": "主世界 竹岛",
+		"image": "golden_carrot.png",
+		"dimension": 0,
+		"x": 658,
+		"y": 64,
+		"z": -128,
+		"description": "MathYellow 造的烟花金胡萝卜合成站。",
+		"minScale": 0.6
+	},
+	{
+		"name": "烤鸡机",
+		"position": "主世界 竹岛",
+		"image": "cooked_chicken.png",
+		"dimension": 0,
+		"x": 639,
+		"y": 63,
+		"z": -97,
+		"description": "",
 		"minScale": 0.6
 	},
 	{
@@ -325,6 +452,17 @@
 		"y": 83,
 		"z": -232,
 		"description": "MathYellow 造的熔炉组。"
+	},
+	{
+		"name": "100速熔炉组",
+		"fontSize": 22,
+		"position": "主世界 伐木林",
+		"image": "big_furnace.png",
+		"dimension": 0,
+		"x": 707,
+		"y": 68,
+		"z": -251,
+		"description": "Chong_Sheng 造的熔炉组。"
 	},
 	{
 		"name": "24核刷铁塔",
@@ -466,6 +604,16 @@
 		"description": "Chong_Sheng 给 MathYellow 的生日礼物。"
 	},
 	{
+		"name": "春宵舫",
+		"position": "主世界 与海",
+		"image": "spring_night_boat.png",
+		"dimension": 0,
+		"x": -637,
+		"y": 183,
+		"z": -722,
+		"description": "服务器成员们建造的新年建筑，用于庆祝丙午新年。"
+	},
+	{
 		"name": "堆门猪灵塔收集",
 		"position": "主世界 ？？？",
 		"fontSize": 24,
@@ -487,6 +635,17 @@
 		"y": 61,
 		"z": -305,
 		"description": "？？？"
+	},
+	{
+		"name": "刷冰机",
+		"position": "主世界 ？？？",
+		"fontSize": 24,
+		"image": "ice.png",
+		"dimension": 0,
+		"x": -435,
+		"y": 63,
+		"z": 2397,
+		"description": "zero-range 造的刷冰机"
 	},
 	{
 		"name": "下界传送门-竹岛",
@@ -548,8 +707,7 @@
 		"x": 70,
 		"y": 129,
 		"z": 70,
-		"description": "地图画的下界传送门。",
-		"minScale": 1.2
+		"description": "地图画的下界传送门。"
 	},
 	{
 		"name": "下界传送门-沼泽刷怪塔",
@@ -573,8 +731,7 @@
 		"x": 83,
 		"y": 129,
 		"z": 8,
-		"description": "末地祭坛刷沙机的下界传送门。",
-		"minScale": 1.2
+		"description": "末地祭坛刷沙机的下界传送门。"
 	},
 	{
 		"name": "下界传送门-掠夺者塔",
@@ -624,6 +781,30 @@
 		"y": 129,
 		"z": 14,
 		"description": "匣中阁的下界传送门。"
+	},
+	{
+		"name": "下界传送门-春宵舫",
+		"position": "下界 下界工业区",
+		"fontSize": 18,
+		"image": "nether_portal.png",
+		"subscript": "spring_night_boat.png",
+		"dimension": 1,
+		"x": -65,
+		"y": 129,
+		"z": -92,
+		"description": "春宵舫的下界传送门。"
+	},
+	{
+		"name": "下界传送门-刷冰机",
+		"position": "下界 ？？？",
+		"fontSize": 18,
+		"image": "nether_portal.png",
+		"subscript": "ice.png",
+		"dimension": 1,
+		"x": -54,
+		"y": 129,
+		"z": 295,
+		"description": "刷冰机的下界传送门。"
 	},
 	{
 		"name": "下界传送门",

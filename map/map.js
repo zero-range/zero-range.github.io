@@ -54,6 +54,8 @@ function drawTag(tag) {
 		var tx = Math.round(width / 2 + ox + x * sc);
 		var ty = Math.round(height / 2 + oy + z * sc);
 		if(ac) {
+			cxt.fillStyle = "rgba(255, 255, 255, 0.5)";
+			cxt.fillRect(tx - 20, ty - 20, 40, 40);
 			cxt.drawImage(img, tx - 20, ty - 20, 40, 40);
 			cxt.lineWidth = '2';
 			cxt.strokeStyle = 'black';
@@ -67,6 +69,8 @@ function drawTag(tag) {
 				cxt.strokeRect(tx + 4, ty + 4, 21, 21);
 			}
 		} else {
+			cxt.fillStyle = "rgba(255, 255, 255, 0.5)";
+			cxt.fillRect(tx - 16, ty - 16, 32, 32);
 			cxt.drawImage(img, tx - 16, ty - 16, 32, 32);
 			cxt.lineWidth = '1';
 			cxt.strokeStyle = 'black';
